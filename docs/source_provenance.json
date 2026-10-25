@@ -1,0 +1,51 @@
+{
+  "source_repository": "https://github.com/asharaff967/590-Data-Wrangling-Project",
+  "source_commit": "2d70519206679c723c4c89e65400d70848d897e2",
+  "created_on": "2026-10-25",
+  "copied_files": {
+    "src/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "src/common/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "src/common/config.py": "f04bd9a14d1e6df33bd375c9d297f1b2a3891c0e604885d556e836b7591a8edf",
+    "src/common/io_utils.py": "c6b46307af42530808be7a19250a7162d05497c85457434438f18de64da7a359",
+    "src/common/wrds_conn.py": "c94a59b039ba273a32557167931dee8ed4309138c91e9fa556c667d0aed897cd",
+    "src/stocks/__init__.py": "5a9ace3ee08ab9096da0d8c3eaf08416da55c5e0f96a60789552e1e69f7ddb18",
+    "src/stocks/pull.py": "2eb82307763f70eaf6788d8038489c683f87fa879e248044d00d38260accd50b",
+    "src/stocks/build.py": "e9555405309ffb630e2cb97e943c498540ec1f8cd016a2a5949361fc6fc349e6",
+    "src/stocks/quality.py": "873945c89f1b2ac034803c1b3f4f13423542ecd637e65a96cf5820d7d982e58d",
+    "src/stocks/history_audit.py": "0d5e39b0eda4bf99c0c9a952c036fece7197f8d4544151b6c3258a56e21f80a4",
+    "tests/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "tests/stocks/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "tests/stocks/test_pilot.py": "952df8a726a6e4f9426d08013387ba29c02ae336960727c25ab7ca42890dd8ad",
+    "tests/stocks/test_history_audit.py": "da149ac006b714a258ad16cb8122cea5e922afd14ade81bab21a04e301069bdb"
+  },
+  "adapted_files": [
+    "src/common/config.py",
+    "src/stocks/pull.py",
+    "tests/stocks/test_pilot.py"
+  ],
+  "omitted": [
+    ".git",
+    "environments",
+    "credentials",
+    "market rows",
+    "original results",
+    "Trading project"
+  ],
+  "actual_semiconductor_data": "not pulled",
+  "independent_file_sha256": {
+    "src/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "src/common/config.py": "ac03cd964d40cfac8fb4c66f8089c318f7d7004aa76bfa7a4eefff02688acf36",
+    "src/common/io_utils.py": "c6b46307af42530808be7a19250a7162d05497c85457434438f18de64da7a359",
+    "src/common/wrds_conn.py": "c94a59b039ba273a32557167931dee8ed4309138c91e9fa556c667d0aed897cd",
+    "src/common/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "src/stocks/build.py": "e9555405309ffb630e2cb97e943c498540ec1f8cd016a2a5949361fc6fc349e6",
+    "src/stocks/history_audit.py": "0d5e39b0eda4bf99c0c9a952c036fece7197f8d4544151b6c3258a56e21f80a4",
+    "src/stocks/pull.py": "7c194abb46272b141aa38014c21f25f50b2ef624622e955ad963c1694b483fb7",
+    "src/stocks/quality.py": "873945c89f1b2ac034803c1b3f4f13423542ecd637e65a96cf5820d7d982e58d",
+    "src/stocks/__init__.py": "5a9ace3ee08ab9096da0d8c3eaf08416da55c5e0f96a60789552e1e69f7ddb18",
+    "run_audible.py": "944ff03f3499012fd211ff35d4ee05290ddcfc54ebf901fd69531ac5a1094774",
+    "config/universe.csv": "115244fe3b3ec18f572d7f8b09ee0bcc146e1b5799758832eae96fb73c541272",
+    "config/audible.json": "f9a7ec2f8e9ff83b30b041e2f197dfe62c7f03d0768f93b8961c07ee0c9bf9a4",
+    "notebooks/audible_semiconductors_wrds.ipynb": "98174ae7c118cf40f987cebc0902c83f9654e2a4cd6998ed96ff464b77f8a46f"
+  }
+}

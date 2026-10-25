@@ -1,0 +1,6 @@
+# On WRDS, check preinstalled packages before any installation.
+pandas>=2.0,<3.0
+numpy
+wrds>=3.2
+python-dotenv>=1.0
+pytest>=8.0

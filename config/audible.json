@@ -1,0 +1,11 @@
+{
+  "project": "audible-semiconductors-v1",
+  "selected_on": "2026-10-25",
+  "start": "2004-01-01",
+  "end": "2024-12-31",
+  "universe_asof": "2024-12-31",
+  "sample_start": "2024-06-01",
+  "sample_end": "2024-06-30",
+  "selection": "Semiconductor and equipment convenience sample; not a historical index universe",
+  "membership_use": "Context only; no automatic S&P membership exclusion"
+}

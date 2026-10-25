@@ -1,0 +1,12 @@
+.env
+.venv/
+.pgpass
+__pycache__/
+*.pyc
+.pytest_cache/
+data/
+reports/
+**/.ipynb_checkpoints/
+**/repro_audits/
+
+.test-tmp*/

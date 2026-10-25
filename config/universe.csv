@@ -1,0 +1,11 @@
+ticker,company,segment,note
+NVDA,NVIDIA,Compute and chip design,Fixed convenience sample; live CRSP identity and coverage pending
+AMD,Advanced Micro Devices,Compute and chip design,Fixed convenience sample; live CRSP identity and coverage pending
+INTC,Intel,Processors and manufacturing,Fixed convenience sample; live CRSP identity and coverage pending
+MU,Micron Technology,Memory,Fixed convenience sample; live CRSP identity and coverage pending
+QCOM,QUALCOMM,Connectivity and chip design,Fixed convenience sample; live CRSP identity and coverage pending
+TXN,Texas Instruments,Analog and embedded,Fixed convenience sample; live CRSP identity and coverage pending
+ADI,Analog Devices,Analog and mixed signal,Fixed convenience sample; live CRSP identity and coverage pending
+AMAT,Applied Materials,Semiconductor equipment,Fixed convenience sample; live CRSP identity and coverage pending
+LRCX,Lam Research,Semiconductor equipment,Fixed convenience sample; live CRSP identity and coverage pending
+KLAC,KLA,Semiconductor process control,Fixed convenience sample; live CRSP identity and coverage pending
