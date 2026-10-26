@@ -1,9 +1,9 @@
-Comparable allocations change the trading rule assessment
+Keep the public timing rule in research
 To: Project Audible review panel
 From: Loki Ziye
-Date: October 26, 2026
+Date: October 26, 2026 | Dashboard v09 | Memo revision 2
 
-I recommend keeping this disclosed short-horizon rule in research rather than deploying it on current evidence. Matching the starting stock allocations reduces its apparent 2025 gross advantage from 10.60 to 1.93 percentage points. Its favorable 2025 return and lower drawdown deserve serious consideration, but a required crossed quote prevents a complete new net-return estimate. The present evidence does not establish an advantage after trading costs.
+I recommend keeping this public short-horizon rule in research rather than trading it on the current evidence. It earns 76.35% gross in 2025, but matching starting stock allocations reduces its advantage over passive exposure from 10.60 to 1.93 percentage points. Its lower drawdown is meaningful counterevidence to my recommendation. Unequal market exposure and an unresolved transaction-cost input still prevent a reliable after-cost decision.
 
 The decision and comparison
 The question is whether a retail trader should use this short-horizon timing rule instead of passive exposure to the same semiconductor stocks. Both views have a plausible case: timing may improve the holding path or reduce losses, while passive exposure avoids frequent trades and can capture a strong industry market. This small public-rule study informs that decision; it does not test a private trading strategy or settle the literature.
@@ -20,13 +20,13 @@ In 2025 the public rule returns 76.35%. The original passive portfolio returns 6
 The strongest evidence against the recommendation
 The strongest objection is that 2025 is favorable even after matching allocations. The public rule gains 76.35% gross against 74.42%, and its within-year daily-close maximum drawdown is 18.21%, compared with 29.76% for the matched passive portfolio. Its mean beginning-of-interval invested-dollar exposure is 54.95%. These results are retained, rather than dismissing a strong year as merely an AI boom. Different exposure still prevents a risk-neutral comparison.
 
-Attribution shows what the returns contain. MU, LRCX and KLAC contribute about 49% of the public rule's 2025 gross gain. Monthly increments to the matched-comparison gap are especially positive in November (+14.63 percentage points) and April (+8.54), but negative in October (-8.22) and December (-8.18). Those increments are measured against period-start capital and sum to the annual gap. They are not simple monthly percentage returns or a causal decomposition of AI news.
+Attribution shows what the returns contain. MU, LRCX and KLAC account for 49.01% of positive stock contributions to the public rule's 2025 gross return. Monthly increments to the matched-comparison gap are especially positive in November (+14.63 percentage points) and April (+8.54), but negative in October (-8.22) and December (-8.18). Those increments are measured against period-start capital and sum to the annual gap. They are not simple monthly percentage returns or a causal decomposition of AI news.
 
-The wider sample also matters. Over 2022-2025 the public rule earns 71.40% gross, while passive exposure from the same original allocation earns 125.92%. That difference alone does not prove inferior risk-adjusted performance: the rule spends substantial time in cash, which earns zero in this experiment. Conversely, the favorable 2025 comparison alone does not establish persistence.
+The wider sample also matters. The matched-comparison gap is +5.35 pp in 2022, -43.32 pp in 2023, -2.58 pp in 2024 and +1.93 pp in 2025. Over 2022-2025 the public rule earns 71.40% gross against 125.92% for passive exposure from the same original allocation. Different cash exposure and zero cash yield prevent these gaps from establishing risk-adjusted superiority or inferiority. A favorable year does not establish persistence.
 
 The largest limitation and next decision
 The main barrier to an after-cost conclusion is explicit. ADI has a crossed closing quote on April 16, 2025 at a required cost event, corroborated in the underlying CIZ table. The frozen net calculator stops; no row or quote is repaired, swapped or dropped. Consequently this release reports gross results only. Fees, market impact, taxes, intraday delays, actual fills and cash yield are not measured. Available annual CRSP coverage ends December 2025; newer-frequency libraries deny this account access.
 
-The stocks were selected in 2026, and the attribution design followed inspection of the historical results. This is retrospective analysis of a convenience universe, not prospective validation. My research-only position rests on unresolved costs, exposure differences and limited independent validation, not on a requirement that every year lose money. I would reconsider it after a documented quote resolution, a separately specified cost analysis and further validation under fixed rules.
+The stocks were selected in 2026, and the attribution design followed inspection of the historical results. This is retrospective analysis of a convenience universe, not prospective validation. My research-only position rests on unresolved costs, exposure differences and limited independent validation, not on a requirement that every year lose money. I would reconsider it after a documented quote resolution or a separate cost sensitivity specified before seeing its net result, followed by validation on a separately specified sample with fixed rules and explicit exposure and cash assumptions.
 
 Evidence: comparison_summary.csv; stock_attribution.csv; monthly_attribution.csv; comparison_paths.csv; protocol.json; Power BI v09 pages 1-3. This AI-assisted draft is for student review; no new human verification is claimed.

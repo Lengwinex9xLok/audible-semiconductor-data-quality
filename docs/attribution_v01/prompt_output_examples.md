@@ -27,3 +27,27 @@ replay argument without changing economic rules. No raw/quote repair or net resu
 Human ownership: Loki chose privacy boundaries, approved the benchmark/attribution direction
 and asked for the course check. AI authored code, DAX, prose and verification. Student final
 position, professor acceptance and new independent human numeric validation remain pending.
+
+## v09 memo revision 2
+
+User: "好的，那我们接下来把position memo和technical memo也按v09的结果更新一下吧，按老师的rubric来，组里的别动。主要更新到github上去，我让我的组员看看哈哈哈"
+
+Output used: a two-page recommendation-led position memo; a three-page technical
+memo; editable text copies; versioned renderer; rubric evidence map and review guide.
+The main results already matched v09. Changes clarify the 2025 objection, annual gaps,
+positive-contribution concentration denominator, source pipeline, exact replay steps,
+PBIX check scope and the distinction between current PDFs and the older source ZIP.
+
+Validation: read the original rubric; checked numeric claims against v09 CSVs;
+executed the published replay commands in a fresh extracted source bundle (10 tests,
+five byte-identical CSVs); inspected all five rendered pages; checked preservation
+hashes. Automated checks do not establish independent human ownership.
+
+Correction: a workspace apply_patch write failed, so files were created in a new
+version directory through a Python script. No existing financial data were edited.
+The available writing-style tools did not include a search/retrieve action; wording
+followed the user-provided draft and explicit preferences, without claiming retrieval.
+
+Human ownership: Loki requested the memo update and GitHub publication for review.
+The recommendation remains an AI-assisted draft for student review, not a recorded
+student endorsement or completed independent verification.

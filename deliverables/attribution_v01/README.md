@@ -1,4 +1,4 @@
-# Attribution review release
+# Power BI v09 and memo revision 2
 
 Download Audible_Semiconductor_v09.pbix with GitHub's Download raw file button, then
 open it in Power BI Desktop. The PBIX was exported natively, reopened from disk,
@@ -19,3 +19,17 @@ Position memo: two pages. Technical memo: three pages. Both are AI-assisted draf
 for student review. All new returns and comparisons remain gross; complete net
 results are blocked by quote quality. Source, topic and teams-of-two acceptance by
 the instructor remain unconfirmed. No group or private Trading file was changed.
+
+## Updated memos for review
+
+October 26, 2026: the separate position_memo.pdf (two pages) and technical_memo.pdf
+(three pages), with editable .txt copies, are memo revision 2 for v09. The position
+leads with a research-only recommendation, preserves favorable 2025 counterevidence,
+and separates gross performance from the unresolved after-cost question. The
+technical memo clarifies the source-to-dashboard pipeline, replay steps and the
+successful native PBIX check. Financial results and assumptions are unchanged.
+
+Start with [the review guide](../../docs/attribution_v01/v09_review_guide.md).
+The revised memo renderer and its table input are in memo_source_v09_r2.zip.
+The unchanged source_bundle.zip contains the earlier memo draft and the original
+analysis/Power BI sources; use the separate PDFs/text here as the current memos.

@@ -49,3 +49,22 @@ or fully submission-ready until topic/source/team questions and student review a
 resolved. Neither the old negative three-year result nor this favorable gross year
 answers the complete after-cost question. New private Trading data are unnecessary
 for the current accounting/benchmark scope.
+
+## Memo revision 2 evidence map
+
+Checked against the supplied Project Audible Rubric.docx on October 26, 2026.
+This maps content to the rubric; it is not an assigned grade.
+
+| Memo criterion | Revised evidence |
+|---|---|
+| Position upfront 10 | First paragraph recommends research-only use and gives the 10.60 to 1.93 pp correction. |
+| Evidence 8 | Page 1 table: four annual comparisons and full period; page 2: drawdowns, exposure and stock/month contributions. Values checked against existing v09 CSVs. |
+| Limitations/counterarguments 4 | Page 2 retains favorable 2025 evidence, names the required crossed quote and explains why the recommendation still holds. |
+| Professional and at most two pages 3 | Two pages, recommendation first, five rendered pages across both memos inspected. |
+| Sources/provenance 8 | Technical page 1 names WRDS tables/query, access date, CIZ format, date scope, hashes and unknown vendor release ID. |
+| Pipeline 8 | Technical pages 1-2 explain dated identity/calendar checks, field mapping, lagged rule, drifting weights, comparators, attribution and risk. |
+| Reproducible 5 | Technical page 3 gives exact commands; fresh archive replay passed 10 tests and matched all five CSVs byte for byte. Raw-source extraction requires WRDS and is not reproduced by this summary replay. |
+| Choices 4 | Technical page 3 explains matching start weights, retained original benchmark, no fitted leverage/alpha/causal claim, and retrospective timing. |
+
+The v09 native PBIX export/reopen evidence is now included in the technical memo.
+No human expanded-data verification, grade or instructor approval is invented.

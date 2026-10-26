@@ -1,0 +1,39 @@
+{
+  "status": "v09_memo_revision_2_review_checks_passed",
+  "files": {
+    "position_memo.pdf": {
+      "pages": 2,
+      "sha256": "ebb6d11a728cd309cca46dd0e2f660853067910246a9a1099f7e2b4e9024cc95"
+    },
+    "technical_memo.pdf": {
+      "pages": 3,
+      "sha256": "c16fc8b9be5d8f242d4b5ad27874fcbf625e6bda4340a60d8ed31c0e58b8be3e"
+    }
+  },
+  "visual_review": "all five rendered pages inspected; no clipping, missing glyphs or overlap",
+  "numeric_claims": "rounded annual/full-period results, gap decomposition, 2025 drawdowns/exposure, concentration and month increments checked against CSVs",
+  "replay": {
+    "status": "v09_memo_replay_passed",
+    "fictional_tests": 10,
+    "result_csvs_byte_identical": 5,
+    "hashes": {
+      "comparison_paths.csv": "79ec37fed4d9a0fdfd0e55c0c55f51dd6f4da51ee5456bfb085d53e68974afbe",
+      "comparison_summary.csv": "02895bb0ca84b9073eb6b098688c2a9ec3b435b85175d83e7392001481699133",
+      "monthly_attribution.csv": "ab51c3501c62dee1fa63d25f1ae7c5b60651792f39d98548326f2c0eb6ae038f",
+      "stock_attribution.csv": "489a6d40432bdfbf5d833fdd2c9af29398b65578f1b9d1225d565adcba684a75",
+      "stock_monthly_attribution.csv": "7de7eafa86da1b72d9087f53ebad067d70c0fc0883548fe5650d2cffcfb0309c"
+    },
+    "python": "3.12.14",
+    "pandas": "3.0.1",
+    "numpy": "2.3.5",
+    "network_or_WRDS_queries": false,
+    "private_or_group_data_used": false,
+    "independent_human_verification": "pending"
+  },
+  "old_artifacts_unchanged": 14,
+  "Trading_data_used": false,
+  "group_files_changed": false,
+  "financial_rules_or_results_changed": false,
+  "new_human_verification_claimed": false,
+  "student_review": "pending"
+}

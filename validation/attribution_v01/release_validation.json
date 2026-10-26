@@ -15,5 +15,7 @@
     "Student ownership/review and independent expanded verification",
     "Resolve quote-quality block before complete new net result"
   ],
-  "native_PBIX_export": "passed; see pbix_export_validation.json"
+  "native_PBIX_export": "passed; see pbix_export_validation.json",
+  "memo_revision": 2,
+  "memo_review_validation": "memo_revision_2_validation.json"
 }

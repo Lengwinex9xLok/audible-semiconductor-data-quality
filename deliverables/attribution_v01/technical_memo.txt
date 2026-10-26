@@ -1,19 +1,21 @@
-Comparable allocations and return attribution methods
+Methods for the semiconductor rule comparison
 To: Project Audible review panel
 From: Loki Ziye
-Date: October 26, 2026
+Date: October 26, 2026 | Dashboard v09 | Memo revision 2
 
 Source and scope
 This analysis uses only derived summary tables already produced from programmatic WRDS CIZ data. The upstream source is crsp_a_stock.dsf_v2, with dated stocknames_v2 identity checks and wrds_dailyindexret_query for the source-relative calendar. The upstream snapshot was pulled October 26, 2026, covers December 30, 2021 through December 31, 2025, and contains 10,050 rows: 20 warmup records and 10,030 analysis stock-date observations. There are 1,003 holding intervals per stock. Source manifests preserve hashes; a vendor release identifier was not recorded.
 
-The ten labels and saved PERMNOs remain ADI, AMAT, AMD, INTC, KLAC, LRCX, MU, NVDA, QCOM and TXN. This is a hindsight convenience universe selected in 2026, not a historically investable S&P 500 portfolio. Membership is not an exclusion rule. No Trading repository, broker API, account, signal or group file is read by this attribution calculation. It makes no new network or WRDS query.
+The ten saved PERMNOs identify ADI, AMAT, AMD, INTC, KLAC, LRCX, MU, NVDA, QCOM and TXN. This 2026 convenience universe is not a historical S&P 500 portfolio; membership is not an exclusion rule. All three named sources were accessed through WRDS SQL on October 26, 2026, selecting saved securities and dates. CIZ/Version 2 names the source format; hashes pin the snapshot, not a known vendor release. No broker, account, private Trading or group file is used.
 
 CIZ replaces the discontinued legacy SIZ format. The entire new 2022-2025 run uses CIZ, with no splice to legacy returns. Across 2,520 overlapping 2024 records, the largest absolute differences are 0.000001 for RET/RETX and 0.00006 for bid/ask; no 2024 positive-return signal signs differ. The accessible annual CIZ source ends December 2025. Monthly and quarterly schemas denied access, so no 2026 observation or return is inferred.
 
-Financial accounting retained
+From source records to gross wealth
+Rows are matched to dated names by PERMNO and valid name dates, then checked against the source calendar. The source audit reports 10,050 dated-name matches, zero previous-date mismatches and no missing numeric values. The calculation rejects duplicate keys, ambiguous identities, missing/unexpected dates, invalid numerics and nonpositive quotes. Quality flags are retained. Map dlycaldt to date, dlyret/dlyretx to RET/RETX and dlybid/dlyask to bid/ask.
+
 The public rule holds an interval close(d) to close(d+1) when RET(d-1)>0. Otherwise it holds cash at zero yield. The first entry date is December 31, 2021. No shorting, leverage or daily/annual cross-stock rebalance is added to the original path. The original sleeve_path engine is unchanged. Two summary inputs contain period-normalized stock wealth paths, binary holding positions and actual period-start capital weights.
 
-The source has 15 locked and three crossed quotes; one crossed ADI quote is required for a transaction cost. The new quoted-width net calculation is correctly rejected. Gross wealth remains calculable because its multiplier is zero. The attribution module accepts only gross inputs, and does not create or repair net returns. The old 2022-2024 cost release is retained separately and has a different window and source snapshot.
+The source has 15 locked and three crossed quotes, including six required locked events and one required crossed ADI event. A complete 2025/four-year net calculation is rejected. The gross-only adapter permits crossed quotes only when every cost multiplier is zero. It neither repairs quotes nor creates net returns. Locked quotes do not establish free execution. The older 2022-2024 cost release is a separate source/window.
 
 ===PAGE===
 Matched comparator and exact decomposition
@@ -32,7 +34,11 @@ Mean invested-dollar exposure averages sum_i[a_i*A_i(t-1)*q_i(t)] divided by pub
 
 ===PAGE===
 Reproduction and validation
-The source bundle contains code, two summary inputs, the protocol, result CSVs and editable Power BI sources. Input hashes identify the exact summaries. Run python -m unittest discover -s code -p 'test*.py' for ten fictional-data tests. Run python code/attribution.py --output-name replay_results in a fresh extracted bundle to write a new result folder. Existing result directories are rejected. No market data pull or private connection is needed.
+Extract deliverables/attribution_v01/source_bundle.zip into a fresh directory. It includes code, two derived summary inputs, protocols, five result CSVs and editable Power BI sources. Python, pandas and NumPy are required. From the extracted directory run:
+
+[COMMANDS]
+
+The runner rejects an existing output folder and verifies the included input hashes. A clean archive replay reproduced all five CSVs byte for byte. This checks attribution from saved summaries, not upstream retrieval from licensed raw data. Raw files remain on WRDS. The original upstream runtime was Python 3.14.5/pandas 2.2.3; the memo validation receipt records the local replay runtime.
 
 Tests cover a hand-derived two-stock allocation decomposition, equal-weight identity, monthly additivity versus compounding, exposure based on previous wealth, initial-wealth drawdown, missing dates, invalid weights, nonzero-cost source rejection, inconsistent positions/returns and input preservation. Runtime checks also reconstruct each active sleeve's gross interval factor from the passive interval return and the saved holding position. Stock contributions, monthly increments, gap components and monthly compounding reconcile to portfolio totals. Downloaded input and original artifact hashes are rechecked. These are AI-assisted software/accounting checks, not independent human validation.
 
@@ -42,9 +48,9 @@ Matching starting stock weights addresses a specific confound in the earlier ann
 The 2025 aggregate and stock results were known before this attribution protocol. Its results cannot be described as preregistered or out of sample. The initial protocol is retained; a later portability update changes file paths and hashes only, without changing financial or attribution rules. A current source hash is stronger provenance than an unsupported claim about a vendor release version.
 
 Dashboard and course boundaries
-Power BI v09 has independent period controls on each page, a full annual comparison, stock and monthly attribution, daily drawdowns and stock detail. All new financial values are labeled gross. Annual bars always show all four years; the other visuals follow that page's period choice. Stock detail uses its own period selector after a drill. The prior dashboard is preserved and should not be read as the new window's net result.
+Download the separate Audible_Semiconductor_v09.pbix; it embeds data and needs no WRDS connection. Its three pages cover the decision, attribution/counterevidence and stock detail. Each has an independent period control defaulting to 2025. Page 1 annual bars show all four years; other visuals follow the page's period. Select a year for all twelve monthly columns. The PBIX was reopened and all three pages, a 2025/2024/2025 switch and MU detail were checked. Drill-through was checked earlier in PBIP, not repeated at export; Ctrl-click Back was not separately tested.
 
-The supplied rubric calls for a working interactive dashboard, a recommendation-led memo of at most two pages, explained/reproducible methods and an LLM validation log. The lecture also requires a genuinely contested question, programmatic primary sources, opposing evidence and teams of two. These artifacts cannot certify instructor acceptance of CRSP as the intended primary source, this narrowed public-rule topic, or the solo/team arrangement. Approval of the separate group options proposal does not establish approval of this independent Audible topic.
+The original source ZIP is retained with its earlier memo drafts. The separate PDFs/text beside the v09 PBIX are the current revision. Instructor acceptance of CRSP as the intended primary source, the narrowed controversy and the lecture's two-person team arrangement remains unconfirmed; separate group-topic approval does not resolve these items.
 
 LLM ownership and evidence
 Loki chose the privacy boundary and requested comparable allocations and attribution. AI authored the code, DAX, charts and draft prose, and performed software, arithmetic and render checks. The LLM log records the prompts, outputs and corrections; student verification of this CIZ expansion and final position remains pending. The earlier user-reported June arithmetic check does not verify these new results. The strongest favorable 2025 evidence remains visible alongside the recommendation.

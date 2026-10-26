@@ -1,6 +1,6 @@
 # Project Audible semiconductor trading costs
 
-**Current analytical draft: [comparable allocations and attribution](deliverables/attribution_v01/README.md).**
+**Current v09 review package and memo revision 2: [comparable allocations and attribution](deliverables/attribution_v01/README.md).**
 The 2025 public rule earns +76.35% gross against +74.42% for passive exposure with
 matching starting stock weights. The original +10.60 pp gap includes +8.67 pp of
 initial-allocation differences. Stock/month contributions and drawdown remain visible.
@@ -12,6 +12,11 @@ and [rubric/lecture check](docs/attribution_v01/rubric_check.md).
 The v09 PBIX was exported natively, reopened from disk, and checked on all three pages.
 It embeds the summary data and requires no WRDS connection.
 No complete new net result, instructor approval or independent human verification is claimed.
+
+The separate memos were revised for v09 and checked against the Audible rubric.
+Start with the [v09 review guide](docs/attribution_v01/v09_review_guide.md).
+Position: two pages; technical: three pages. The retained source ZIP has earlier memo
+drafts; the directly linked PDFs above are current.
 
 
 **Latest evidence: [CIZ 2022-2025 gross-only supplement](supplements/ciz_2022_2025_gross_v01/README.md).**
@@ -28,7 +33,7 @@ The continuous three-year return is -8.41%; always-long returns +36.23%, with di
 The recommendation is to keep the rule in research. Positive years challenge a blanket failure claim.
 That dashboard makes no 2025/2026 claim; see the newer supplement above.
 
-## Open the current deliverables
+## Preserved v08 deliverables
 
 - [Three-page Power BI dashboard v08](deliverables/expanded_2022_2024_v01/Audible_Semiconductor_v08.pbix)
 - [Position memo, two pages](deliverables/expanded_2022_2024_v01/position_memo.pdf)
