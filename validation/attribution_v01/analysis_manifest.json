@@ -21,5 +21,9 @@
   "costs": "gross only",
   "financial_rule_changed": false,
   "comparator_years_are_independent": true,
-  "causal_AI_attribution_or_alpha_claim": false
+  "causal_AI_attribution_or_alpha_claim": false,
+  "protocol_file": "protocol_initial.json",
+  "portability_protocol_file": "protocol.json",
+  "portability_protocol_sha256": "783708a78800aa9e708a55cff44ea5a4c2025ae4059c6e4838d1e86a895829f8",
+  "protocol_note": "Initial analysis hashes the initial protocol. Portable replays hash protocol.json; financial and attribution rules are unchanged."
 }
