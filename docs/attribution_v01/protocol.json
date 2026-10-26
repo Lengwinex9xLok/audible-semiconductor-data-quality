@@ -1,0 +1,38 @@
+{
+  "created_for": "Loki Ziye independent Project Audible",
+  "question": "Does the public short-horizon rule add value relative to passive semiconductor exposure under comparable starting allocations?",
+  "known_results_before_design": "2022-2025 aggregate, annual and stock gross results already observed; this is retrospective attribution, not a preregistered or prospective test",
+  "scope": "Summary-only CIZ 2022-2025 gross results; no broker, Trading, group or new WRDS query",
+  "primary_comparator": "For each selected period, always-long sleeves start with the SAME stock weights as the public rule at that period start. No within-period cross-stock rebalance. Each annual comparator is a separate conditional benchmark; annual comparator returns must not be compounded as one continuous strategy.",
+  "decomposition": "original_public_minus_original_passive = public_minus_same_weight_passive + same_weight_passive_minus_original_passive. Terms describe holding paths and initial allocations, not causal AI effects or risk-adjusted alpha.",
+  "attribution": "Stock contributions use public period-start weights. Monthly return contributions use actual month-start wealth weights; monthly increments relative to period-start capital telescope to period return. Do not sum simple monthly percentage returns.",
+  "exposure": "Mean of daily beginning-of-interval invested dollars divided by public beginning-of-interval total wealth. Not held-name share or an ex-post risk-matching multiplier.",
+  "risk": "Drawdowns use period-normalized daily close wealth including starting wealth 1. No annualization, significance or deployment claim.",
+  "cost_status": "Gross only. Existing required crossed quote gate and net-result blocker retained.",
+  "parameters_tuned": false,
+  "inputs": {
+    "outputs\\Audible-CIZ-Supplement-v01\\received\\code\\benchmark_core_v02.py": "b4a585d9d911a0c9d22c20c92ede5d9c12db6b567099ff3439f33e583b226141",
+    "outputs\\Audible-CIZ-Supplement-v01\\received\\code\\ciz_aggregation.py": "5f387cc5eeb6dffefa81c97e58b4b661a321fed281853c8dfea1af52f7c4e209",
+    "outputs\\Audible-CIZ-Supplement-v01\\received\\code\\expansion_core.py": "31c252e3a1ecea5236947d0ab2bee37b5c0d188e14842cde274bbdb9eb6c47d6",
+    "outputs\\Audible-CIZ-Supplement-v01\\received\\code\\replay_saved.py": "2b206a73272a6aeb42b51b2b95359944ec0b108e7c60bba83bf85443236b6c9f",
+    "outputs\\Audible-CIZ-Supplement-v01\\received\\code\\test_expansion.py": "987cc1ade0dbd819f6338b1950ab6dc7e7b284c635f7b58dfa08f7ad549e7889",
+    "outputs\\Audible-CIZ-Supplement-v01\\received\\code\\test_gross_scope.py": "dbfe242b69da1eb8c3ff0756b1a532dc6accdaaa44ff7db0bef3f97aedd7c8f4",
+    "outputs\\Audible-CIZ-Supplement-v01\\received\\results\\daily_portfolio_summary.csv": "799a5a9d1b55dfa6d38c116895999e593a7bf953333897ccf53f33031cf3f6db",
+    "outputs\\Audible-CIZ-Supplement-v01\\received\\results\\monthly_summary.csv": "17935a2f3da769988d40161a763161f80d89ef3212000f1289252e2a4f06375d",
+    "outputs\\Audible-CIZ-Supplement-v01\\received\\results\\performance_summary.csv": "4f21aad01524983ca4782dea504e5a51ecfd1494e3bf3970b18cc15d542bc5ee",
+    "outputs\\Audible-CIZ-Supplement-v01\\received\\results\\quote_exception_events.csv": "2fae2b8d404a82f2164b0471951104b28e3f3ef7b0a90dc0a28302473b19b526",
+    "outputs\\Audible-CIZ-Supplement-v01\\received\\results\\stock_daily_summary.csv": "7f4d65b8e170f3416f9b5feb3e0923d5426e160a356bced223ce9096bc57c8ea",
+    "outputs\\Audible-CIZ-Supplement-v01\\received\\results\\stock_performance_summary.csv": "64ee06912a73ec52621b0b9bfcffccd9d5bffd2af5dd9db8ffb1a78e6646c8c2",
+    "outputs\\Audible-CIZ-Supplement-v01\\received\\validation\\ciz_manifest.json": "b86b1927ba74150e5b93e72429db0c0e2fd894be9cfff0838254ab84f352560b",
+    "outputs\\Audible-CIZ-Supplement-v01\\received\\validation\\protocol.json": "2af25c2cd99e68c21491b16f9cd8559a1865c5132c0497ec7e89e7df91a7f945",
+    "outputs\\Audible-CIZ-Supplement-v01\\received\\validation\\quote_eligibility.csv": "2fae2b8d404a82f2164b0471951104b28e3f3ef7b0a90dc0a28302473b19b526",
+    "outputs\\Audible-CIZ-Supplement-v01\\received\\validation\\source_quality.json": "421ac32f2fa27d61ae678b1094ee72b526db45fe972da2100c861083d21ebd2e",
+    "outputs\\Audible-CIZ-Supplement-v01\\received\\validation\\validation.json": "a075ff61f45fd24be5b5d4da259eb9e04dcc275e1f43f8b3a37be73186a0a130",
+    "outputs\\Audible-PowerBI-v08\\Audible_Semiconductor_v08.pbix": "60e44f9c88507058a6364daaea55017e3460fc83761867ccbc46bd35eb564cf7"
+  },
+  "source_tables": {
+    "stock_performance_summary.csv": "64ee06912a73ec52621b0b9bfcffccd9d5bffd2af5dd9db8ffb1a78e6646c8c2",
+    "stock_daily_summary.csv": "7f4d65b8e170f3416f9b5feb3e0923d5426e160a356bced223ce9096bc57c8ea"
+  },
+  "portability_note": "Source path metadata added after first calculation. Economic and attribution rules unchanged. Original protocol preserved in protocol_initial.json."
+}

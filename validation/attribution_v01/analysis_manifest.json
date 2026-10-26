@@ -1,0 +1,25 @@
+{
+  "status": "summary_only_attribution_complete",
+  "protocol_sha256": "bcdcb3d8a0922b11cc607fa262d3bfcda7d1bbb0ea09d4482c214b6c008796d9",
+  "tables": {
+    "comparison_summary": 5,
+    "comparison_paths": 2011,
+    "stock_attribution": 50,
+    "monthly_attribution": 96,
+    "stock_monthly_attribution": 960
+  },
+  "outputs": {
+    "comparison_paths.csv": "79ec37fed4d9a0fdfd0e55c0c55f51dd6f4da51ee5456bfb085d53e68974afbe",
+    "comparison_summary.csv": "02895bb0ca84b9073eb6b098688c2a9ec3b435b85175d83e7392001481699133",
+    "monthly_attribution.csv": "ab51c3501c62dee1fa63d25f1ae7c5b60651792f39d98548326f2c0eb6ae038f",
+    "stock_attribution.csv": "489a6d40432bdfbf5d833fdd2c9af29398b65578f1b9d1225d565adcba684a75",
+    "stock_monthly_attribution.csv": "7de7eafa86da1b72d9087f53ebad067d70c0fc0883548fe5650d2cffcfb0309c"
+  },
+  "old_input_hashes_unchanged": 18,
+  "raw_source_or_private_data_read": false,
+  "network_queries": false,
+  "costs": "gross only",
+  "financial_rule_changed": false,
+  "comparator_years_are_independent": true,
+  "causal_AI_attribution_or_alpha_claim": false
+}

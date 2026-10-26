@@ -1,0 +1,8 @@
+{
+  "status": "clean_archive_replay_passed",
+  "fictional_tests": 10,
+  "source_files_hash_checked": 87,
+  "result_csvs_byte_identical": 5,
+  "new_market_queries": false,
+  "private_or_group_data_access": false
+}

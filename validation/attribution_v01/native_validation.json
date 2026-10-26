@@ -1,0 +1,27 @@
+{
+  "status": "PBIP_refreshed_and_interactions_checked_PBIX_export_blocked",
+  "pages": 3,
+  "periods_checked_on_attribution_page": [
+    "2025",
+    "2024",
+    "All"
+  ],
+  "stock_drillthrough": "MU native right-click passed",
+  "stock_periods_checked": [
+    "MU 2025",
+    "MU 2024"
+  ],
+  "MU2025": {
+    "public_stock_return_pct": 185.45,
+    "passive_stock_return_pct": 240.25,
+    "portfolio_contribution_pp": 14.73,
+    "holding_path_contribution_pp": -4.35,
+    "public_start_weight_pct": 7.94
+  },
+  "chart_fixes": "All ten stocks and 12 annual-view months visible; legends enabled; two-decimal labels",
+  "Back": "binding retained; Ctrl-click not separately exercised",
+  "PBIP_saved": true,
+  "PBIX_export": "Save As dialog Not Responding; no PBIX created",
+  "final_disk_reopen": "not claimed after final native stock-chart change",
+  "native_evidence": "native_stock_MU2025.jpg"
+}

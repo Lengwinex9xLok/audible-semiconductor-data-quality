@@ -1,0 +1,20 @@
+{
+  "status": "embedded_summary_model_and_visual_definitions_passed",
+  "tables": {
+    "Summary": 5,
+    "Paths": 2011,
+    "StockSummary": 50,
+    "StockPaths": 20110,
+    "Months": 96,
+    "StockMonths": 960,
+    "AnnualSummary": 4,
+    "PeriodSelector": 5
+  },
+  "matched_start_weights": true,
+  "gross_only": true,
+  "stock_chart_all_ten_visible": true,
+  "monthly_chart_12_months_visible_in_annual_view": true,
+  "All_monthly_view": "48 months; scroll may be needed; select a year for complete 12-month view",
+  "no_private_or_broker_source": true,
+  "source_hash": "530ae487ee9321ea5724cc26b0708829565a63eadb6b8855d24122f8651880cd"
+}

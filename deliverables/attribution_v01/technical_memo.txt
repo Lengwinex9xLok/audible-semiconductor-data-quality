@@ -1,0 +1,50 @@
+Comparable allocations and return attribution methods
+To: Project Audible review panel
+From: Loki Ziye
+Date: October 26, 2026
+
+Source and scope
+This analysis uses only derived summary tables already produced from programmatic WRDS CIZ data. The upstream source is crsp_a_stock.dsf_v2, with dated stocknames_v2 identity checks and wrds_dailyindexret_query for the source-relative calendar. The upstream snapshot was pulled October 26, 2026, covers December 30, 2021 through December 31, 2025, and contains 10,050 rows: 20 warmup records and 10,030 analysis stock-date observations. There are 1,003 holding intervals per stock. Source manifests preserve hashes; a vendor release identifier was not recorded.
+
+The ten labels and saved PERMNOs remain ADI, AMAT, AMD, INTC, KLAC, LRCX, MU, NVDA, QCOM and TXN. This is a hindsight convenience universe selected in 2026, not a historically investable S&P 500 portfolio. Membership is not an exclusion rule. No Trading repository, broker API, account, signal or group file is read by this attribution calculation. It makes no new network or WRDS query.
+
+CIZ replaces the discontinued legacy SIZ format. The entire new 2022-2025 run uses CIZ, with no splice to legacy returns. Across 2,520 overlapping 2024 records, the largest absolute differences are 0.000001 for RET/RETX and 0.00006 for bid/ask; no 2024 positive-return signal signs differ. The accessible annual CIZ source ends December 2025. Monthly and quarterly schemas denied access, so no 2026 observation or return is inferred.
+
+Financial accounting retained
+The public rule holds an interval close(d) to close(d+1) when RET(d-1)>0. Otherwise it holds cash at zero yield. The first entry date is December 31, 2021. No shorting, leverage or daily/annual cross-stock rebalance is added to the original path. The original sleeve_path engine is unchanged. Two summary inputs contain period-normalized stock wealth paths, binary holding positions and actual period-start capital weights.
+
+The source has 15 locked and three crossed quotes; one crossed ADI quote is required for a transaction cost. The new quoted-width net calculation is correctly rejected. Gross wealth remains calculable because its multiplier is zero. The attribution module accepts only gross inputs, and does not create or repair net returns. The old 2022-2024 cost release is retained separately and has a different window and source snapshot.
+
+===PAGE===
+Matched comparator and exact decomposition
+For each selected period let a_i be the public rule's actual starting capital weight and b_i the original passive portfolio's starting weight. Let A_i(t) and B_i(t) be their gross stock-sleeve wealth paths normalized to one at that period's start. The three portfolio paths are:
+
+[FORMULAS]
+
+These definitions use only starting weights and the saved holding paths. The matched passive benchmark remains fully invested in those stocks; it is not volatility-matched, beta-neutral or dollar-exposure-matched. Annual benchmarks each begin at the selected year's public weights, then hold them without cross-stock rebalancing within that year. They are independent conditional comparisons. Their annual returns are not a compoundable continuous comparator.
+
+Stock attribution uses a_i times the public sleeve return for public contribution, a_i times the passive sleeve return for matched-passive contribution, and a_i times their difference for holding-path contribution. Initial-allocation contribution is (a_i-b_i) times the passive sleeve return. The corresponding stock terms sum to portfolio returns and the two exact gap terms. These are accounting descriptions, not causal effects or estimates of alpha.
+
+Monthly contribution and risk
+A month's contribution to the selected-period return is the change in normalized portfolio wealth between adjacent month ends. Its public-minus-matched increment telescopes exactly to the selected-period holding-path difference. A stock's increment uses a_i times its wealth change over that month. Separately, contribution to that month's own return divides the increment by actual month-start portfolio wealth. Simple monthly percentage returns are compounded, not added.
+
+Mean invested-dollar exposure averages sum_i[a_i*A_i(t-1)*q_i(t)] divided by public portfolio wealth before the interval. It uses previous wealth, never the same interval's realized return. It differs from the share of stock sleeves held. Maximum drawdown uses wealth/running maximum wealth minus one and includes the initial wealth of one. It is a daily-close, within-period statistic; intraday drawdowns are unobserved. The top-three concentration measure uses the three largest positive stock contributions divided by all positive contributions, and is blank if no contributions are positive.
+
+===PAGE===
+Reproduction and validation
+The source bundle contains code, two summary inputs, the protocol, result CSVs and editable Power BI sources. Input hashes identify the exact summaries. Run python -m unittest discover -s code -p 'test*.py' for ten fictional-data tests. Run python code/attribution.py --output-name replay_results in a fresh extracted bundle to write a new result folder. Existing result directories are rejected. No market data pull or private connection is needed.
+
+Tests cover a hand-derived two-stock allocation decomposition, equal-weight identity, monthly additivity versus compounding, exposure based on previous wealth, initial-wealth drawdown, missing dates, invalid weights, nonzero-cost source rejection, inconsistent positions/returns and input preservation. Runtime checks also reconstruct each active sleeve's gross interval factor from the passive interval return and the saved holding position. Stock contributions, monthly increments, gap components and monthly compounding reconcile to portfolio totals. Downloaded input and original artifact hashes are rechecked. These are AI-assisted software/accounting checks, not independent human validation.
+
+Design choices and rejected alternatives
+Matching starting stock weights addresses a specific confound in the earlier annual comparison. It leaves exposure differences visible rather than calling them controlled. The original passive comparator is retained so readers can see the allocation effect. No ex-post leverage scaling is fitted to the observed return or volatility. There is no random-timing experiment, regression alpha, significance claim, optimal parameter search or causal AI-event attribution in this release. More elaborate tests would require a separately specified design.
+
+The 2025 aggregate and stock results were known before this attribution protocol. Its results cannot be described as preregistered or out of sample. The initial protocol is retained; a later portability update changes file paths and hashes only, without changing financial or attribution rules. A current source hash is stronger provenance than an unsupported claim about a vendor release version.
+
+Dashboard and course boundaries
+Power BI v09 has independent period controls on each page, a full annual comparison, stock and monthly attribution, daily drawdowns and stock detail. All new financial values are labeled gross. Annual bars always show all four years; the other visuals follow that page's period choice. Stock detail uses its own period selector after a drill. The prior dashboard is preserved and should not be read as the new window's net result.
+
+The supplied rubric calls for a working interactive dashboard, a recommendation-led memo of at most two pages, explained/reproducible methods and an LLM validation log. The lecture also requires a genuinely contested question, programmatic primary sources, opposing evidence and teams of two. These artifacts cannot certify instructor acceptance of CRSP as the intended primary source, this narrowed public-rule topic, or the solo/team arrangement. Approval of the separate group options proposal does not establish approval of this independent Audible topic.
+
+LLM ownership and evidence
+Loki chose the privacy boundary and requested comparable allocations and attribution. AI authored the code, DAX, charts and draft prose, and performed software, arithmetic and render checks. The LLM log records the prompts, outputs and corrections; student verification of this CIZ expansion and final position remains pending. The earlier user-reported June arithmetic check does not verify these new results. The strongest favorable 2025 evidence remains visible alongside the recommendation.

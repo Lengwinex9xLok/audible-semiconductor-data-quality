@@ -1,0 +1,32 @@
+Comparable allocations change the trading rule assessment
+To: Project Audible review panel
+From: Loki Ziye
+Date: October 26, 2026
+
+I recommend keeping this disclosed short-horizon rule in research rather than deploying it on current evidence. Matching the starting stock allocations reduces its apparent 2025 gross advantage from 10.60 to 1.93 percentage points. Its favorable 2025 return and lower drawdown deserve serious consideration, but a required crossed quote prevents a complete new net-return estimate. The present evidence does not establish an advantage after trading costs.
+
+The decision and comparison
+The question is whether a retail trader should use this short-horizon timing rule instead of passive exposure to the same semiconductor stocks. Both views have a plausible case: timing may improve the holding path or reduce losses, while passive exposure avoids frequent trades and can capture a strong industry market. This small public-rule study informs that decision; it does not test a private trading strategy or settle the literature.
+
+The rule holds close(d) to close(d+1) if RET(d-1)>0, otherwise cash. Ten stock sleeves begin equally funded in December 2021, retain their capital and are never rebalanced across stocks within the continuous rule. The new annual passive comparator starts with the rule's actual weights at that year's start. This removes an initial-allocation difference; it does not equalize market risk or cash exposure.
+
+[COMPARISON_TABLE]
+
+Values are gross cumulative percentages; gaps are percentage points. Each annual matched comparator is a separate conditional benchmark. Its annual returns must not be compounded as one continuously implementable strategy. The full-period comparison begins with equal weights for both paths.
+
+In 2025 the public rule returns 76.35%. The original passive portfolio returns 65.75%, while the same-starting-weight passive comparator returns 74.42%. Thus 8.67 of the original 10.60 percentage points, about 82%, comes from different starting allocations. The remaining 1.93 percentage points describes different holding paths, including cash timing. It is not an estimate of alpha.
+
+===PAGE===
+The strongest evidence against the recommendation
+The strongest objection is that 2025 is favorable even after matching allocations. The public rule gains 76.35% gross against 74.42%, and its within-year daily-close maximum drawdown is 18.21%, compared with 29.76% for the matched passive portfolio. Its mean beginning-of-interval invested-dollar exposure is 54.95%. These results are retained, rather than dismissing a strong year as merely an AI boom. Different exposure still prevents a risk-neutral comparison.
+
+Attribution shows what the returns contain. MU, LRCX and KLAC contribute about 49% of the public rule's 2025 gross gain. Monthly increments to the matched-comparison gap are especially positive in November (+14.63 percentage points) and April (+8.54), but negative in October (-8.22) and December (-8.18). Those increments are measured against period-start capital and sum to the annual gap. They are not simple monthly percentage returns or a causal decomposition of AI news.
+
+The wider sample also matters. Over 2022-2025 the public rule earns 71.40% gross, while passive exposure from the same original allocation earns 125.92%. That difference alone does not prove inferior risk-adjusted performance: the rule spends substantial time in cash, which earns zero in this experiment. Conversely, the favorable 2025 comparison alone does not establish persistence.
+
+The largest limitation and next decision
+The main barrier to an after-cost conclusion is explicit. ADI has a crossed closing quote on April 16, 2025 at a required cost event, corroborated in the underlying CIZ table. The frozen net calculator stops; no row or quote is repaired, swapped or dropped. Consequently this release reports gross results only. Fees, market impact, taxes, intraday delays, actual fills and cash yield are not measured. Available annual CRSP coverage ends December 2025; newer-frequency libraries deny this account access.
+
+The stocks were selected in 2026, and the attribution design followed inspection of the historical results. This is retrospective analysis of a convenience universe, not prospective validation. My research-only position rests on unresolved costs, exposure differences and limited independent validation, not on a requirement that every year lose money. I would reconsider it after a documented quote resolution, a separately specified cost analysis and further validation under fixed rules.
+
+Evidence: comparison_summary.csv; stock_attribution.csv; monthly_attribution.csv; comparison_paths.csv; protocol.json; Power BI v09 pages 1-3. This AI-assisted draft is for student review; no new human verification is claimed.

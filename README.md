@@ -1,5 +1,17 @@
 # Project Audible semiconductor trading costs
 
+**Current analytical draft: [comparable allocations and attribution](deliverables/attribution_v01/README.md).**
+The 2025 public rule earns +76.35% gross against +74.42% for passive exposure with
+matching starting stock weights. The original +10.60 pp gap includes +8.67 pp of
+initial-allocation differences. Stock/month contributions and drawdown remain visible.
+[Position memo](deliverables/attribution_v01/position_memo.pdf),
+[technical memo](deliverables/attribution_v01/technical_memo.pdf),
+[editable Power BI project and reproducible code](deliverables/attribution_v01/source_bundle.zip),
+and [rubric/lecture check](docs/attribution_v01/rubric_check.md).
+The native PBIP runs; PBIX export is currently blocked by an unresponsive Save As dialog.
+No complete new net result, instructor approval or independent human verification is claimed.
+
+
 **Latest evidence: [CIZ 2022-2025 gross-only supplement](supplements/ciz_2022_2025_gross_v01/README.md).**
 The unchanged public rule earns +76.35% gross in 2025 and +71.40% across 2022-2025.
 A required crossed ADI quote blocks a complete new net result under the frozen policy.
