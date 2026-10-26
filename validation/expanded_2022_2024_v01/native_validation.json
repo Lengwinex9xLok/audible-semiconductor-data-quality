@@ -1,0 +1,29 @@
+{
+  "status": "native_refresh_year_cost_drillthrough_and_disk_reopen_passed",
+  "file": "Audible_Semiconductor_v08.pbix",
+  "bytes": 2654791,
+  "sha256": "60e44f9c88507058a6364daaea55017e3460fc83761867ccbc46bd35eb564cf7",
+  "pages": 3,
+  "year_switches_checked": [
+    "All",
+    "2022",
+    "2023",
+    "2024"
+  ],
+  "cost_cases_checked": [
+    "gross_zero_cost",
+    "quoted_spread_proxy",
+    "double_spread_stress"
+  ],
+  "stock_drillthrough": "NVDA native right-click passed",
+  "stock_year_checked": "NVDA 2023: public gross 19.5891%, proxy 18.0569%, passive 239.0171%, contribution 1.4175 pp",
+  "date_axes": "continuous; full three-year path visible",
+  "empty_date_guard": "NVDA 2023 has only valid period dates; no fabricated -100% return",
+  "scope_note": "shortened; no scroll bar in stock scope note",
+  "back_button": "native binding retained; Ctrl-click action not separately exercised",
+  "saved_stock": "NVDA",
+  "saved_period": "All",
+  "saved_PBIX_reopen": "passed; correct full-period values and no refresh banner",
+  "native_evidence": "native_reopen.png",
+  "human_independent_verification": "not completed for expanded results"
+}

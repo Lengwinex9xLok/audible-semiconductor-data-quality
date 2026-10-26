@@ -1,0 +1,32 @@
+{
+  "status": "WRDS_audit_counts_and_event_review",
+  "source_rows": 7550,
+  "analysis_rows": 7530,
+  "warmup_rows": 20,
+  "stocks": 10,
+  "source_calendar_dates": 755,
+  "analysis_dates_by_year": {
+    "2022": 251,
+    "2023": 250,
+    "2024": 252
+  },
+  "missing_or_legacy_code_returns": 0,
+  "calendar_exception_records": 0,
+  "quotes": {
+    "NORMAL": 7544,
+    "LOCKED": 5,
+    "CROSSED": 1
+  },
+  "locked_quote_cost_events": 2,
+  "crossed_quote_cost_events": 0,
+  "original_WRDS_June_files_unchanged": 38,
+  "source_values_exported": false,
+  "build_audit_FutureWarnings_captured": 15,
+  "quote_policy": "Locked-inclusive quoted-width sensitivity; strict normal-only complete cost estimate not available; no row dropped or repaired",
+  "data_available_years": [
+    2022,
+    2023,
+    2024
+  ],
+  "same_source_requested_2025_records": 0
+}

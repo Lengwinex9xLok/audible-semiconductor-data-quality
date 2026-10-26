@@ -1,0 +1,18 @@
+{
+  "status": "embedded_model_matches_all_expanded_CSV_values",
+  "tables": {
+    "Summary": 24,
+    "Paths": 9060,
+    "StockSummary": 240,
+    "StockPaths": 90600,
+    "CaseSelector": 3,
+    "PeriodSelector": 4,
+    "AnnualSummary": 18
+  },
+  "model_bytes": 1967810,
+  "blank_date_guards_present": true,
+  "PBIX_has_native_model_and_three_pages": true,
+  "continuous_date_axes_in_saved_PBIX": true,
+  "PBIX_sha256": "60e44f9c88507058a6364daaea55017e3460fc83761867ccbc46bd35eb564cf7",
+  "PBIX_bytes": 2654791
+}

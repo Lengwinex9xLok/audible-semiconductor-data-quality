@@ -1,0 +1,43 @@
+{
+  "status": "expanded_coursework_review_release",
+  "created_at_utc": "2026-10-26T16:38:26.325861+00:00",
+  "source": "same legacy CRSP via WRDS",
+  "requested_years": [
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "actual_years": [
+    2022,
+    2023,
+    2024
+  ],
+  "analysis_rows": 7530,
+  "warmup_rows": 20,
+  "expansion_fictional_tests": 8,
+  "tests_run_locally_and_WRDS": true,
+  "financial_engine_v02_unchanged": true,
+  "june_result_reproduced": true,
+  "local_weighted_portfolio_path_rows_checked": 9060,
+  "annual_and_monthly_compounding_checked": true,
+  "embedded_model_values_match_all_source_CSVs": true,
+  "PBIX_native_checks": "native_refresh_year_cost_drillthrough_and_disk_reopen_passed",
+  "PDF_pages": {
+    "position": 2,
+    "technical": 3
+  },
+  "original_local_June_files_unchanged": 130,
+  "private_strategy_used": false,
+  "raw_price_or_quote_rows_published": false,
+  "quote_scope": "locked-inclusive sensitivity; two required zero-width locked events",
+  "human_expanded_verification": "pending; the June arithmetic check does not verify this expansion",
+  "open_items": [
+    "Student review of final recommendation and prose",
+    "Instructor acceptance of source and narrowed controversy",
+    "Instructor confirmation of team/solo arrangement",
+    "Independent source/human and actual-execution validation",
+    "Vendor release identifier not recorded"
+  ],
+  "publication_authorized": "User requested GitHub upload and then authorized the multi-year continuation; preserve the June release"
+}

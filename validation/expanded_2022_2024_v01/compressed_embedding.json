@@ -1,0 +1,16 @@
+{
+  "status": "lossless_compressed_M_embedding_prepared",
+  "bytes_before": 21473892,
+  "bytes_after": 1956841,
+  "rows_roundtrip_exact": {
+    "Summary": 24,
+    "Paths": 9060,
+    "StockSummary": 240,
+    "StockPaths": 90600,
+    "CaseSelector": 3,
+    "PeriodSelector": 4,
+    "AnnualSummary": 18
+  },
+  "reason": "Power BI project model JSON exceeded the native 10MB source-file limit; compression changes representation only",
+  "native_validation": "pending"
+}

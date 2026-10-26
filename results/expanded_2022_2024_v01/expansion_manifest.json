@@ -1,0 +1,76 @@
+{
+  "status": "expanded_calculation_complete_review_required",
+  "created_at_utc": "2026-10-26T15:22:50.285939+00:00",
+  "analysis_years": [
+    2022,
+    2023,
+    2024
+  ],
+  "requested_years": [
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "unavailable_years_in_same_source": [
+    2025
+  ],
+  "analysis_records": 7530,
+  "warmup_records": 20,
+  "source_records": 7550,
+  "stocks": 10,
+  "calendar_dates": 755,
+  "holding_intervals": 753,
+  "first_entry": "2021-12-31",
+  "final_exit": "2024-12-31",
+  "raw_pull_at_utc": "2026-10-26T13:47:05.190105+00:00",
+  "raw_manifest_sha256": "2cebee170a49d888066b261d1d7207d03c8e8b4ec63c8ffb78a9b103e6427661",
+  "source_sha256": "cc6fb9bec124a40b7ce7bac98ee762a4d3efc2f476db8a22d236632d7b1cd662",
+  "audit_manifest_sha256": "4968769a40796d628b90e690046605a9914117c5b62e8f6ce7a8ae82befba676",
+  "source_vendor_release": "not recorded",
+  "code_sha256": {
+    "benchmark_core_v02.py": "b4a585d9d911a0c9d22c20c92ede5d9c12db6b567099ff3439f33e583b226141",
+    "expansion_core.py": "31c252e3a1ecea5236947d0ab2bee37b5c0d188e14842cde274bbdb9eb6c47d6",
+    "run_expansion.py": "b155b1b6ab234e30d2ccf6e975a2f0f10aaf8e22cb7280a3b3d8fc68c01a9db6",
+    "test_expansion.py": "987cc1ade0dbd819f6338b1950ab6dc7e7b284c635f7b58dfa08f7ad549e7889"
+  },
+  "original_v02_financial_engine_unchanged": true,
+  "june_v02_results_reproduced": true,
+  "quote_policy": "Locked-inclusive quoted-width sensitivity: positive locked quotes have zero quoted half-width; crossed quotes are unusable for costs and permitted only when no entry/exit cost needs that quote. No rows dropped, swapped or imputed.",
+  "strict_normal_only_complete_cost_estimate_available": false,
+  "required_locked_quote_events": 2,
+  "crossed_quote_cost_events": 0,
+  "annual_monthly_definition": "Segments of a continuous equal-initial-capital sleeve portfolio; no annual rebalance, forced liquidation or strategy reset. Stock contributions use period-start drifting wealth weights.",
+  "original_files_unchanged": 38,
+  "network_or_WRDS_queries": false,
+  "raw_prices_or_quotes_included": false,
+  "private_strategy_used": false,
+  "outputs": {
+    "performance_summary.csv": "f07d112e53ad743210f7574be1ec4e5e64eff5384fdea5b7ac499fa774b48410",
+    "daily_portfolio_summary.csv": "3a6701011eaa3d2af4f9dd0d35638e3b7d93621b479e6a6ccace3b3ce0dbe5b3",
+    "stock_performance_summary.csv": "3189b89dcfdd832f8776d604354f1b41037f877431f0dcad2c4bc54c4fb5fcff",
+    "stock_daily_summary.csv": "33f478fe82703e05cac183af46ca42f30dc5fafd1f5df183ee44976e1370be61",
+    "monthly_summary.csv": "d53b67a8efbafb417356b021ef47bee63cca955c0d27a0727133937be67bcfbc",
+    "quote_exception_events.csv": "d3904aee98f69584f45a4906ffdf5d5ac1a455e096c8be8a00d2053f22a0370e"
+  },
+  "table_rows": {
+    "performance_summary.csv": 24,
+    "daily_portfolio_summary.csv": 9060,
+    "stock_performance_summary.csv": 240,
+    "stock_daily_summary.csv": 90600,
+    "monthly_summary.csv": 216,
+    "quote_exception_events.csv": 12
+  },
+  "runtime": {
+    "python": "3.14.5",
+    "pandas": "2.2.3"
+  },
+  "limitations": [
+    "Convenience universe selected in 2026, not historical index or survivorship-free sample",
+    "2024 June results were already seen; later or other years are additional historical checks, not prospective validation",
+    "No actual fills, intraday latency, fees, impact, taxes or cash yield",
+    "Same-source availability ended in 2024; no 2025 or 2026 profitability claim",
+    "Quotes include two required locked events with zero quoted width, not zero actual trading costs",
+    "No independent human/source verification of expanded results yet"
+  ]
+}

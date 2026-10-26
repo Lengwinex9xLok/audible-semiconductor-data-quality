@@ -1,0 +1,11 @@
+{
+  "status": "expanded_local_hash_and_accounting_passed",
+  "portfolio_path_rows_reconciled": 9060,
+  "summary_cases": 24,
+  "stock_summary_rows": 240,
+  "monthly_rows": 216,
+  "yearly_and_monthly_compounding": "passed",
+  "original_june_files_unchanged": 130,
+  "raw_source_data_read_locally": false,
+  "human_independent_verification": "pending for expanded results"
+}

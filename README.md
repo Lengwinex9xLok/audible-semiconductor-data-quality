@@ -1,51 +1,57 @@
-# Project Audible June semiconductor pilot
+# Project Audible semiconductor trading costs
 
-**Recommendation:** keep this disclosed daily rule in research. In this June pilot,
-a +0.1631% gross return becomes -0.0380% under the quoted-width cost proxy.
-This small hindsight-selected sample does not establish persistent profitability.
+**Current version: expanded 2022-2024 historical check.** The public daily rule's 1x
+quoted-width sensitivity returns -30.08% in 2022, +29.25% in 2023 and +1.34% in 2024.
+The continuous three-year return is -8.41%; always-long returns +36.23%, with different exposure.
+The recommendation is to keep the rule in research. Positive years challenge a blanket failure claim.
+No 2025 or 2026 performance is inferred.
 
-## Current deliverables
+## Open the current deliverables
 
-- [Three-page Power BI dashboard with stock drill-through](deliverables/june_pilot_v01/Audible_Semiconductor_v07.pbix)
-- [Position memo, two pages](deliverables/june_pilot_v01/position_memo.pdf)
-- [Technical memo](deliverables/june_pilot_v01/technical_memo.pdf)
-- [Editable memo text and instructions](deliverables/june_pilot_v01/README.md)
-- [Source bundle including editable PBIP and benchmark tests](deliverables/june_pilot_v01/source_bundle.zip)
-- [Summary results](results/june_pilot_v01)
-- [LLM validation log](docs/llm_validation_log.csv) and [selected prompt/output excerpts](docs/prompt_output_examples.md)
-- [Current validation and remaining submission items](validation/june_pilot_v01/release_validation.json)
+- [Three-page Power BI dashboard v08](deliverables/expanded_2022_2024_v01/Audible_Semiconductor_v08.pbix)
+- [Position memo, two pages](deliverables/expanded_2022_2024_v01/position_memo.pdf)
+- [Technical memo, three pages](deliverables/expanded_2022_2024_v01/technical_memo.pdf)
+- [Editable PBIP, code, tests and all summary inputs](deliverables/expanded_2022_2024_v01/source_bundle.zip)
+- [Results and complete summary ZIP](results/expanded_2022_2024_v01)
+- [Time coverage and interpretation](docs/expanded_time_coverage.md)
+- [Cumulative LLM log](docs/llm_validation_log.csv)
+- [Validation and remaining submission items](validation/expanded_2022_2024_v01/release_validation.json)
 
-Download the PBIX using GitHub's **Download raw file** button; GitHub's preview does
-not run Power BI. Or extract source_bundle.zip and open powerbi/Audible.pbip.
-Embedded summary tables require no WRDS account. On Page 1, right-click a stock
-contribution bar, then Drill through > 03 Stock detail. Pages 2 and 3 have separate
-cost selectors. The saved detail ticker is AMD; a new drill-through replaces it.
-In Desktop use Ctrl+click on Back. Its binding exists; that click was not separately tested.
+Use GitHub's **Download raw file** for PBIX, then open it in Power BI Desktop. It embeds its
+summary tables and needs no broker/WRDS connection. Or extract source_bundle.zip and open
+powerbi/Audible.pbip. Page 1 selects Full or an individual year and supports right-click
+stock drill-through. Page 2 compares all annual returns under a selected cost case and
+shows a selectable-period path. Page 3 has independent stock-period and cost controls.
+After drilling, choose the desired year on that page separately. The saved stock is NVDA.
+Ctrl+click Back in Desktop; the binding is retained, but that specific click is not separately tested.
 
-## Evidence and scope
+## Source and limits
 
-Ten stocks, 190 input records, 19 June 2024 dates and 17 holding intervals per stock
-(June 4-28). Hold close(d) to close(d+1) if RET(d-1)>0, otherwise cash. Equal initial
-sleeves; no daily cross-stock rebalance, shorts or leverage; cash yield zero.
-The three cost scenarios use the same observations. Always-long returns +4.7781%
-under the quote proxy, with different exposure. The gross deficit is already
-4.6593 percentage points: costs are not its main explanation. Positive gross
-performance and profitable stock sleeves remain visible as counterevidence.
+Programmatic WRDS extraction on October 26, 2026 found complete same-source 2022-2024 coverage,
+with 7,530 analysis records and 20 warmup records. Those legacy tables returned no 2025 records.
+The unchanged rule holds close(d) to close(d+1) when RET(d-1)>0, otherwise cash. Equal initial
+sleeves retain their capital; no daily or annual cross-stock rebalance, shorts or leverage;
+cash yield zero. Annual/monthly returns segment a continuous portfolio. Annual contributions
+use drifting starting wealth weights and are not reset to 10% each January.
 
-Source: programmatic legacy CRSP through WRDS, pulled October 25, 2026 at
-23:53:41 UTC. Hashes identify the retained snapshot; vendor release was not recorded.
-This private coursework release contains derived summaries, not source prices,
-quotes, account records or a private trading strategy. No redistribution rights
-are asserted. Course source eligibility and team/solo approval remain unconfirmed.
-One user-reported arithmetic check passed; a full independent human/source audit
-is not claimed. Review the wording and recommendation before submission.
+Cost results are a **locked-inclusive quoted-width sensitivity**. Two transactions require
+positive locked quotes with zero recorded width, which is not evidence of free execution.
+One crossed quote is retained but not required for costs. No row is dropped, repaired or
+imputed. A complete strict-normal-only cost estimate is unavailable. Returns are modeled,
+not actual fills; fees, impact, taxes, cash yield and intraday latency are omitted.
 
-## Existing extraction source
+The 2026 convenience universe is not historically investable or survivorship-free. Extra
+historical years are not prospective validation. Instructor acceptance of the source,
+narrowed controversy and team/solo arrangement remains unconfirmed. Full independent human
+verification of the expansion is not claimed. Review the prose and recommendation before submission.
 
-Root config/src/tests/notebook files remain the earlier extraction and audit
-scaffold. Their 2004-2024 setting is an available tutorial configuration, **not the
-sample used here**. Do not enable full-history extraction to review this pilot.
-The [earlier proposal](docs/revised_topic_proposal.md) predates the benchmark;
-current memos supersede its pending-analysis status. The group checkout is unchanged.
-Stock logic and shared scaffolding are attributed in docs/source_provenance.json.
-Keep licensed source files, credentials and executed notebooks outside publication.
+## Preserved June pilot and existing code
+
+[The original June pilot](deliverables/june_pilot_v01) remains available as a development
+and verification record, with its [results](results/june_pilot_v01). Its negative-cost
+sign reversal must not be extrapolated to every year. Root extraction config/src/tests/notebook
+files are the earlier source scaffold; their 2004-2024 setting is not this release's sample.
+Do not enable full-history extraction to inspect either dashboard. No group checkout or
+private strategy was changed. Shared scaffolding is attributed in docs/source_provenance.json.
+This private coursework repository contains derived summaries, not original source prices,
+quotes, account records or private research. No redistribution rights are asserted.

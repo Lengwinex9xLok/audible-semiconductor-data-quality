@@ -1,0 +1,13 @@
+ticker,date,strategy,quote_status,cost_required
+LRCX,2024-02-29,lagged_positive_return,CROSSED,0
+LRCX,2024-02-29,always_long,CROSSED,0
+MU,2024-03-25,lagged_positive_return,LOCKED,0
+MU,2024-03-25,always_long,LOCKED,0
+INTC,2022-01-24,lagged_positive_return,LOCKED,0
+INTC,2024-04-23,lagged_positive_return,LOCKED,1
+INTC,2024-12-05,lagged_positive_return,LOCKED,0
+INTC,2022-01-24,always_long,LOCKED,0
+INTC,2024-04-23,always_long,LOCKED,0
+INTC,2024-12-05,always_long,LOCKED,0
+QCOM,2023-10-26,lagged_positive_return,LOCKED,1
+QCOM,2023-10-26,always_long,LOCKED,0

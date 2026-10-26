@@ -1,0 +1,32 @@
+Short horizon performance across three years
+To: Project Audible review panel
+From: Loki Ziye
+Date: October 26, 2026
+
+I recommend keeping this disclosed daily rule in research. The expanded 2022-2024 sample weakens a blanket claim that costs make the rule unprofitable: its quoted-width proxy return is positive in 2023 and 2024. Over the full three years, however, the rule loses 8.41%, compared with a 36.23% gain for always-long. These results do not demonstrate a reliable net trading advantage or establish how the rule would perform in 2026.
+
+The question and evidence
+The question is whether this public short-horizon rule retains a useful return after estimated trading costs, and whether the answer is stable across years. Hold close(d) to close(d+1) when RET(d-1)>0; otherwise hold cash. The full-session lag, three cost multipliers and financial engine remain unchanged from the June pilot. Ten sleeves receive equal initial capital and retain it; cash yield is zero and there is no shorting or leverage.
+
+[PERFORMANCE_TABLE]
+
+Returns are cumulative percentages. The 1x proxy includes two transactions with positive locked quotes at zero recorded width, which is not evidence of zero execution cost. The three annual returns segment one continuous portfolio, without yearly rebalancing or forced boundary trades. Their compounded result equals the full-period return.
+
+The analysis uses 7,530 stock-date observations across 753 trading dates, plus 20 warmup records. Programmatic WRDS queries found complete same-source coverage for 2022-2024; the requested 2025 year was unavailable in those tables. The stock universe was chosen in 2026, so this remains a retrospective convenience sample.
+
+The expanded evidence changes the June story. Across three years the rule already loses 2.81% before modeled costs; costs reduce its return by a further 5.61 percentage points. The result is not simply a profitable signal erased by spreads. Nor is it a rule that loses every year. In 2024 its 1x result is +1.34%, while the 2x width stress is -0.95%, showing that the sign still depends on assumptions.
+
+===PAGE===
+The strongest objection
+The best objection to a negative assessment is now visible in the annual chart: the rule earns 29.25% in 2023 and 1.34% in 2024 under the 1x proxy. In 2022 it loses 30.08%, less than always-long's 34.09% loss. These outcomes suggest that timing and market exposure matter. They do not establish risk-adjusted alpha: the rule holds about half of stock-intervals, and the comparator remains fully invested. Idle-cash yield and actual execution could also change the comparison.
+
+Stock detail helps explain the portfolio but must not become an invitation to remove losing names. Annual contributions use each sleeve's actual period-start wealth weight, which drifts over time; they do not assume a fresh 10% allocation every January. The dashboard allows period, stock and cost inspection while retaining profitable and losing observations.
+
+Decision and reconsideration
+The three-year negative result supports caution about this particular implementation, but a research-only recommendation rests on the whole evidence gap, not on requiring every year to lose. I would keep the rule and sample definitions fixed, review execution assumptions, and test a separately specified additional period when compatible data become available. A deployment case would need useful net performance, an exposure-aware comparison, uncertainty assessment and independent checks. A profitable historical year alone would not meet that standard.
+
+The source quotes require explicit limits. Five records are locked; two are used for entry or exit costs in the expanded sensitivity. One crossed quote is preserved but is not needed for either strategy's transaction costs. No quote is swapped, absolutized or imputed, and no source row is dropped. A complete strict-normal-only cost estimate is unavailable. RET supplies a wealth reference, not actual fills. Fees, impact, taxes, cash yield, release timestamps and execution delays are not measured.
+
+The original June pilot is preserved as a development and verification record. The added historical years are not prospective validation, and three years do not remove hindsight selection or dependence across semiconductor stocks. No annualized return, significance finding or 2025-2026 performance claim is made.
+
+Evidence: expanded performance_summary.csv, monthly_summary.csv, stock_performance_summary.csv and expansion_manifest.json; Power BI v08 pages 1-3; local_reconciliation.json. The technical memo explains timing, data quality, period accounting and verification limits.

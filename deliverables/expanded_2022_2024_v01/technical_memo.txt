@@ -1,0 +1,49 @@
+Expanded semiconductor methods and verification
+To: Project Audible review panel
+From: Loki Ziye
+Date: October 26, 2026
+
+Source and time coverage
+This expansion checks whether the June pilot's conclusion survives a longer time window. It retains the same ten stock labels and public daily rule, while extending the analysis to complete 2022-2024 coverage. The request included 2025, but the same legacy crsp.dsf and crsp.dsi tables returned no records for that year. Their availability is not a statement about every other CRSP product. No 2025 or 2026 trading result is inferred.
+
+Data were retrieved programmatically through WRDS on October 26, 2026 at 13:47:05 UTC. Extraction uses crsp.stocknames for dated identifiers, crsp.dsp500list for contextual membership and crsp.dsf for daily observations. crsp.dsi supplies the audit calendar. The runtime was Python 3.14.5 and pandas 2.2.3. A vendor release identifier was not recorded; the raw manifest, processed source and audit hashes identify the retained snapshot. Full hashes appear in expansion_manifest.json. Source stock_daily.csv SHA256 is cc6fb9bec124a40b7ce7bac98ee762a4d3efc2f476db8a22d236632d7b1cd662.
+
+The ten labels are ADI, AMAT, AMD, INTC, KLAC, LRCX, MU, NVDA, QCOM and TXN. They were selected in 2026 and resolved to dated common-stock permnos using the existing December 31, 2024 identity anchor. Historical pulls use permno, with dated name and membership joins. Membership is descriptive context, not a rule for excluding observations. This is not a historical S&P 500 universe or a survivorship-free sample.
+
+Preserved records and quality
+The independent expansion directory contains immutable raw pulls, a separate build, a fresh audit and new result folders. The original June raw panel, audit, v02 results and v07 dashboard are preserved. The panel has 7,550 rows: 7,530 analysis records over 753 trading dates plus 20 warmup records on December 30-31, 2021. Returns have no missing or legacy-code values. The source-relative calendar audit reports no gaps or duplicate dates; it is not an independent exchange-calendar check.
+
+The 7,550 source quotes include 7,544 normal, five locked and one crossed observation. All rows remain in place. The crossed LRCX quote on February 29, 2024 is not required for any entry/exit cost. Five locked quotes are retained; an INTC entry on April 23, 2024 and a QCOM exit on October 26, 2023 need two of them. The expanded cost results are explicitly a locked-inclusive sensitivity: h=0 for those recorded locked quotes. This does not establish free execution. The original strict-normal June gate is unchanged, and a complete strict-normal-only expanded cost estimate is not claimed. A crossed quote required for a transaction cost would stop this calculation.
+
+===PAGE===
+Financial rule and period accounting
+For each stock, q(d)=1 when RET(d-1)>0 and zero otherwise, for close(d) to close(d+1). The prior return is lagged one full session; actual historical release times remain unverified. The first entry is December 31, 2021, so return intervals end on every analysis date from January 3, 2022 through December 31, 2024. The two warmup dates are not extra performance observations. Each sleeve begins flat and ends with fixed terminal liquidation. Ten sleeves have equal initial capital, no daily cross-stock rebalance, zero cash yield, no shorts and no leverage.
+
+The exact v02 financial engine is reused. For h(d)=(ask(d)-bid(d))/(ask(d)+bid(d)), entry and exit flags identify position transitions. Consecutive long intervals do not pay a daily round trip. The unchanged interval factor is:
+
+F(d) = [1+q(d)*RET(d+1)] / [1+k*h(d)*entry(d)]
+       * [1-k*h(d+1)*exit(d)]
+
+The fixed multipliers are k=0, k=1 and k=2. The latter two use recorded widths as modeled penalties, with the locked-quote qualification above. A crossed quote is never used to create a negative trading cost. No quote is swapped or replaced with an absolute spread. RET is a holding-period wealth reference, not an execution-price simulation. Fees, market impact, taxes, cash yield and latency are omitted. The 2x case is an uncalibrated stress, not an estimated confidence bound.
+
+Wealth compounds within each sleeve and is averaged with equal initial weights. Annual and monthly results segment this single continuous path. Positions carry across December 31; no annual rebalance, extra liquidation or strategy reset occurs. A period return is its ending wealth divided by its prior-period ending wealth minus one. Annual and monthly compounded returns each reconcile to the full period.
+
+Stock-period contributions require drifting weights. For sleeve i, period-start weight equals its prior wealth divided by total sleeve wealth. Multiply that weight by the sleeve's normalized period return. These contributions sum to the portfolio-period return. Using 10% for every annual contribution would be wrong. The full period alone starts each sleeve at 10%.
+
+Gross-minus-proxy period return is a descriptive wealth-return difference, not a cash-fee total. In 2023 always-long's 1x return is slightly above its gross return because prior modeled costs change relative starting weights; the portfolio incurs no new passive trades that year. Full-period net wealth still falls as the cost multiplier rises. Held share is an unweighted proportion of invested stock-intervals, not dollar exposure. Percent, percentage points and basis points remain distinct.
+
+===PAGE===
+Reproduction and checks
+The release contains summaries and code, not original market prices/quotes or private strategy data. On WRDS, run_expansion.py checks the exact existing expansion path, raw and audit hashes, source dimensions and original v02 engine hash before computation. It makes no SQL query. It writes a fresh result folder and summary ZIP. The eight fictional expansion tests cover clean-input agreement with v02, cross-year weights, unused/required crossed quotes, locked entries, missing dates/returns and absence of forced year-end trades. All eight passed both locally and on WRDS with FutureWarnings treated as errors. The wrapper also reproduced the original June outputs within 1e-12 before saving the expansion.
+
+Downloaded ZIP and six CSV hashes matched WRDS metadata. A separate local reconciliation checked all 9,060 period-specific portfolio path rows against stock wealth weighted by each period's actual starting weights, alongside 240 stock summaries and 216 monthly rows. Both annual and monthly compounding agree with full-period returns. The local verifier initially inferred some year keys as integers in the large CSV; explicit string types corrected that read mismatch without changing inputs. Source/audit wrappers also needed tuple unpacking and the correct audit-derived quote classification. Those corrections did not trigger a second pull or alter financial rules. The inherited build/audit emitted 15 captured FutureWarnings; their presence is recorded, not presented as a warning-free source pipeline.
+
+Power BI and interpretation
+Power BI v08 embeds Summary (24 rows), Paths (9,060), StockSummary (240), StockPaths (90,600), CaseSelector (3), PeriodSelector (4) and AnnualSummary (18). Path rows include explicit starting points and duplicate underlying dates across Full and annual views by design. PeriodSelector filters the four period tables; measures default to Full if its single-select slicer is cleared. Each page has independent period controls. Stock drill-through replaces the ticker; select the desired period separately on the detail page. Page 2's annual bars always show all three years under its cost selection. There is no hidden annual capital reset.
+
+The large literal M tables exceeded Power BI's query-size limit. They were converted to losslessly compressed JSON tables, with all values round-trip checked; no observation was removed. Native refresh, display and interaction status is recorded separately in native_validation.json. The source-only PBIP is not treated as proof of a working saved PBIX.
+
+The recommendation remains research-only, with positive years retained as opposing evidence. Expanded history is additional retrospective evidence, not prospective validation. The convenience universe, dependence across stocks, uncertain execution and unavailable later years remain limits. The June arithmetic agreement is not human verification of this expanded sample. Full independent human/source review and instructor acceptance of the source, narrowed controversy and team arrangement remain unconfirmed.
+
+Attribution and LLM use
+Extraction/audit logic and shared scaffolding retain the original Group 2 attribution at commit 2d70519206679c723c4c89e65400d70848d897e2. The student selected the topic, sector, privacy boundaries and expansion; AI assisted code, operation, calculations, dashboard and prose. The dated LLM log records outputs, errors and checks. Exact backend model versions were not captured. Original source_provenance.json and the new manifest preserve provenance without claiming sole authorship of inherited code.
