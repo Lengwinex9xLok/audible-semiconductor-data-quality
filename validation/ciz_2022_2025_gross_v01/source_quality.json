@@ -1,0 +1,44 @@
+{
+  "status": "source_checks_complete",
+  "source_rows": 10050,
+  "stocks": 10,
+  "calendar_dates": 1005,
+  "analysis_intervals": 1003,
+  "by_year": {
+    "2021": 20,
+    "2022": 2510,
+    "2023": 2500,
+    "2024": 2520,
+    "2025": 2500
+  },
+  "overlap_2024": {
+    "ret": {
+      "max_abs_difference": 1.000000000001e-06,
+      "rows_over_1e_8": 67,
+      "rows": 2520
+    },
+    "retx": {
+      "max_abs_difference": 1.000000000001e-06,
+      "rows_over_1e_8": 66,
+      "rows": 2520
+    },
+    "bid": {
+      "max_abs_difference": 6.000000007588824e-05,
+      "rows_over_1e_8": 876,
+      "rows": 2520
+    },
+    "ask": {
+      "max_abs_difference": 6.000000007588824e-05,
+      "rows_over_1e_8": 871,
+      "rows": 2520
+    }
+  },
+  "previous_trading_date_mismatches": 0,
+  "dated_name_matches": 10050,
+  "normal_quotes": 10032,
+  "locked_quotes": 15,
+  "crossed_quotes": 3,
+  "missing_numeric": 0,
+  "source_latest_date": "2025-12-31",
+  "2026_status": "unavailable in checked accessible annual source; monthly/quarterly schemas denied"
+}

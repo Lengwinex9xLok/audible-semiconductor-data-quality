@@ -1,0 +1,27 @@
+{
+  "created_at_utc": "2026-10-26T16:57:06.600964+00:00",
+  "source": "crsp_a_stock.dsf_v2",
+  "range": [
+    "2021-12-30",
+    "2025-12-31"
+  ],
+  "universe": "same ten saved PERMNOs; 2026 convenience selection",
+  "rules": "unchanged v02; full-session lag; continuous equal initial sleeves; no annual rebalance",
+  "costs": "same k=0,1,2; locked-inclusive quoted-width sensitivity; crossed cost quote stops calculation",
+  "returns": "DlyRet total return, not actual fills",
+  "mapping": {
+    "date": "dlycaldt",
+    "ret": "dlyret",
+    "retx": "dlyretx",
+    "bid": "dlybid",
+    "ask": "dlyask"
+  },
+  "preflight": "2025 has 2500 rows; accessible annual source ends 2025-12-31; monthly and quarterly sources permission denied; 2026 unavailable in accessible checked CRSP sources",
+  "overlap_check": "compare 2024 keys, RET, RETX, bid and ask with saved legacy data before performance; never splice sources",
+  "performance_seen_before_protocol": false,
+  "documentation": [
+    "https://wrds-www.wharton.upenn.edu/pages/data-announcements/changes-to-crsp-data/",
+    "https://www.crsp.org/crsp_pdf/crsp-us-stock-indexes-databases-guide-flat-file-format-2-0/",
+    "https://www.crsp.org/crsp_pdf/crsp-us-stock-indexes-databases-siz-to-ciz-cross-reference-guide/"
+  ]
+}

@@ -1,10 +1,18 @@
 # Project Audible semiconductor trading costs
 
-**Current version: expanded 2022-2024 historical check.** The public daily rule's 1x
+**Latest evidence: [CIZ 2022-2025 gross-only supplement](supplements/ciz_2022_2025_gross_v01/README.md).**
+The unchanged public rule earns +76.35% gross in 2025 and +71.40% across 2022-2025.
+A required crossed ADI quote blocks a complete new net result under the frozen policy.
+These results do not establish after-cost profitability. No 2026 data were available
+in the checked accessible CRSP source. The PBIX below still covers 2022-2024;
+its results and memos are retained historical artifacts.
+
+
+**Preserved dashboard version: expanded 2022-2024 historical check.** The public daily rule's 1x
 quoted-width sensitivity returns -30.08% in 2022, +29.25% in 2023 and +1.34% in 2024.
 The continuous three-year return is -8.41%; always-long returns +36.23%, with different exposure.
 The recommendation is to keep the rule in research. Positive years challenge a blanket failure claim.
-No 2025 or 2026 performance is inferred.
+That dashboard makes no 2025/2026 claim; see the newer supplement above.
 
 ## Open the current deliverables
 

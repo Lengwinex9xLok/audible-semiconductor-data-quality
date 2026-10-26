@@ -1,0 +1,13 @@
+{
+  "status": "gross_accounting_and_preservation_passed",
+  "fictional_tests": 12,
+  "portfolio_path_rows": 4022,
+  "stock_summary_rows": 100,
+  "annual_and_monthly_compounding": "passed",
+  "full_net_calculation": "correctly rejected",
+  "crossed_source_quote_confirmed_against_base_table": true,
+  "original_data_files_unchanged": 70,
+  "human_independent_verification": "not performed for CIZ expansion",
+  "raw_data_exported": false,
+  "private_strategy_used": false
+}

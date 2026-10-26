@@ -1,0 +1,15 @@
+{
+  "status": "CIZ_summary_hash_and_accounting_passed",
+  "archive_sha256": "b38cfaa861ac4e5a6e22a47cc19dd6cdde567ecaea23e7f79043d363e5ebfda4",
+  "portfolio_paths_reconciled": 4022,
+  "stock_paths": 40220,
+  "summary_rows": 10,
+  "stock_summary_rows": 100,
+  "monthly_rows": 96,
+  "year_and_month_compounding": "passed",
+  "cost_scope": "gross only; no fabricated net result",
+  "original_June_files_unchanged": 130,
+  "v08_pbix_unchanged": true,
+  "raw_source_data_read_locally": false,
+  "human_verification": "not independently performed"
+}

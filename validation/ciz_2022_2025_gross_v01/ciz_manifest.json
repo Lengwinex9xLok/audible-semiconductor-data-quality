@@ -1,0 +1,78 @@
+{
+  "status": "gross_only_supplement_complete_net_blocked",
+  "created_at_utc": "2026-10-26T17:01:55.083929+00:00",
+  "source": "crsp_a_stock.dsf_v2",
+  "source_cutoff": "2025-12-31",
+  "analysis_years": [
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "requested_but_unavailable_years": [
+    2026
+  ],
+  "source_rows": 10050,
+  "analysis_rows": 10030,
+  "warmup_rows": 20,
+  "stocks": 10,
+  "holding_intervals": 1003,
+  "first_entry": "2021-12-31",
+  "final_exit": "2025-12-31",
+  "net_status": "NOT AVAILABLE for 2025 and full 2022-2025 under frozen quote rules",
+  "net_blocker": "ADI 2025-04-16 crossed quote required for transaction cost; confirmed in CIZ base table; no swaps, imputations or row deletions",
+  "quote_status_counts": {
+    "normal": 10032,
+    "locked": 15,
+    "crossed": 3,
+    "required_locked_events": 6,
+    "required_crossed_events": 1
+  },
+  "annual_definition": "Segments of one continuous portfolio; no annual reset/rebalance; drifting sleeve weights",
+  "limitations": [
+    "All reported new returns are gross; no after-cost profitability conclusion",
+    "2026 unavailable in checked accessible CRSP annual source; monthly and quarterly schemas denied",
+    "Universe selected in 2026; retrospective convenience sample, not prospective test",
+    "Same unchanged public daily rule, no private strategy or broker data",
+    "Actual fills, fees, impact, latency, cash yield and taxes omitted",
+    "2024 overlap has rounding differences; unified CIZ source used throughout; no legacy splicing"
+  ],
+  "source_quality": "source_quality.json",
+  "input_hashes": {
+    "stock_daily.csv": "3e9308189392d13cd6f72ab16a0f8254d0e1fef29700ea20690cf191a11a8dea",
+    "raw/dsf_v2.csv": "d6bde3e24dd1edb0b48a5728e8aaa47c0085259bdb091e230ae71aae7a5fad33",
+    "raw/calendar.csv": "5cef122ae2294332ab36462b7714a55a057e68e5084855b1a57db853f72fddb7",
+    "raw/names.csv": "f6acfa77078ae08db52af9c215a40806ef8afa2a47e9a5b94db46919e74eeb76",
+    "raw/pilot_securities.csv": "1957d97f0a7967ac8489c0afa7646061a51d70103b714ede172c81fc0bf2c07b",
+    "raw/manifest.json": "dafb07aee87faae82a74c57c49312542d127864587527a81cb5d700c3c47a161",
+    "raw/adi_quote_crosscheck.csv": "1ef60df6fc1dc8b34f4e6a82c4413c48e66c73f4e79ed67e4f9e8dd50ec0bcdb"
+  },
+  "code_hashes": {
+    "ciz_aggregation.py": "5f387cc5eeb6dffefa81c97e58b4b661a321fed281853c8dfea1af52f7c4e209",
+    "benchmark_core_v02.py": "b4a585d9d911a0c9d22c20c92ede5d9c12db6b567099ff3439f33e583b226141",
+    "expansion_core.py": "31c252e3a1ecea5236947d0ab2bee37b5c0d188e14842cde274bbdb9eb6c47d6",
+    "test_expansion.py": "987cc1ade0dbd819f6338b1950ab6dc7e7b284c635f7b58dfa08f7ad549e7889",
+    "replay_saved.py": "2b206a73272a6aeb42b51b2b95359944ec0b108e7c60bba83bf85443236b6c9f",
+    "test_gross_scope.py": "dbfe242b69da1eb8c3ff0756b1a532dc6accdaaa44ff7db0bef3f97aedd7c8f4"
+  },
+  "outputs": {
+    "performance_summary.csv": "4f21aad01524983ca4782dea504e5a51ecfd1494e3bf3970b18cc15d542bc5ee",
+    "daily_portfolio_summary.csv": "799a5a9d1b55dfa6d38c116895999e593a7bf953333897ccf53f33031cf3f6db",
+    "stock_performance_summary.csv": "64ee06912a73ec52621b0b9bfcffccd9d5bffd2af5dd9db8ffb1a78e6646c8c2",
+    "stock_daily_summary.csv": "7f4d65b8e170f3416f9b5feb3e0923d5426e160a356bced223ce9096bc57c8ea",
+    "monthly_summary.csv": "17935a2f3da769988d40161a763161f80d89ef3212000f1289252e2a4f06375d",
+    "quote_exception_events.csv": "2fae2b8d404a82f2164b0471951104b28e3f3ef7b0a90dc0a28302473b19b526"
+  },
+  "table_rows": {
+    "performance_summary.csv": 10,
+    "daily_portfolio_summary.csv": 4022,
+    "stock_performance_summary.csv": 100,
+    "stock_daily_summary.csv": 40220,
+    "monthly_summary.csv": 96,
+    "quote_exception_events.csv": 36
+  },
+  "runtime": {
+    "python": "3.14.5",
+    "pandas": "2.2.3"
+  }
+}
