@@ -1,4 +1,18 @@
-# Semiconductor Data Quality for Project Audible
+### Revised Project Audible direction
+
+Read [the revised topic proposal](docs/revised_topic_proposal.md) first. The course
+study will test a fully disclosed short-horizon benchmark before and after
+estimated trading costs. The hypothesis is not an established result, and the
+private strategy, its parameters and results remain outside this repository.
+
+An independent June 2024 pilot has been built and reviewed outside GitHub. This
+documentation-only revision does not upload market records or dashboard files.
+The original setup notes below describe the earlier data-quality pilot; their
+preparation-time pending statuses are historical. The final benchmark, adequate
+sample length, cost assumptions and source acceptability remain to be fixed.
+The older full-history tutorial is not a decision to expand the current study.
+
+ Semiconductor Data Quality for Project Audible
 
 This separate coursework version reuses Loki's historical stock-data audit. It
 asks how a researcher should screen and label data before using it in an analysis.
