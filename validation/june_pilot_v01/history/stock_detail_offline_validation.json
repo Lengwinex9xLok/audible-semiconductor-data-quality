@@ -1,0 +1,18 @@
+{
+  "status": "offline_fictional_validation_passed",
+  "checks": [
+    "known two-stock gross arithmetic",
+    "known quoted-cost arithmetic",
+    "transition counts",
+    "input dataframe preserved",
+    "ten-stock 19-date fixture reconciles all six cases and 102 portfolio dates",
+    "CSV roundtrip reconciliation",
+    "input row order invariance",
+    "mismatched contribution rejected"
+  ],
+  "real_market_data_used": false,
+  "underlying_return_or_fill_verification": false,
+  "helper_sha256": "e61ef50c9070558f7a5c89bfe47da82b7d329681f81fdef13cdb7f327bbebd9c",
+  "helper_normalized_LF_sha256": "87ffde581659e4494489465544a6bb158ba0d5a37ffd1904695721d8740ab58a",
+  "windows_CRLF_difference_confirmed": true
+}

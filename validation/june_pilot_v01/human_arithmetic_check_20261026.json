@@ -1,0 +1,33 @@
+{
+  "status": "user_reported_single_interval_arithmetic_check_passed",
+  "reviewer": "Loki Ziye",
+  "review_date": "2026-10-26",
+  "recorded_at_utc": "2026-10-26T07:47:57.006462+00:00",
+  "ticker": "AMAT",
+  "entry_date": "2024-06-06",
+  "exit_date": "2024-06-07",
+  "cost_multiplier": 1,
+  "reported_values": {
+    "entry_half_width": "0.000135271035102574",
+    "exit_half_width": "0.000293208832352211",
+    "wealth_factor": "0.99948161664359"
+  },
+  "absolute_differences_from_AI_Decimal_reference": {
+    "entry_half_width": "2.9641529953063724337879400697226466E-19",
+    "exit_half_width": "4.7123170264113494372645871394095225E-19",
+    "wealth_factor": "3.32700872990114963794341988009338089E-15"
+  },
+  "comparison_tolerance": "1e-12",
+  "calculation_method": "User reports having completed the calculation; specific tool not supplied",
+  "AI_reference_disclosed_before_user_response": true,
+  "scope": "Arithmetic agreement for h_entry, h_exit and one wealth factor only",
+  "not_established": [
+    "Blind independent replication",
+    "Full portfolio reconciliation by a human",
+    "Independent source-price validation",
+    "Historical information availability or actual execution",
+    "Acceptance of source under course instructions"
+  ],
+  "market_data_files_modified": false,
+  "git_commit_or_push": false
+}

@@ -1,0 +1,41 @@
+{
+  "rows": 190,
+  "securities": 10,
+  "window": [
+    "2024-06-01",
+    "2024-06-30"
+  ],
+  "universe_asof": "2024-12-31",
+  "quality_status": "documented_with_usage_restrictions",
+  "quote_status_counts": {
+    "NORMAL": 190
+  },
+  "returns": {
+    "ret_missing_or_code": 0,
+    "retx_missing_or_code": 0,
+    "missing_both": 0,
+    "same_missing_rows": true,
+    "unresolved_rows": 0
+  },
+  "calendar_status": "pass",
+  "calendar_exception_records": 0,
+  "core_flag_counts": {},
+  "diagnostic_counts": {},
+  "rules": [
+    "Preserve original columns, row order, missing values and source provenance.",
+    "Main spread: finite positive bid < ask; sensitivity: also positive bid == ask at zero spread.",
+    "Crossed or invalid quotes have missing analytic spreads; never swap quotes or take absolute spreads.",
+    "Quote eligibility is not general row eligibility; preserve other quality and membership flags.",
+    "Missing returns and legacy missing codes are not zero returns; exclude from relevant return statistics.",
+    "Earliest-source missing returns are consistent with no prior price; no IPO or precise cause claim.",
+    "Calendar starts use source MIN(date), capped at requested start; requested end is retained."
+  ],
+  "limitations": [
+    "Fixed pilot labels are not a survivorship-free historical S&P 500 universe.",
+    "Calendar completeness is relative to crsp.dsi, not an independent exchange calendar.",
+    "Source counts were queried now and can differ after a vendor revision; such differences require review.",
+    "Closing quoted spreads are not executable prices or total transaction costs.",
+    "Crossed-quote causes remain unverified; full-period statistics can hide year effects.",
+    "Older notebook audits are historical snapshots and are not overwritten or newly certified by this run."
+  ]
+}

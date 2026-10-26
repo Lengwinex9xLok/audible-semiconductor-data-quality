@@ -1,0 +1,11 @@
+pilot_ticker,permno,coverage_start,coverage_end,expected_dates,observed_rows,observed_unique_dates,missing_dates,unexpected_dates,duplicate_dates,extra_duplicate_rows,source_window_rows,source_count_matches
+ADI,60871,2024-06-01,2024-06-30,19,19,19,0,0,0,0,19,True
+AMAT,14702,2024-06-01,2024-06-30,19,19,19,0,0,0,0,19,True
+AMD,61241,2024-06-01,2024-06-30,19,19,19,0,0,0,0,19,True
+INTC,59328,2024-06-01,2024-06-30,19,19,19,0,0,0,0,19,True
+KLAC,46886,2024-06-01,2024-06-30,19,19,19,0,0,0,0,19,True
+LRCX,48486,2024-06-01,2024-06-30,19,19,19,0,0,0,0,19,True
+MU,53613,2024-06-01,2024-06-30,19,19,19,0,0,0,0,19,True
+NVDA,86580,2024-06-01,2024-06-30,19,19,19,0,0,0,0,19,True
+QCOM,77178,2024-06-01,2024-06-30,19,19,19,0,0,0,0,19,True
+TXN,15579,2024-06-01,2024-06-30,19,19,19,0,0,0,0,19,True

@@ -1,0 +1,57 @@
+{
+  "status": "AI_assisted_decimal_spot_checks_passed_on_WRDS",
+  "ticker": "AMAT",
+  "case_results": [
+    {
+      "case": "cash",
+      "start": "2024-06-04",
+      "end": "2024-06-05",
+      "position": 0,
+      "entry": 0,
+      "exit": 0
+    },
+    {
+      "case": "entry_and_exit",
+      "start": "2024-06-06",
+      "end": "2024-06-07",
+      "position": 1,
+      "entry": 1,
+      "exit": 1
+    },
+    {
+      "case": "continued_hold",
+      "start": "2024-06-12",
+      "end": "2024-06-13",
+      "position": 1,
+      "entry": 0,
+      "exit": 0
+    },
+    {
+      "case": "initial_passive_entry",
+      "start": "2024-06-04",
+      "end": "2024-06-05",
+      "position": 1,
+      "entry": 1,
+      "exit": 0
+    },
+    {
+      "case": "terminal_passive_exit",
+      "start": "2024-06-27",
+      "end": "2024-06-28",
+      "position": 1,
+      "entry": 0,
+      "exit": 1
+    }
+  ],
+  "all_saved_factors_matched_within": "1e-12",
+  "production_functions_called": false,
+  "source_sha256": "5fecbfd21d39fe4ddf3cde1dd3d13e2cf194c2ca193f2d483cab7809d5e13b31",
+  "stock_paths_sha256": "1ab7cae8abc42d1255d2368218511c1238702c4607626356e0dccd508753a05c",
+  "market_data_files_written": false,
+  "network_or_WRDS_queries": false,
+  "human_independent_verification": "One user-reported arithmetic check completed; other checks remain AI-assisted only",
+  "raw_quotes_copied_to_local_files": false,
+  "scope_limit": "Five selected factors checked from the existing processed source; no independent exchange-source validation, execution or timestamp verification.",
+  "AI_arithmetic_reference_file": "manual_check_reference.json",
+  "human_arithmetic_check_record": "human_arithmetic_check_20261026.json"
+}

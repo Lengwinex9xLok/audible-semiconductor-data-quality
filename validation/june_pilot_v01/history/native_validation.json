@@ -1,0 +1,22 @@
+{
+  "file": "Audible_Semiconductor_v07.pbix",
+  "bytes": 165881,
+  "sha256": "c1ddb4821afa02ce04412edf8b69646302d881db6b9f9284e9a6e2388eacccbc",
+  "pages": 3,
+  "data_model_bytes": 104192,
+  "native_refresh_passed": true,
+  "LRCX_drillthrough_passed": true,
+  "AMD_drillthrough_passed": true,
+  "LRCX_cost_cases_checked": [
+    "gross_zero_cost",
+    "quoted_spread_proxy",
+    "double_spread_stress"
+  ],
+  "back_button_binding": "native Back action; Ctrl-click action not separately exercised",
+  "saved_PBIX_reopen": "passed: overview numbers and saved AMD detail render without refresh banner",
+  "human_independent_verification": "pending",
+  "reopened_stock": "AMD",
+  "reopened_public_quote_net_pct": -5.504334,
+  "status": "native_refresh_drillthrough_cost_selection_and_reopen_passed",
+  "sha256_verified_after_reopen": "c1ddb4821afa02ce04412edf8b69646302d881db6b9f9284e9a6e2388eacccbc"
+}

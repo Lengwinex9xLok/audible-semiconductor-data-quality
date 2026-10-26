@@ -1,0 +1,48 @@
+Semiconductor pilot methods and verification
+To: Project Audible review panel
+From: Loki Ziye
+Date: October 26, 2026
+
+Purpose and source
+This memo explains how the independent June pilot is constructed, reproduced and checked. It supports a research-only recommendation for a disclosed daily rule. This descriptive cost-sensitivity exercise does not estimate persistent trading profitability.
+
+The source is licensed legacy CRSP accessed programmatically through WRDS. The raw manifest records a pull on October 25, 2026 at 23:53:41 UTC, Python 3.14.5 and pandas 2.2.3. Extraction queries crsp.stocknames for dated identities, crsp.dsp500list for membership context, and crsp.dsf for daily observations. A later audit compares dates with crsp.dsi. The exact vendor release and extraction Git commit were not recorded; file hashes identify the retained snapshot. Pull metadata was read from the existing manifest on October 26 without a new market query.
+
+Ten labels were selected on October 25, 2026: ADI, AMAT, AMD, INTC, KLAC, LRCX, MU, NVDA, QCOM and TXN. Identity lookup uses December 31, 2024 as its anchor and requires exactly one active common-stock permno per label. History is retrieved by permno, then joined to dated name and membership intervals. The anchor resolves identity; it does not produce a historically investable or survivorship-free universe. Membership is context, not an exclusion rule.
+
+Data quality and preservation
+The fixed window is June 1-30, 2024. Its saved panel has 190 records, ten stocks and 19 trading dates. The retained audit reports 190 normal quotes, no missing or coded RET/RETX, no unresolved return records and no calendar exceptions. Calendar completeness is relative to CRSP, not an independently verified exchange calendar. No price correction, return imputation or replacement with zero is performed. Bid and ask are used only when both real fields exist; bidlo and askhi are not substituted. The benchmark requires finite positive bid below ask and stops on unexpected flags, missing dates, duplicates or changed hashes. These gates apply to this fixed pilot, not a general policy of dropping inconvenient observations.
+
+Raw pulls and existing results stay on WRDS. The processed stock_daily.csv SHA256 is 5fecbfd21d39fe4ddf3cde1dd3d13e2cf194c2ca193f2d483cab7809d5e13b31. The audit receipt hash is da03890fea30b2578c8fa1178bc5c10f0375d84086d123e52aad768272ce9e46. The release contains portfolio and stock-sleeve summaries, not source prices, source quotes, account data or private strategy results. Private repository access does not establish redistribution rights.
+
+===PAGE===
+Rule and accounting
+For each stock, q(d)=1 when RET(d-1)>0 and zero otherwise. Hold close(d) to close(d+1); zero signals mean cash. The imposed full-session lag is explicit, but actual historical release timestamps are unverified. Nineteen input dates yield 17 intervals, June 4-28. Every sleeve begins flat and is liquidated at the fixed end. No shorting or leverage is allowed. Equal initial capital is assigned to ten sleeves and retained there; no daily cross-stock rebalancing occurs. Cash earns zero. Always-long uses the same dates and capital allocation.
+
+Define h(d)=(ask(d)-bid(d))/(ask(d)+bid(d)). An entry flag is one only on a cash-to-long transition. An exit flag is one when a long interval is followed by cash or the sample ends. Consecutive long intervals incur no artificial round trip. For multiplier k, the interval wealth factor is:
+
+F(d) = [1+q(d)*RET(d+1)] / [1+k*h(d)*entry(d)]
+       * [1-k*h(d+1)*exit(d)]
+
+Factors compound within a sleeve; portfolio wealth is the equal-initial-weight average of sleeve wealth. Return equals terminal wealth minus one. Stock contribution equals 0.1 times sleeve cumulative return. Cost drag is gross cumulative return minus modeled net cumulative return, a compounded wealth difference rather than a sum of fees. Percent uses return times 100; basis points use return times 10,000. Contribution charts use percentage points. Held share counts invested stock-intervals and is not dollar exposure.
+
+The three fixed cost cases are k=0, k=1 and k=2. Zero cost is an optimistic reference for modeled penalties; 1x quoted width is a proxy; 2x is an uncalibrated wider-cost stress. These are assumptions on the same sample, not independent observations. RET supplies the wealth reference, which need not equal the quote midpoint. The model does not simulate actual fills, intraday latency, fees, impact, taxes or cash yield.
+
+Why these choices
+A public rule makes the arithmetic inspectable while keeping private research separate. A fixed June pilot checks the pipeline; it cannot establish a robust edge. Always-long is interpretable, but its full exposure differs from the rule's 83/170 held intervals. Neither the return gap nor a higher raw return establishes alpha. Daily rebalancing, selecting winners after seeing results, annualizing the small sample, and treating quote costs as actual execution would answer different questions or overstate the evidence. No such adjustments are made. The rule was frozen before its first benchmark run, after June data already existed; this is not prospective preregistration.
+
+===PAGE===
+Reproduction and dashboard
+Extract source_bundle.zip. The powerbi folder contains Audible.pbip, report definitions, model.bim, DAX and byte-preserved input summaries. Import tables are embedded, so opening PBIX or PBIP needs no broker or WRDS connection. Five tables are Summary (6 rows), Paths (108), CaseSelector (3), StockSummary (60) and StockPaths (1,080). Paths add one pre-entry wealth=1 point per series to the original 102 portfolio and 1,020 stock paths. Initial held shares are null and excluded from averages.
+
+Page 1 leads with the decision, gross/net/cost cards and stock contributions. Page 2 displays positive gross performance, full portfolio paths, cost sensitivity and the exposure limitation as opposing evidence. Page 3 uses native ticker drill-through and a separate cost selector. CaseSelector is disconnected; measures explicitly apply the selected case. Stock path measures use TREATAS to carry the StockSummary ticker to StockPaths. Portfolio headline cards retain their full-portfolio scope. Right-click a contribution bar and choose Drill through > 03 Stock detail. Use Ctrl+click on Back in Desktop. The Back binding is present; that click was not separately exercised.
+
+Run python reconcile_summaries.py in the extracted bundle to verify input hashes and reconcile all six portfolio cases and 102 dates to stock summaries. Run python -W error::FutureWarning -m unittest discover -s benchmark_v02 -p "test_*.py" for fictional tests. Neither command queries WRDS. For authorized reproduction, retain the existing independent WRDS project and matching raw/audit files; copy benchmark_v02 there and run python benchmark_v02/run_pilot.py --project-root <independent-project> --check-only first. Removing --check-only writes a fresh result folder. The stock_source_summaries reproduction cell retains the original WRDS path and exact checks. Inspect paths before using it elsewhere. No new extraction is required to inspect this release.
+
+Checks and limits
+The benchmark has 23 fictional tests of chronology, transition costs and immutable-input behavior. Stock detail passed eight earlier fictional checks and reconciles to the portfolio. Five separate Decimal spot checks on WRDS cover cash, entry/exit, continued hold, initial entry and final liquidation without production-function calls. Native refresh, LRCX/AMD drill-through, LRCX cost selections, PBIX Save As and disk reopen passed. The release receipt separates newly rerun checks from historical evidence.
+
+Loki reported an AMAT June 6-7 factor of 0.99948161664359, matching the Decimal reference within 1e-12. The AI reference was already shown, so this is one reported arithmetic agreement, not blind replication or a full human audit. Full source validation, historical availability and actual execution remain unresolved. Course source eligibility and team/solo arrangement need instructor confirmation.
+
+Attribution and audit trail
+Stock audit logic is adapted from Loki's group stocks module; shared SQL, connection and configuration scaffolding comes from Group 2 at commit 2d70519206679c723c4c89e65400d70848d897e2. source_provenance.json preserves attribution and hashes. AI assisted code, analysis, dashboard construction and prose. docs/llm_validation_log.csv records tasks, outputs, checks and corrections; selected prompt/output excerpts appear separately. Exact backend model versions were not captured and are not invented. Historical receipts keep their original statuses; current release status is separate.

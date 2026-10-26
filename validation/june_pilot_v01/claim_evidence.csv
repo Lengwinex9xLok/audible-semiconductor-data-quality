@@ -1,0 +1,22 @@
+claim,strategy,cost_case,value,unit,source,scope
+Cumulative return,lagged_positive_return,gross_zero_cost,0.16313770537479400,percent,results/june_pilot_v01/performance_summary.csv,June 4-28 2024; 17 holding intervals
+Cumulative return,lagged_positive_return,quoted_spread_proxy,-0.03795048709737125500,percent,results/june_pilot_v01/performance_summary.csv,June 4-28 2024; 17 holding intervals
+Cumulative return,lagged_positive_return,double_spread_stress,-0.238551125967245700,percent,results/june_pilot_v01/performance_summary.csv,June 4-28 2024; 17 holding intervals
+Cumulative return,always_long,gross_zero_cost,4.82245496523596700,percent,results/june_pilot_v01/performance_summary.csv,June 4-28 2024; 17 holding intervals
+Cumulative return,always_long,quoted_spread_proxy,4.77809642030051500,percent,results/june_pilot_v01/performance_summary.csv,June 4-28 2024; 17 holding intervals
+Cumulative return,always_long,double_spread_stress,4.73375389043924100,percent,results/june_pilot_v01/performance_summary.csv,June 4-28 2024; 17 holding intervals
+Public quote cost drag,lagged_positive_return,quoted_spread_proxy,20.1088192472165250000,basis points,results/june_pilot_v01/performance_summary.csv,Descriptive pilot; not independent samples or alpha
+Passive quote cost drag,always_long,quoted_spread_proxy,4.43585449354522150000,basis points,results/june_pilot_v01/performance_summary.csv,Descriptive pilot; not independent samples or alpha
+Gross deficit versus always long,lagged_positive_return,gross_zero_cost,4.65931725986117300,percentage points,results/june_pilot_v01/performance_summary.csv,Descriptive pilot; not independent samples or alpha
+Additional relative deficit from modeled costs,lagged_positive_return,quoted_spread_proxy,15.67296475367130350000,basis points,results/june_pilot_v01/performance_summary.csv,Descriptive pilot; not independent samples or alpha
+Average stock sleeves held,lagged_positive_return,quoted_spread_proxy,48.8235294117647100,percent of stock intervals,results/june_pilot_v01/performance_summary.csv,Descriptive pilot; not independent samples or alpha
+AMAT contribution,lagged_positive_return,quoted_spread_proxy,-0.2092918899021889500,percentage points,results/june_pilot_v01/stock_performance_summary.csv,0.1 times sleeve return; not share of total profit
+TXN contribution,lagged_positive_return,quoted_spread_proxy,0.01884486796366102800,percentage points,results/june_pilot_v01/stock_performance_summary.csv,0.1 times sleeve return; not share of total profit
+KLAC contribution,lagged_positive_return,quoted_spread_proxy,-0.0814986395551475900,percentage points,results/june_pilot_v01/stock_performance_summary.csv,0.1 times sleeve return; not share of total profit
+LRCX contribution,lagged_positive_return,quoted_spread_proxy,0.889413195114372400,percentage points,results/june_pilot_v01/stock_performance_summary.csv,0.1 times sleeve return; not share of total profit
+MU contribution,lagged_positive_return,quoted_spread_proxy,-0.2225334246946142600,percentage points,results/june_pilot_v01/stock_performance_summary.csv,0.1 times sleeve return; not share of total profit
+INTC contribution,lagged_positive_return,quoted_spread_proxy,0.0102194650652798200,percentage points,results/june_pilot_v01/stock_performance_summary.csv,0.1 times sleeve return; not share of total profit
+ADI contribution,lagged_positive_return,quoted_spread_proxy,-0.46493646949870800,percentage points,results/june_pilot_v01/stock_performance_summary.csv,0.1 times sleeve return; not share of total profit
+AMD contribution,lagged_positive_return,quoted_spread_proxy,-0.550433423133721600,percentage points,results/june_pilot_v01/stock_performance_summary.csv,0.1 times sleeve return; not share of total profit
+QCOM contribution,lagged_positive_return,quoted_spread_proxy,-0.0369490135353889300,percentage points,results/june_pilot_v01/stock_performance_summary.csv,0.1 times sleeve return; not share of total profit
+NVDA contribution,lagged_positive_return,quoted_spread_proxy,0.609214845079080300,percentage points,results/june_pilot_v01/stock_performance_summary.csv,0.1 times sleeve return; not share of total profit

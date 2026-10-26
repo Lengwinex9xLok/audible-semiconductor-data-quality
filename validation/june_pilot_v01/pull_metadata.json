@@ -1,0 +1,22 @@
+{
+  "status": "complete",
+  "source": "WRDS legacy CRSP",
+  "start": "2024-06-01",
+  "end": "2024-06-30",
+  "universe_asof": "2024-12-31",
+  "pulled_at_utc": "2026-10-25T23:53:41.216050+00:00",
+  "python": "3.14.5",
+  "pandas": "2.2.3",
+  "quote_columns_available": true,
+  "git_head": "unavailable",
+  "git_dirty": null,
+  "tables": [
+    "stocknames",
+    "dsp500list",
+    "dsf"
+  ],
+  "manifest_sha256": "5d8539e64eb88b89eb4a67ab6ed17e44e6d071fdc146b564f297ad2927d13c4f",
+  "observed_on": "2026-10-26",
+  "observation": "Existing raw manifest read through independent WRDS notebook; no SQL or market file writes",
+  "vendor_release_version": "Not recorded; file hashes identify the retained snapshot"
+}

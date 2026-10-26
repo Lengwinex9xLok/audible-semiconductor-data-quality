@@ -1,0 +1,33 @@
+{
+  "status": "complete",
+  "data_kind": "real_source_derived_summaries",
+  "created_at_utc": "2026-10-26T00:18:50.992337+00:00",
+  "window": [
+    "2024-06-01",
+    "2024-06-30"
+  ],
+  "universe_asof": "2024-12-31",
+  "tickers": [
+    "ADI",
+    "AMAT",
+    "AMD",
+    "INTC",
+    "KLAC",
+    "LRCX",
+    "MU",
+    "NVDA",
+    "QCOM",
+    "TXN"
+  ],
+  "quality_status": "documented_with_usage_restrictions",
+  "source_sha256": "5fecbfd21d39fe4ddf3cde1dd3d13e2cf194c2ca193f2d483cab7809d5e13b31",
+  "audit_manifest_sha256": "da03890fea30b2578c8fa1178bc5c10f0375d84086d123e52aad768272ce9e46",
+  "files": {
+    "quote_sensitivity.csv": "2215e45d441a9e0c9741bd6c2736b0fca6ca85d1bc4959903cd3e474261804c6",
+    "coverage_by_security.csv": "9dc301d96084db73c53f955db11d7ed3ce561d447ee2639337aa81fb10dbe5dd",
+    "quality_summary.json": "de14c3cbc90fe681ceec32e450ea1f654a54a6bcafabaa1ac3604993a36b2845",
+    "coverage.csv": "56589b7357eb2ff072b80efe28325eb385292f0a16fd3ccb5a977da4e6ff2f97"
+  },
+  "row_level_prices_included": false,
+  "use": "Review permitted coursework use before transferring this summary bundle"
+}

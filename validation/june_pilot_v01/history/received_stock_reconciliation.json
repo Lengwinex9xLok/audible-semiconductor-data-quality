@@ -1,0 +1,10 @@
+{
+  "status": "downloaded_stock_aggregates_reconciled_locally",
+  "summary_cases_checked": 6,
+  "portfolio_dates_checked": 102,
+  "positive_stock_sleeves": 4,
+  "negative_stock_sleeves": 6,
+  "portfolio_return": -0.00037950487097350005,
+  "human_independent_verification": "pending",
+  "raw_source_values_checked_locally": false
+}

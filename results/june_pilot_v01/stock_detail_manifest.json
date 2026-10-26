@@ -1,0 +1,47 @@
+{
+  "status": "stock_detail_complete_human_review_pending",
+  "created_at_utc": "2026-10-26T07:03:28.791340+00:00",
+  "source_run": "benchmark_v02_20261026T023308Z_4245d86a",
+  "source_manifest_sha256": "c758b8d1780f0969483504305f8826091da0acc1e97091eaddc817fb2801bb76",
+  "source_sha256": "5fecbfd21d39fe4ddf3cde1dd3d13e2cf194c2ca193f2d483cab7809d5e13b31",
+  "model": "public_lagged_positive_return_v02",
+  "helper_sha256": "87ffde581659e4494489465544a6bb158ba0d5a37ffd1904695721d8740ab58a",
+  "benchmark_code_sha256": {
+    "benchmark_core_v02.py": "b4a585d9d911a0c9d22c20c92ede5d9c12db6b567099ff3439f33e583b226141",
+    "run_pilot.py": "22dedc10129808a9314d5e16560beac38677c08b2d3582693186219310ba7c74"
+  },
+  "stocks": 10,
+  "input_rows": 190,
+  "trading_dates": 19,
+  "holding_intervals_per_stock": 17,
+  "summary_rows": 60,
+  "stock_path_rows": 1020,
+  "first_entry": "2024-06-04",
+  "final_exit": "2024-06-28",
+  "initial_portfolio_weight_per_stock": 0.1,
+  "contribution_definition": "0.1 * stock sleeve cumulative return; sums to portfolio cumulative return; not a share of total profit",
+  "average_held_share_definition": "fraction of 17 intervals held; not capital-weighted market exposure",
+  "saved_CSV_reconciliation": {
+    "summary_cases_checked": 6,
+    "portfolio_dates_checked": 102
+  },
+  "outputs": {
+    "stock_performance_summary.csv": "fc8b297460dcd58dacc8cd06b1c16fc6f19b07cb11dcdc9ad571b8b696c382de",
+    "stock_daily_summary.csv": "1ab7cae8abc42d1255d2368218511c1238702c4607626356e0dccd508753a05c",
+    "stock_detail_reproduction_cell.py": "a4a683fdedf62f6ab9020d048cd6214b9a3b4e8c9e2ac7108926e3780c0e915e"
+  },
+  "raw_prices_or_quotes_included": false,
+  "account_data_included": false,
+  "private_strategy_used": false,
+  "existing_inputs_and_results_unchanged": true,
+  "network_or_WRDS_queries": false,
+  "human_independent_verification": "pending",
+  "limitations": [
+    "One-month hindsight-selected pilot; not a statistical profitability finding",
+    "Quoted-width multipliers applied to a RET wealth reference; not actual fills",
+    "Historical data availability timestamps and execution delay are not measured",
+    "Fees, impact, taxes and cash interest are omitted; no leverage or shorting",
+    "No annualization, significance test or risk-adjusted alpha claim; source acceptance pending"
+  ],
+  "intended_use": "Independent Audible coursework review. Redistribution permissions are not asserted."
+}

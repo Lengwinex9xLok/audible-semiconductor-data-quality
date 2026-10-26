@@ -1,98 +1,51 @@
-### Revised Project Audible direction
+# Project Audible June semiconductor pilot
 
-Read [the revised topic proposal](docs/revised_topic_proposal.md) first. The course
-study will test a fully disclosed short-horizon benchmark before and after
-estimated trading costs. The hypothesis is not an established result, and the
-private strategy, its parameters and results remain outside this repository.
+**Recommendation:** keep this disclosed daily rule in research. In this June pilot,
+a +0.1631% gross return becomes -0.0380% under the quoted-width cost proxy.
+This small hindsight-selected sample does not establish persistent profitability.
 
-An independent June 2024 pilot has been built and reviewed outside GitHub. This
-documentation-only revision does not upload market records or dashboard files.
-The original setup notes below describe the earlier data-quality pilot; their
-preparation-time pending statuses are historical. The final benchmark, adequate
-sample length, cost assumptions and source acceptability remain to be fixed.
-The older full-history tutorial is not a decision to expand the current study.
+## Current deliverables
 
- Semiconductor Data Quality for Project Audible
+- [Three-page Power BI dashboard with stock drill-through](deliverables/june_pilot_v01/Audible_Semiconductor_v07.pbix)
+- [Position memo, two pages](deliverables/june_pilot_v01/position_memo.pdf)
+- [Technical memo](deliverables/june_pilot_v01/technical_memo.pdf)
+- [Editable memo text and instructions](deliverables/june_pilot_v01/README.md)
+- [Source bundle including editable PBIP and benchmark tests](deliverables/june_pilot_v01/source_bundle.zip)
+- [Summary results](results/june_pilot_v01)
+- [LLM validation log](docs/llm_validation_log.csv) and [selected prompt/output excerpts](docs/prompt_output_examples.md)
+- [Current validation and remaining submission items](validation/june_pilot_v01/release_validation.json)
 
-This separate coursework version reuses Loki's historical stock-data audit. It
-asks how a researcher should screen and label data before using it in an analysis.
-It contains no private Trading strategy or research finding.
+Download the PBIX using GitHub's **Download raw file** button; GitHub's preview does
+not run Power BI. Or extract source_bundle.zip and open powerbi/Audible.pbip.
+Embedded summary tables require no WRDS account. On Page 1, right-click a stock
+contribution bar, then Drill through > 03 Stock detail. Pages 2 and 3 have separate
+cost selectors. The saved detail ticker is AMD; a new drill-through replaces it.
+In Desktop use Ctrl+click on Back. Its binding exists; that click was not separately tested.
 
-## Sample and status
+## Evidence and scope
 
-Ten labels: NVDA, AMD, INTC, MU, QCOM, TXN, ADI, AMAT, LRCX, KLAC. The scope includes
-seven chip businesses and three equipment/process-control suppliers. Segment
-labels are broad descriptions, not claims of pure exposure to one business.
+Ten stocks, 190 input records, 19 June 2024 dates and 17 holding intervals per stock
+(June 4-28). Hold close(d) to close(d+1) if RET(d-1)>0, otherwise cash. Equal initial
+sleeves; no daily cross-stock rebalance, shorts or leverage; cash yield zero.
+The three cost scenarios use the same observations. Always-long returns +4.7781%
+under the quote proxy, with different exposure. The gross deficit is already
+4.6593 percentage points: costs are not its main explanation. Positive gross
+performance and profitable stock sleeves remain visible as counterevidence.
 
-Requested history: 2004-01-01 to 2024-12-31. Identifier anchor: 2024-12-31.
-Selection date: 2026-10-25. This is a convenience sample chosen with present
-knowledge, not a historical index universe or a survivorship-free study.
-No live semiconductor data or real semiconductor findings are bundled. All ten
-IDs and their actual historical coverage still require a new WRDS check.
-The old group sample's counts are not findings for this sample.
+Source: programmatic legacy CRSP through WRDS, pulled October 25, 2026 at
+23:53:41 UTC. Hashes identify the retained snapshot; vendor release was not recorded.
+This private coursework release contains derived summaries, not source prices,
+quotes, account records or a private trading strategy. No redistribution rights
+are asserted. Course source eligibility and team/solo approval remain unconfirmed.
+One user-reported arithmetic check passed; a full independent human/source audit
+is not claimed. Review the wording and recommendation before submission.
 
-## Start here
+## Existing extraction source
 
-1. Read docs/selection.md, then run `python run_audible.py plan` locally. Plan reads
-   configuration only; it opens no account or data connection.
-2. Transfer this source folder to a separate WRDS directory. Open
-   notebooks/audible_semiconductors_wrds.ipynb there.
-3. Run setup and identity check first. Review the ten resolved IDs before pulling.
-   The default data example is June 2024, using the same 2024-12-31 identity anchor.
-4. After the example works, change FULL_HISTORY to True in the configuration cell
-   for 2004-2024. The new date window uses a different raw/processed folder.
-5. Run the guarded pull/build/audit cells. Inspect quality_status and flagged rows.
-6. The final cell collects existing summary tables into a separate handoff folder.
-   Review intended coursework use before export; raw price rows are not included.
-
-The notebook prompts for WRDS username only as needed. Authenticate through the
-normal WRDS password/Duo flow; never put a password in source. Check installed
-kernel packages first. This notebook does not install or upgrade packages.
-
-## Isolation and preservation
-
-This version has its own config, source, tests, notebook and data root. No .git,
-virtual environment, credentials, group market records or group result reports
-were copied. STOCKS_DATA_ROOT is ignored; Audible has an AUDIBLE_DATA_ROOT name.
-The recommended notebook explicitly uses this project's data/semiconductors root.
-Do not point any manual low-level command at the original group's data root.
-
-Raw runs are immutable. The notebook refuses to build over existing processed
-output. Audit runs write fresh directories. The inherited low-level build CLI
-retains its explicit rebuilding behavior; use the guarded notebook workflow.
-
-## Audit interpretation
-
-The code resolves research labels to dated permnos, pulls history by permno,
-attaches dated names and S&P membership, and preserves source-row provenance.
-It flags normal/locked/crossed quotes, checks missing returns against source-first
-observations, and reconciles dates with CRSP. It does not repair quotes, impute
-returns, or silently remove original rows. S&P membership is context in this
-version; a nonmember row is not automatically a bad semiconductor observation.
-Closing quoted spreads are not executable prices or total trading costs.
-
-## Remaining deliverables
-
-This is a source/configuration version. Real semiconductor results, a live
-dashboard, position memo, technical memo and completed LLM log are still needed.
-See docs/audible_checklist.md and docs/llm_validation_log.csv. Reuse permission and
-contribution attribution remain submission-planning items. Nothing is published.
-
-## Offline tests
-
-Use an existing Python environment with pandas and pytest:
-
-```text
-python -m pytest -q -p no:cacheprovider tests --basetemp .test-tmp
-```
-
-Tests use fictional records and do not verify WRDS access or real coverage.
-Keep generated evidence and executed notebooks out of source-only transfers.
-
-## Attribution
-
-Stock audit logic/tests are adapted from Loki's stocks module in Group 2's
-590-Data-Wrangling-Project. Shared SQL, connection and configuration scaffolding
-originated in that team repository. This version adds the independent sample,
-workflow and summary handoff. Exact original commit/hashes are recorded in
-docs/source_provenance.json. It does not claim sole authorship of team code.
+Root config/src/tests/notebook files remain the earlier extraction and audit
+scaffold. Their 2004-2024 setting is an available tutorial configuration, **not the
+sample used here**. Do not enable full-history extraction to review this pilot.
+The [earlier proposal](docs/revised_topic_proposal.md) predates the benchmark;
+current memos supersede its pending-analysis status. The group checkout is unchanged.
+Stock logic and shared scaffolding are attributed in docs/source_provenance.json.
+Keep licensed source files, credentials and executed notebooks outside publication.

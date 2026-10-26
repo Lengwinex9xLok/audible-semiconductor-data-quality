@@ -1,0 +1,11 @@
+pilot_ticker,permno,rows,observed_dates,rows_with_core_flags,in_sp500_rows,missing_entirely
+ADI,60871,19,19,0,19,False
+AMAT,14702,19,19,0,19,False
+AMD,61241,19,19,0,19,False
+INTC,59328,19,19,0,19,False
+KLAC,46886,19,19,0,19,False
+LRCX,48486,19,19,0,19,False
+MU,53613,19,19,0,19,False
+NVDA,86580,19,19,0,19,False
+QCOM,77178,19,19,0,19,False
+TXN,15579,19,19,0,19,False

@@ -1,0 +1,33 @@
+Short horizon trading costs in a semiconductor pilot
+To: Project Audible review panel
+From: Loki Ziye
+Date: October 26, 2026
+
+I recommend keeping this public daily trading rule in research rather than deploying it on the evidence of this June pilot. Across ten semiconductor stocks, it earns 0.1631% before costs and loses 0.0380% under a quoted-width cost proxy. The modeled drag is 20.11 basis points. This shows how a small gross gain can disappear under a stated cost assumption. It does not establish that short-term signals generally fail or that this rule has a persistent negative expected return.
+
+The question is whether an apparent short-horizon advantage remains useful after trading costs. To test a transparent example without disclosing private research, I use a public rule: hold a stock from close(d) to close(d+1) when RET(d-1) is positive; otherwise hold cash. The rule imposes a full-session lag, allows no shorting or leverage, and compares with always-long over the same dates. Capital is split equally at the start into ten sleeves and stays within each sleeve. Idle cash earns zero.
+
+The June evidence
+
+Cost assumption                 Public rule       Always long
+Gross with zero cost              0.1631%            4.8225%
+Quoted-width proxy               -0.0380%            4.7781%
+Double-width stress              -0.2386%            4.7338%
+
+These are cumulative returns over 17 holding intervals, June 4-28, 2024. The three rows are assumptions applied to the same observations, not three independent samples. The inputs contain 190 stock-date records across 19 trading dates. Daily CRSP returns and quotes were pulled programmatically through WRDS; the dashboard uses derived summaries.
+
+Costs reverse the rule's small positive gross result, but they do not explain its main deficit against always-long. The gross return gap is already 4.6593 percentage points. The two approaches also have different exposure: the public rule holds 83 of 170 stock-intervals, or 48.8%, while always-long holds all 170. This is an unweighted count of sleeves held, not a capital-weighted exposure estimate. The comparison cannot identify risk-adjusted alpha.
+
+Stock detail explains why the portfolio result is close to zero. Four stock sleeves have positive quote-proxy returns and six have negative returns. LRCX and NVDA contribute about 0.8894 and 0.6092 percentage points to the portfolio, while AMD and ADI contribute about -0.5504 and -0.4649 points. Contributions use each sleeve's 10% initial capital weight. These results justify inspecting individual stocks; they do not justify removing losing stocks after seeing the outcome.
+
+The strongest objection
+
+The zero-cost result is positive, several stock sleeves remain profitable under the proxy, and the portfolio's quoted net loss is only 3.80 basis points. More favorable execution or an allowance for idle-cash yield could change its sign. Lower exposure also makes always-long an imperfect comparator. These are reasons to avoid a broad claim that the signal is useless. They do not provide enough evidence to trade the rule: a small, assumption-sensitive gain in one hindsight-selected month is not a demonstrated trading advantage.
+
+What would change the decision
+
+I would keep the rule, universe and cost scenarios fixed, then evaluate an independently specified additional period and review the execution assumptions. A longer sample should show results by period and stock, including adverse cases, with uncertainty and an exposure-aware comparator. I would reconsider deployment only after those checks support a useful net result and the calculations have been reviewed.
+
+The current pilot uses closing quote widths as modeled penalties on a RET wealth reference, not actual fills. Fees, impact, taxes, cash interest and execution delays are omitted, and exact historical data-availability timestamps have not been verified. No annualized return, significance result or persistent profitability claim is warranted.
+
+Evidence: Power BI v07, pages 1-3; performance_summary.csv and stock_performance_summary.csv in results/june_pilot_v01; claim_evidence.csv in validation/june_pilot_v01. The technical memo documents assumptions and the limited verification completed.

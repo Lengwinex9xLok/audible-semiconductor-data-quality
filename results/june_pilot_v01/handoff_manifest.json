@@ -1,0 +1,50 @@
+{
+  "status": "aggregate_handoff_complete_human_review_pending",
+  "data_kind": "real_benchmark_aggregates_under_modelled_cost_assumptions",
+  "created_at_utc": "2026-10-26T02:42:21.401851+00:00",
+  "source_run": "benchmark_v02_20261026T023308Z_4245d86a",
+  "source_run_created_at_utc": "2026-10-26T02:33:08.604663+00:00",
+  "source_manifest_sha256": "c758b8d1780f0969483504305f8826091da0acc1e97091eaddc817fb2801bb76",
+  "source_sha256": "5fecbfd21d39fe4ddf3cde1dd3d13e2cf194c2ca193f2d483cab7809d5e13b31",
+  "model": "public_lagged_positive_return_v02",
+  "first_entry": "2024-06-04",
+  "final_exit": "2024-06-28",
+  "source_rows": 190,
+  "stocks": 10,
+  "trading_dates": 19,
+  "holding_intervals_per_stock": 17,
+  "files": {
+    "performance_summary.csv": "08aa4b666a76cf3d19b8c2aaecf58c353a6188e7783e9ba4eae4e193be72b8a2",
+    "daily_portfolio_summary.csv": "917c52000af7e1f05afb5917385177241ed696e9617c18c37baed8ee9610ec6d"
+  },
+  "table_rows": {
+    "performance_summary.csv": 6,
+    "daily_portfolio_summary.csv": 102
+  },
+  "code_sha256": {
+    "benchmark_core_v02.py": "b4a585d9d911a0c9d22c20c92ede5d9c12db6b567099ff3439f33e583b226141",
+    "run_pilot.py": "22dedc10129808a9314d5e16560beac38677c08b2d3582693186219310ba7c74"
+  },
+  "runtime": {
+    "python": "3.14.5",
+    "pandas": "2.2.3"
+  },
+  "cost_cases": {
+    "gross_zero_cost": 0.0,
+    "quoted_spread_proxy": 1.0,
+    "double_spread_stress": 2.0
+  },
+  "row_level_prices_included": false,
+  "private_strategy_used": false,
+  "raw_or_existing_results_modified": false,
+  "saved_accounting_checks": "passed_again_during_packaging",
+  "human_independent_verification": "pending",
+  "limitations": [
+    "One-month hindsight-selected pilot; not a statistical profitability finding",
+    "Quoted-width multipliers applied to a RET wealth reference; not actual fills",
+    "Historical data availability timestamps and execution delay are not measured",
+    "Fees, impact, taxes and cash interest are omitted; no leverage or shorting",
+    "No annualization, significance test or risk-adjusted alpha claim; source acceptance pending"
+  ],
+  "intended_use": "Independent Project Audible coursework review; redistribution permissions are not asserted"
+}
