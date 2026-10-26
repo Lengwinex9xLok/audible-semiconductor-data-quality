@@ -6,9 +6,11 @@ matching starting stock weights. The original +10.60 pp gap includes +8.67 pp of
 initial-allocation differences. Stock/month contributions and drawdown remain visible.
 [Position memo](deliverables/attribution_v01/position_memo.pdf),
 [technical memo](deliverables/attribution_v01/technical_memo.pdf),
+[Power BI v09 PBIX](deliverables/attribution_v01/Audible_Semiconductor_v09.pbix),
 [editable Power BI project and reproducible code](deliverables/attribution_v01/source_bundle.zip),
 and [rubric/lecture check](docs/attribution_v01/rubric_check.md).
-The native PBIP runs; PBIX export is currently blocked by an unresponsive Save As dialog.
+The v09 PBIX was exported natively, reopened from disk, and checked on all three pages.
+It embeds the summary data and requires no WRDS connection.
 No complete new net result, instructor approval or independent human verification is claimed.
 
 
@@ -16,7 +18,7 @@ No complete new net result, instructor approval or independent human verificatio
 The unchanged public rule earns +76.35% gross in 2025 and +71.40% across 2022-2025.
 A required crossed ADI quote blocks a complete new net result under the frozen policy.
 These results do not establish after-cost profitability. No 2026 data were available
-in the checked accessible CRSP source. The PBIX below still covers 2022-2024;
+in the checked accessible CRSP source. The preserved v08 PBIX below still covers 2022-2024;
 its results and memos are retained historical artifacts.
 
 

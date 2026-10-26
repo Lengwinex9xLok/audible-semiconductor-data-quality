@@ -1,0 +1,38 @@
+{
+  "status": "PBIX_export_disk_reopen_and_basic_interactions_passed",
+  "checked_at_utc": "2026-10-26T18:22:36.480445+00:00",
+  "file": "Audible_Semiconductor_v09.pbix",
+  "bytes": 1346015,
+  "sha256": "05f89be0df50da1a252ef300dbcfa4c248b78e7e4e60b974d6524972a61602a0",
+  "DataModel_bytes": 1288273,
+  "pages": [
+    "results",
+    "challenge",
+    "stock_detail"
+  ],
+  "saved_page": "results",
+  "saved_period": "2025",
+  "native_disk_reopen": true,
+  "overview_values": {
+    "public_gross_pct": 76.35,
+    "matched_passive_gross_pct": 74.42,
+    "holding_path_gap_pp": 1.93,
+    "allocation_gap_pp": 8.67,
+    "mean_dollar_exposure_pct": 54.95
+  },
+  "attribution_year_switches": [
+    "2025",
+    "2024",
+    "2025"
+  ],
+  "stock_page": "MU 2025: 185.45% public, 240.25% passive, 14.73 pp public contribution, -4.35 pp holding-path contribution, 7.94% starting weight",
+  "stock_drillthrough": "binding retained; native drill was checked on PBIP earlier, not repeated in this PBIX export check",
+  "Back": "binding retained; Ctrl-click not separately exercised",
+  "evidence": "pbix_reopened_v09.jpg",
+  "prior_failure": "Earlier Save As became unresponsive. Fresh Power BI instance saved default Audible.pbix successfully; byte-identical versioned copy created without editing the filename in the dialog.",
+  "financial_values_or_rules_changed": false,
+  "source_bundle_changed": false,
+  "Trading_data_used": false,
+  "group_files_changed": false,
+  "net_status": "gross-only limitation unchanged"
+}

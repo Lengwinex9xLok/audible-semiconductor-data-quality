@@ -1,5 +1,5 @@
 {
-  "status": "analysis_and_PBIP_review_release_with_export_limit",
+  "status": "analysis_and_native_PBIX_review_release",
   "costs": "gross only",
   "position_pages": 2,
   "technical_pages": 3,
@@ -10,10 +10,10 @@
   "group_files_changed": false,
   "old_artifacts_hashes_unchanged": true,
   "open_items": [
-    "Complete PBIX export after native Save As recovers",
     "Instructor acceptance of narrowed controversy and CRSP source",
     "Teams-of-two arrangement or solo permission",
     "Student ownership/review and independent expanded verification",
     "Resolve quote-quality block before complete new net result"
-  ]
+  ],
+  "native_PBIX_export": "passed; see pbix_export_validation.json"
 }
