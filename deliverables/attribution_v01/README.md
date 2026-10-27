@@ -1,4 +1,36 @@
-# Power BI v09 and memo revision 2
+# Power BI v10 cost sensitivity update
+
+Open [Audible_Semiconductor_v10.pbix](Audible_Semiconductor_v10.pbix) in Power BI
+Desktop. This native PBIX embeds its summary data; no WRDS connection is needed.
+Its default page is the 2025 allocation overview. The original three gross
+pages remain; **04 Cost sensitivity** shows four fixed 2025 scenarios.
+
+The cost page is independent of the other pages' period selectors. Both
+strategies pay the same hypothetical cost on traded notional, including initial
+purchases and terminal sales. Cash earns zero; costs compound through wealth.
+At 1 one-way bp, public net return is 74.11%, matched passive net is 74.38%,
+and the net gap is -0.27 percentage points. This is not a measured execution-cost
+estimate or a repair of the ADI quote. Historical SOX/exit-event sample testing
+remains unexecuted.
+
+[Assumptions and validation scope](../../docs/attribution_v01/v10_cost_sensitivity.md)
+| [Selected derived results](cost_sensitivity_2025_v10.csv)
+
+The PBIX was natively exported and reopened from disk; its overview and new
+cost table were checked. All four pages were visually inspected in the editable
+project. Existing drill-through and period-switch interactions were not retested
+for v10. The table rows match the saved cost-review outputs.
+
+The v09 PBIX, memos, analysis outputs and old source ZIPs are preserved. The
+source_bundle.zip below is the **v09** reproducibility archive; it does not
+contain the v10 cost-page changes. The directly linked memos are still v09
+revision 2, awaiting teammate integration of the new cost results and LLM notes.
+No final student/instructor sign-off is asserted.
+
+---
+
+## Preserved v09 release notes
+
 
 Download Audible_Semiconductor_v09.pbix with GitHub's Download raw file button, then
 open it in Power BI Desktop. The PBIX was exported natively, reopened from disk,

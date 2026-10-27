@@ -1,6 +1,26 @@
 # Project Audible semiconductor trading costs
 
-**Current v09 review package and memo revision 2: [comparable allocations and attribution](deliverables/attribution_v01/README.md).**
+## Current dashboard v10
+
+[Download Power BI v10](deliverables/attribution_v01/Audible_Semiconductor_v10.pbix)
+with GitHub's **Download raw file** button, then open it in Power BI Desktop.
+It embeds its data and requires no WRDS connection. The first three pages retain
+the v09 gross charts; page 4 adds the fixed **2025 hypothetical cost sensitivity**.
+See the [v10 change note and assumptions](docs/attribution_v01/v10_cost_sensitivity.md)
+and [four-scenario derived summary](deliverables/attribution_v01/cost_sensitivity_2025_v10.csv).
+
+Both strategies pay the same hypothetical one-way rate on traded notional.
+At 1 bp, the 2025 matched annual net gap is **-0.27 pp**, versus **+1.93 pp**
+at zero cost. These are conditional model scenarios, not observed execution costs.
+The ADI crossed quote remains unresolved, and the historical SOX sample test
+has not been executed. The original v09 PBIX and source bundle remain available.
+
+**Dashboard update only:** the published memos remain v09 revision 2 and have
+not been updated with this new cost sensitivity. Teammate memo/LLM-note
+integration and independent student verification remain pending. This is a
+review update, not certification of a final submission.
+
+**Preserved v09 review package and published memo revision 2: [comparable allocations and attribution](deliverables/attribution_v01/README.md).**
 The 2025 public rule earns +76.35% gross against +74.42% for passive exposure with
 matching starting stock weights. The original +10.60 pp gap includes +8.67 pp of
 initial-allocation differences. Stock/month contributions and drawdown remain visible.
@@ -11,7 +31,7 @@ initial-allocation differences. Stock/month contributions and drawdown remain vi
 and [rubric/lecture check](docs/attribution_v01/rubric_check.md).
 The v09 PBIX was exported natively, reopened from disk, and checked on all three pages.
 It embeds the summary data and requires no WRDS connection.
-No complete new net result, instructor approval or independent human verification is claimed.
+No complete quote-derived net result, instructor approval or independent human verification is claimed.
 
 The separate memos were revised for v09 and checked against the Audible rubric.
 Start with the [v09 review guide](docs/attribution_v01/v09_review_guide.md).
@@ -19,7 +39,7 @@ Position: two pages; technical: three pages. The retained source ZIP has earlier
 drafts; the directly linked PDFs above are current.
 
 
-**Latest evidence: [CIZ 2022-2025 gross-only supplement](supplements/ciz_2022_2025_gross_v01/README.md).**
+**Underlying gross evidence: [CIZ 2022-2025 gross-only supplement](supplements/ciz_2022_2025_gross_v01/README.md).**
 The unchanged public rule earns +76.35% gross in 2025 and +71.40% across 2022-2025.
 A required crossed ADI quote blocks a complete new net result under the frozen policy.
 These results do not establish after-cost profitability. No 2026 data were available
