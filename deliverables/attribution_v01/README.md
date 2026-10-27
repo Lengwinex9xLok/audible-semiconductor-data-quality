@@ -1,3 +1,16 @@
+# Current v10 handoff
+
+[Current position memo](../../position_memo.pdf) |
+[Current technical memo](../../technical_memo.pdf) |
+[Current LLM log](../../docs/llm_validation_log.csv) |
+[Complete runnable memo package](../../Audible_Memos_LLM_v10_complete_20261027.zip)
+
+The root PDFs contain the v10 cost update. This directory preserves the earlier
+v09 memo PDFs without overwriting them. Use the new package or the root
+supporting_evidence folder to run the supplemental annual cost replay.
+Original contributor-local records were not supplied; their availability is
+explicitly documented rather than reconstructed as historical evidence.
+
 # Power BI v10 cost sensitivity update
 
 Open [Audible_Semiconductor_v10.pbix](Audible_Semiconductor_v10.pbix) in Power BI
@@ -23,8 +36,8 @@ for v10. The table rows match the saved cost-review outputs.
 
 The v09 PBIX, memos, analysis outputs and old source ZIPs are preserved. The
 source_bundle.zip below is the **v09** reproducibility archive; it does not
-contain the v10 cost-page changes. The directly linked memos are still v09
-revision 2, awaiting teammate integration of the new cost results and LLM notes.
+contain the v10 cost-page changes. The directly linked memos below are preserved v09 revision 2. Current v10
+memos are at the repository root; use the current handoff links above.
 No final student/instructor sign-off is asserted.
 
 ---

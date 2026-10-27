@@ -1,0 +1,73 @@
+{
+  "status": "PASS_WITH_DISCLOSED_HISTORICAL_GAPS",
+  "checked_at_utc": "2026-10-27T14:59:34.978773+00:00",
+  "zip_integrity": true,
+  "standalone_replay": {
+    "status": "PASS",
+    "implementation": "new_cash_and_share_replay_20261027",
+    "provenance": "New reconstruction after 5e622d6; not the missing contributor M11 source or original receipt",
+    "executed_at_utc": "2026-10-27T14:59:34.716708+00:00",
+    "period": "2025",
+    "convention": "annual_matched_cash_start",
+    "inputs_sha256": {
+      "stock_daily_summary.csv": "7f4d65b8e170f3416f9b5feb3e0923d5426e160a356bced223ce9096bc57c8ea",
+      "stock_performance_summary.csv": "64ee06912a73ec52621b0b9bfcffccd9d5bffd2af5dd9db8ffb1a78e6646c8c2"
+    },
+    "expected_csv_sha256": "13088607577be84fb3f82afc5f7eb7feef233a74a721dd94350d1e7b4f803d5b",
+    "script_sha256": "3fdd3664e501d3ab4326217e54ed10f3d6e965dfe5408994b3d08367adcd34a7",
+    "securities": 10,
+    "intervals_per_security": 250,
+    "tolerance": 1e-12,
+    "max_absolute_error": 1.1546319456101628e-14,
+    "cases": [
+      {
+        "one_way_bps": 0.0,
+        "net_public": 0.7634887674607611,
+        "net_matched_passive": 0.7441910216493797,
+        "net_gap": 0.01929774581138144,
+        "extra_drag": 0.0,
+        "public_entries": 640,
+        "public_exits": 640
+      },
+      {
+        "one_way_bps": 0.5,
+        "net_public": 0.7522630673076312,
+        "net_matched_passive": 0.7440166112677333,
+        "net_gap": 0.00824645603989782,
+        "extra_drag": 0.011051289771483619,
+        "public_entries": 640,
+        "public_exits": 640
+      },
+      {
+        "one_way_bps": 1.0,
+        "net_public": 0.7411091066592512,
+        "net_matched_passive": 0.7438422183253819,
+        "net_gap": -0.002733111666130661,
+        "extra_drag": 0.0220308574775121,
+        "public_entries": 640,
+        "public_exits": 640
+      },
+      {
+        "one_way_bps": 2.0,
+        "net_public": 0.7190145653592726,
+        "net_matched_passive": 0.7434934847480998,
+        "net_gap": -0.02447891938882729,
+        "extra_drag": 0.04377666520020873,
+        "public_entries": 640,
+        "public_exits": 640
+      }
+    ],
+    "inputs_unchanged": true,
+    "raw_wrds_queried": false,
+    "continuous_four_year_replayed": false,
+    "independent_human_verification": false
+  },
+  "existing_receipt_overwrite_rejected": true,
+  "canonical_log_copies_equal": true,
+  "canonical_log_rows": 35,
+  "original_34_rows_preserved": true,
+  "new_entrypoint_links_resolve": true,
+  "contributor_original_evidence_recovered": false,
+  "raw_wrds_queried": false,
+  "scope_note": "Executed on the standalone core payload before adding this receipt; this receipt does not certify the missing contributor historical artifacts."
+}

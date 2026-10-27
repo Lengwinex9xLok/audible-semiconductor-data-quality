@@ -1,0 +1,22 @@
+{
+  "status": "PASS_WITH_DISCLOSED_HISTORICAL_EVIDENCE_GAPS",
+  "created_at_utc": "2026-10-27T14:58:48.163298+00:00",
+  "provenance": "New release-repair review after 5e622d6, not original contributor M01/M11 receipts",
+  "pdf_sha256": {
+    "position_memo.pdf": "050cbed209a0dfd83b00d53ed5d24b0ea6063789f6d342c50a4353bf1c77d44c",
+    "technical_memo.pdf": "dc15db68e9736a5c6e960e214551c249fa8a795841f64ebdfbad859b6f18b9ed"
+  },
+  "pdf_pages": {
+    "position": 2,
+    "technical": 5
+  },
+  "prior_read_only_review": "All seven PDF pages inspected; four cost rows checked against the frozen v10 results",
+  "new_fictional_tests_passed": 7,
+  "new_replay_receipt": "replay_run_20261027.json",
+  "new_replay_max_absolute_error": 1.1546319456101628e-14,
+  "original_log_rows_preserved": 34,
+  "current_log_rows": 35,
+  "historical_evidence_status": "Original contributor receipts/transcripts remain unavailable; see ../docs/memo_contributor_evidence_status.md",
+  "raw_wrds_queried": false,
+  "independent_human_verification": false
+}

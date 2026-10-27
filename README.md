@@ -1,5 +1,20 @@
 # Project Audible semiconductor trading costs
 
+## Current v10 memos and runnable handoff
+
+- [Position memo, 2 pages](position_memo.pdf)
+- [Technical memo, 5 pages](technical_memo.pdf)
+- [Current LLM validation log](docs/llm_validation_log.csv)
+- [Complete memo and replay package](Audible_Memos_LLM_v10_complete_20261027.zip)
+- [Reproduction instructions and evidence availability](supporting_evidence/README.md)
+
+The current memos incorporate the v10 hypothetical cost sensitivity. Both PDFs
+are the contributor's unchanged uploads from 5e622d6. The complete package adds a
+new executable replay, frozen derived inputs in the unchanged source archive,
+seven fictional tests, and actual repair receipts. It does not fabricate the
+contributor's missing original local records; see the availability register.
+Final student endorsement and the historical SOX test remain pending.
+
 ## Current dashboard v10
 
 [Download Power BI v10](deliverables/attribution_v01/Audible_Semiconductor_v10.pbix)
@@ -15,10 +30,9 @@ at zero cost. These are conditional model scenarios, not observed execution cost
 The ADI crossed quote remains unresolved, and the historical SOX sample test
 has not been executed. The original v09 PBIX and source bundle remain available.
 
-**Dashboard update only:** the published memos remain v09 revision 2 and have
-not been updated with this new cost sensitivity. Teammate memo/LLM-note
-integration and independent student verification remain pending. This is a
-review update, not certification of a final submission.
+The contributor's current memos are linked above. Their original evidence gaps
+are disclosed; this repair supplies a new independently implemented accounting
+replay, not a new raw-data audit or final student certification.
 
 **Preserved v09 review package and published memo revision 2: [comparable allocations and attribution](deliverables/attribution_v01/README.md).**
 The 2025 public rule earns +76.35% gross against +74.42% for passive exposure with
@@ -36,7 +50,8 @@ No complete quote-derived net result, instructor approval or independent human v
 The separate memos were revised for v09 and checked against the Audible rubric.
 Start with the [v09 review guide](docs/attribution_v01/v09_review_guide.md).
 Position: two pages; technical: three pages. The retained source ZIP has earlier memo
-drafts; the directly linked PDFs above are current.
+drafts; the PDFs in that preserved directory remain v09 revision 2.
+Use the root-level PDFs linked at the top for the current v10 memos.
 
 
 **Underlying gross evidence: [CIZ 2022-2025 gross-only supplement](supplements/ciz_2022_2025_gross_v01/README.md).**
