@@ -1,0 +1,80 @@
+{
+  "status": "v10_cost_replay_refactor_checks_passed",
+  "checked_at_utc": "2026-10-28T03:40:34.453088+00:00",
+  "base_commit": "61944f61a916749bcf7c0395106b77a668716b39",
+  "original_tests_passed": 7,
+  "added_tests_passed": 6,
+  "total_unit_tests_passed": 13,
+  "four_case_results_exactly_equal": true,
+  "cases": [
+    {
+      "one_way_bps": 0.0,
+      "net_public": 0.7634887674607611,
+      "net_matched_passive": 0.7441910216493797,
+      "net_gap": 0.01929774581138144,
+      "extra_drag": 0.0,
+      "public_entries": 640,
+      "public_exits": 640
+    },
+    {
+      "one_way_bps": 0.5,
+      "net_public": 0.7522630673076312,
+      "net_matched_passive": 0.7440166112677333,
+      "net_gap": 0.00824645603989782,
+      "extra_drag": 0.011051289771483619,
+      "public_entries": 640,
+      "public_exits": 640
+    },
+    {
+      "one_way_bps": 1.0,
+      "net_public": 0.7411091066592512,
+      "net_matched_passive": 0.7438422183253819,
+      "net_gap": -0.002733111666130661,
+      "extra_drag": 0.0220308574775121,
+      "public_entries": 640,
+      "public_exits": 640
+    },
+    {
+      "one_way_bps": 2.0,
+      "net_public": 0.7190145653592726,
+      "net_matched_passive": 0.7434934847480998,
+      "net_gap": -0.02447891938882729,
+      "extra_drag": 0.04377666520020873,
+      "public_entries": 640,
+      "public_exits": 640
+    }
+  ],
+  "max_absolute_error_vs_published": 1.1546319456101628e-14,
+  "implementation_files_sha256": {
+    "replay_v10_costs.py": "f5a50411e78ccb2791cb7b93007641741b5f3a9d75622492e881f2b0014d15cd",
+    "cost_replay/__init__.py": "06654fbb55f83f038bcc1bd2dcd84975484c381540ae39c2747e834da6c3a06e",
+    "cost_replay/accounting.py": "cbb837fef0a2f76a326d86346382afba7037a1c040924e2e39bdcb95fa9ef742",
+    "cost_replay/inputs.py": "58a9323fe839d3c1b7d6ee384a1a1ae223180621f20f65c4f70491afefc8925f",
+    "cost_replay/replay.py": "ea3e211efaf2d793e649ec6db8d3304a2d0b18bbda48296593c7e5d49304f6fe"
+  },
+  "frozen_inputs_sha256": {
+    "stock_daily_summary.csv": "7f4d65b8e170f3416f9b5feb3e0923d5426e160a356bced223ce9096bc57c8ea",
+    "stock_performance_summary.csv": "64ee06912a73ec52621b0b9bfcffccd9d5bffd2af5dd9db8ffb1a78e6646c8c2"
+  },
+  "expected_csv_sha256": "13088607577be84fb3f82afc5f7eb7feef233a74a721dd94350d1e7b4f803d5b",
+  "entrypoints": {
+    "direct_script": true,
+    "python_module": true,
+    "arbitrary_working_directory": true,
+    "legacy_import_api": true
+  },
+  "existing_receipt_overwrite_rejected": true,
+  "changed_input_hash_rejected": true,
+  "invalid_reference_regression": {
+    "old_nan_reference_passed": true,
+    "new_nan_reference_rejected": true,
+    "published_reference_contains_nan": false
+  },
+  "source_bundle_sha256": "7cfc78ebf1afd082e2bbf2c7ee1618ac4cf0a084730c0779064c5510337dbd5f",
+  "historical_computational_receipts_preserved": true,
+  "frozen_financial_assumptions_changed": false,
+  "new_market_queries": false,
+  "private_or_group_data_access": false,
+  "independent_human_verification": false,
+  "scope": "Current v10 annual cost replay only; historical ZIPs, PBIX and memo artifacts unchanged; not a full upstream extraction audit"
+}

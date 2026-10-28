@@ -2,6 +2,10 @@
 
 ## Current v10 memos and runnable handoff
 
+The maintained cost replay has a [modular code layout and regression checks](docs/code_cleanup_20261027.md).
+Its existing command is unchanged; the checkout runs 13 tests. The preserved complete
+ZIP below retains its original replay and seven tests. Financial results are unchanged.
+
 - [Position memo, 2 pages](position_memo.pdf)
 - [Technical memo, 5 pages](technical_memo.pdf)
 - [Current LLM validation log](docs/llm_validation_log.csv)
