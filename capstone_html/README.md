@@ -30,7 +30,7 @@ An equivalent command, including on Windows without Git Bash, is:
 python html_dashboard.py --require-live
 ```
 
-The dashboard opens locally at `http://127.0.0.1:8765/`. Keep the terminal open and press Ctrl+C to stop it. It has Executive, Risk, Compliance and Quote Monitor views. Select a year in Executive to see that segment's returns; drawdown remains a fixed full-period result.
+The dashboard opens locally at `http://127.0.0.1:8765/`. Keep the terminal open and press Ctrl+C to stop it. The Executive view includes a four-year comparison and an interactive selector for individual stocks and selected groups. Its year selector applies to the main metrics and selected sample; the annual comparison shows all four years. The Risk view's drawdown remains a fixed full-period result. Compliance illustrates the separate historical and quote data paths; Phase 2 context links to the earlier bank risk console and memo.
 
 Only derived historical results are included. **No Twelve Data quotes or API keys are included.** Do not commit or share the key. The Python collector fetches 20 symbols about 12 seconds apart, then waits an hour before its next cycle. It saves a new snapshot only if all 20 succeed. Quotes can be delayed or stale; check both quote date and retrieval time. The quote feed does not rerun the historical backtest.
 

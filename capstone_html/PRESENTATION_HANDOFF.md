@@ -11,7 +11,7 @@ Use the 20-stock result in this folder for the final capstone. The full-period r
 1. Lead with the recommendation and its strongest evidence.
 2. Explain the question: does a simple lagged-return rule hold up across 20 selected stocks?
 3. Show the return comparison, then the historical maximum drawdowns: −21.27% and −25.36%. Explain that these are separate peaks and troughs.
-4. Demonstrate the HTML dashboard: change the year, visit Risk and Compliance, then show Quote Monitor and its timestamps if a feed is running.
+4. Demonstrate the HTML dashboard: compare annual segments and select a stock or group; change the year to update the main and selected-sample comparisons. Visit Risk and Compliance, then show Quote Monitor and its timestamps if a feed is running.
 5. Close with what needs testing next: a sample selected before the evaluation period, transaction costs, and a fully reproducible workflow.
 
 ## The same facts for three audiences
