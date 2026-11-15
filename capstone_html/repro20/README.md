@@ -10,7 +10,7 @@ The original 20-stock calculation script is `run_twenty.py` (SHA-256 `dcc9852c38
 
 We independently executed the calculation in a WRDS Jupyter console without writing files. All 140 rows matched the saved result to absolute tolerance `1e-8` percentage points; the maximum observed difference was about `2.84e-14`. The two maximum drawdowns were −21.2746747828% and −25.3552334896%, with troughs on 2022-10-12 and 2022-09-30. There were three required crossed-quote and 23 required locked-quote strategy events. The net result remains blocked under the original policy.
 
-That check uses the saved WRDS inputs and existing engine; it is a replay of the same source snapshot, not an independent audit of the CRSP vendor data. `replay_wrds.py` implements the same read-only check, but the new script itself has not yet been run on WRDS.
+That check uses the saved WRDS inputs and existing engine; it is a replay of the same source snapshot, not an independent audit of the CRSP vendor data. `replay_wrds.py` was then executed as a standalone script on WRDS on 15 November 2026 and exited successfully. Its SHA-256 was verified before execution; see [the run receipt](WRDS_REPLAY_RECEIPT.json).
 
 ## Inputs and paths
 

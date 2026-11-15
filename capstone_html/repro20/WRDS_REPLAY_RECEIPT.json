@@ -1,0 +1,33 @@
+{
+  "execution_date": "2026-11-15",
+  "status": "PASS",
+  "exit_code": 0,
+  "execution": "Standalone Python script on WRDS Jupyter host",
+  "script_sha256": "b3e84b29d494dcbab8ee816bbc1749dda409e93e76f6922616238f3cef71276f",
+  "reference_csv_sha256": "86463bd682eaaccab45aa1c160bb6f05abfba19b65b513c68f9969dae044f383",
+  "saved_input_manifests_verified": true,
+  "code_and_calendar_hashes_verified": true,
+  "rows_checked": 140,
+  "maximum_absolute_difference_pp": 2.842170943040401e-14,
+  "drawdowns": {
+    "lagged_positive_return": {
+      "max_drawdown_pct": -21.274674782767956,
+      "trough": "2022-10-12"
+    },
+    "always_long": {
+      "max_drawdown_pct": -25.355233489553463,
+      "trough": "2022-09-30"
+    }
+  },
+  "required_quote_events": {
+    "crossed": 3,
+    "locked": 23
+  },
+  "scope": "Read-only replay of saved 2022-2025 WRDS inputs and existing code; no fresh query, external source audit, or net-cost estimate",
+  "environment": {
+    "python": "3.14.5",
+    "numpy": "2.4.6",
+    "pandas": "2.2.3"
+  },
+  "stderr": ""
+}
