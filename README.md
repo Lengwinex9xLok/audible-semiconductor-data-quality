@@ -1,5 +1,8 @@
 # Project Audible semiconductor trading costs
 
+> **Current capstone presentation:** Start with the [20-stock HTML dashboard and team handoff](capstone_html/README.md). This is a newer, separate analysis; the earlier v10 materials below remain preserved.
+
+
 ## Current v10 memos and runnable handoff
 
 - [Position memo, 2 pages](position_memo.pdf)

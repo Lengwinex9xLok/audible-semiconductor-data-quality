@@ -1,0 +1,5 @@
+name: audible-demo
+channels:
+  - defaults
+dependencies:
+  - python=3.11

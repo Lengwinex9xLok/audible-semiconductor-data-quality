@@ -1,0 +1,4 @@
+twelvedata_quotes_latest.csv
+.quotes_*.tmp
+__pycache__/
+.env
