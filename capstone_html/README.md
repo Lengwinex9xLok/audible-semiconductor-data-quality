@@ -16,23 +16,25 @@ The rule holds a stock from close to close when its prior session return is posi
 
 ## Run the HTML dashboard
 
-Python 3 is required. From this folder, run:
+Python 3, network access, and `TWELVE_DATA_API_KEY` provisioned in the environment are required for the live demo. From this folder, run:
 
 ```sh
 sh run_demo.sh
 ```
 
-Or, including on Windows without Git Bash:
+This command starts in strict live mode: it fetches all 20 symbols before opening the dashboard, and exits with an error if the key is missing or the initial fetch fails. First collection takes several minutes. A successfully retrieved quote can still be delayed or be from an earlier market session; check its timestamps.
+
+An equivalent command, including on Windows without Git Bash, is:
 
 ```text
-python html_dashboard.py
+python html_dashboard.py --require-live
 ```
 
 The dashboard opens locally at `http://127.0.0.1:8765/`. Keep the terminal open and press Ctrl+C to stop it. It has Executive, Risk, Compliance and Quote Monitor views. Select a year in Executive to see that segment's returns; drawdown remains a fixed full-period result.
 
-Only derived historical results are included. **No Twelve Data quotes or API keys are included.** Without a local quote snapshot or a configured key, the historical views still work and Quote Monitor says that quote data are unavailable. To fetch fresh quotes, set the environment variable `TWELVE_DATA_API_KEY` in the launching terminal before starting; do not commit or share the key. The Python collector fetches 20 symbols about 12 seconds apart, then waits an hour before its next cycle. It saves a new snapshot only if all 20 succeed. Quotes can be delayed or stale; check both quote date and retrieval time. The quote feed does not rerun the historical backtest.
+Only derived historical results are included. **No Twelve Data quotes or API keys are included.** Do not commit or share the key. The Python collector fetches 20 symbols about 12 seconds apart, then waits an hour before its next cycle. It saves a new snapshot only if all 20 succeed. Quotes can be delayed or stale; check both quote date and retrieval time. The quote feed does not rerun the historical backtest.
 
-For offline mode, use `python html_dashboard.py --no-refresh`. See [data dictionary](DATA_DICTIONARY.md) and [presentation handoff](PRESENTATION_HANDOFF.md).
+For an offline historical-only preview, use `sh run_demo.sh --no-refresh` or `python html_dashboard.py --no-refresh`. Without a saved snapshot, Quote Monitor clearly indicates that quotes are unavailable. This preview is not a live-data test. See [data dictionary](DATA_DICTIONARY.md) and [presentation handoff](PRESENTATION_HANDOFF.md).
 
 ## Limits and remaining work
 

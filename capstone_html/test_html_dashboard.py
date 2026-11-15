@@ -3,6 +3,9 @@ import threading
 import csv
 import tempfile
 import unittest
+from contextlib import redirect_stderr, redirect_stdout
+from io import StringIO
+from unittest.mock import Mock, patch
 from urllib.error import HTTPError
 from urllib.request import urlopen
 
@@ -58,6 +61,51 @@ class DashboardTests(unittest.TestCase):
         with self.assertRaises(HTTPError) as ctx:
             urlopen(self.url + '/html_dashboard.py', timeout=3)
         self.assertEqual(ctx.exception.code, 404)
+
+    def test_missing_snapshot_has_clear_empty_status(self):
+        from pathlib import Path
+        with tempfile.TemporaryDirectory() as tmp, patch.object(dashboard, 'QUOTES', Path(tmp) / 'missing.csv'):
+            result = self.get_json('/api/quotes')
+        self.assertEqual(result['rows'], [])
+        self.assertIn('No saved quotes', result['status']['message'])
+
+
+class StrictLiveStartupTests(unittest.TestCase):
+    def test_missing_key_fails_before_opening_server(self):
+        with patch.dict('os.environ', {}, clear=True), patch('sys.argv', ['demo', '--require-live']), \
+             patch.object(dashboard, 'ThreadingHTTPServer') as server, redirect_stderr(StringIO()):
+            with self.assertRaises(SystemExit) as exc:
+                dashboard.main()
+        self.assertEqual(exc.exception.code, 2)
+        server.assert_not_called()
+
+    def test_failed_initial_refresh_does_not_open_browser_or_serve(self):
+        server = Mock()
+        with patch.dict('os.environ', {'TWELVE_DATA_API_KEY': 'test-only'}, clear=True), \
+             patch('sys.argv', ['demo', '--require-live']), \
+             patch.object(dashboard, 'ThreadingHTTPServer', return_value=server), \
+             patch.object(dashboard, 'refresh_quotes', side_effect=ValueError('fake failure')), \
+             patch.object(dashboard.webbrowser, 'open') as browser, \
+             redirect_stdout(StringIO()), redirect_stderr(StringIO()):
+            self.assertEqual(dashboard.main(), 1)
+        browser.assert_not_called()
+        server.serve_forever.assert_not_called()
+        server.server_close.assert_called_once()
+
+    def test_success_refreshes_once_before_opening(self):
+        server = Mock(server_port=8765)
+        events = []
+        with patch.dict('os.environ', {'TWELVE_DATA_API_KEY': 'test-only'}, clear=True), \
+             patch('sys.argv', ['demo', '--require-live']), \
+             patch.object(dashboard, 'ThreadingHTTPServer', return_value=server), \
+             patch.object(dashboard, 'refresh_quotes', side_effect=lambda key: events.append('refresh')), \
+             patch.object(dashboard.threading, 'Thread') as worker, \
+             patch.object(dashboard.webbrowser, 'open', side_effect=lambda url: events.append('open')), \
+             redirect_stdout(StringIO()):
+            dashboard.main()
+        self.assertEqual(events, ['refresh', 'open'])
+        self.assertTrue(worker.call_args.kwargs['args'][1])
+        server.serve_forever.assert_called_once()
 
 
 if __name__ == '__main__':
