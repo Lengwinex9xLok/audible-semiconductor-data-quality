@@ -36,10 +36,14 @@ Only derived historical results are included. **No Twelve Data quotes or API key
 
 For an offline historical-only preview, use `sh run_demo.sh --no-refresh` or `python html_dashboard.py --no-refresh`. Without a saved snapshot, Quote Monitor clearly indicates that quotes are unavailable. This preview is not a live-data test. See [data dictionary](DATA_DICTIONARY.md) and [presentation handoff](PRESENTATION_HANDOFF.md).
 
+## Historical analysis replay
+
+See [the 20-stock replay instructions](repro20/README.md) for the saved WRDS inputs, source hashes, analytical dependencies and read-only reconciliation. On 15 November 2026 a read-only WRDS recomputation matched all 140 saved rows. The new reusable replay script has fictional-data tests, but has not yet been executed on the WRDS inputs as a standalone script. Raw WRDS/CRSP inputs remain restricted.
+
 ## Limits and remaining work
 
 - This is a fixed historical output from WRDS/CRSP data, not proof of future or after-cost performance. The documented quote-based cost policy blocks a net result because three required strategy events have crossed quotes.
-- Raw licensed WRDS records, provider quote snapshots, and the WRDS analysis environment are not included. The original 20-stock analysis must be made accessible and independently rerun before claiming full reproduction.
+- Raw licensed WRDS records and provider quote snapshots are not included. The standalone 20-stock replay script still needs to be run against the saved WRDS inputs; the analysis environment file describes a separately tested fictional-data setup, not an independently validated WRDS installation.
 - The dashboard has not passed a clean-machine, no-manual-steps cold-start test. A fresh quote feed requires a separately provisioned key and network access.
 - The course also refers to a Phase 2 risk console and to three output formats. The scope of those requirements and their integration still needs confirmation. The HTML Tufte review and final package review are not complete.
 
