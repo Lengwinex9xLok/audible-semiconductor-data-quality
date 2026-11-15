@@ -18,6 +18,7 @@ function barChart(target, values, labels, colors) {
   const x = v => left + ((v-min)/range)*width;
   const zero=x(0);
   svg.append(svgEl('line',{x1:zero,y1:20,x2:zero,y2:145,stroke:'#aab8c8','stroke-width':1}));
+  svg.append(svgEl('text',{x:zero,y:166,fill:'#40566d','font-size':13,'font-family':'Arial','text-anchor':'middle'},'0%'));
   values.forEach((v,i)=>{
     const y=35+i*57;
     svg.append(svgEl('text',{x:0,y:y+15,fill:'#40566d','font-size':15,'font-family':'Arial'},labels[i]));
@@ -33,7 +34,10 @@ function renderHistory(){
   const a=Number(row.rule_return_pct),b=Number(row.buy_hold_return_pct),d=Number(row.difference_pp);
   if(![a,b,d].every(Number.isFinite)) return;
   $('#rule-return').textContent=fmt(a);$('#buy-return').textContent=fmt(b);$('#difference').textContent=pp(d);
-  $('#period-tag').textContent=period==='All'?'FULL PERIOD':period;
+  const periodLabel=period==='All'?'2022–2025':period;
+  $('#period-tag').textContent=period==='All'?'FULL PERIOD · 2022–2025':period;
+  $('#return-title').textContent=`${periodLabel}: rule vs. buy and hold`;
+  $('#return-chart').setAttribute('aria-label', `${periodLabel} gross return: rule ${fmt(a)}; buy and hold ${fmt(b)}.`);
   barChart('#return-chart',[a,b],['Rule','Buy and hold'],['#5685a4','#0b376b']);
 }
 function renderQuotes(){
