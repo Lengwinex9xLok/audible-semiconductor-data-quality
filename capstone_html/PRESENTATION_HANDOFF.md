@@ -23,3 +23,7 @@ Use the 20-stock result in this folder for the final capstone. The full-period r
 The sample was selected in 2026 and half the names are semiconductor-related. Three crossed-quote events block the documented quote-based net calculation; do not describe gross returns as net. The HTML display uses derived results, not raw WRDS prices.
 
 The course asks for a 10-minute Backwards First presentation with a recommendation on slide 1 and a live interactive system, followed by Executive, Risk and Compliance questioning. The connection to the Phase 2 risk console, final output formats, and clean-machine test still need to be resolved. Do not present those items as complete.
+
+## Risk page: invested sleeves
+
+The rule held 52.06% of the 20 stock sleeves on average across 1,003 holding intervals; buy and hold held 100%. This counts sleeves equally and is not the fraction of portfolio dollars invested. See [RISK_METHOD.md](RISK_METHOD.md) for the definition and verification.

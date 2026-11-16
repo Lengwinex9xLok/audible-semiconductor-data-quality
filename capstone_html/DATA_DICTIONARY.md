@@ -30,3 +30,7 @@ Generated locally by the Twelve Data collector; this file is not part of the rep
 | `retrieved_at_utc` | UTC time at which this row was retrieved; not necessarily the quote time |
 
 The collector saves a snapshot only after all 20 symbols succeed. If collection fails, an older file may remain. The quote feed is separate from the fixed historical analysis.
+
+## Risk: average invested stock sleeves
+
+`average_invested_sleeve_share` is the mean of the fraction of 20 stock sleeves held in stock in each of 1,003 holding intervals, excluding the initial base row. The rule is 10,443 / 20,060 = 52.06%; buy and hold is 100.00%. This is an equal-count metric, not dollar-weighted portfolio exposure. See [RISK_METHOD.md](RISK_METHOD.md) and [the verification receipt](repro20/INVESTED_SHARE_RECEIPT.json).

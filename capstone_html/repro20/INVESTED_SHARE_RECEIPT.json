@@ -1,0 +1,19 @@
+{
+  "status": "PASS",
+  "verified_on": "2026-11-16",
+  "source": "Saved WRDS / CRSP inputs, gross-only replay; no raw records included",
+  "metric": "Equal-count mean of the 20 invested stock sleeves per holding interval; not dollar-weighted exposure",
+  "intervals": 1003,
+  "sleeves": 20,
+  "first_interval_end": "2022-01-03",
+  "last_interval_end": "2025-12-31",
+  "rule_held_sleeve_intervals": 10443,
+  "total_sleeve_intervals": 20060,
+  "rule_mean_sleeve_share": 0.5205882352941177,
+  "buy_and_hold_mean_sleeve_share": 1.0,
+  "return_rows_checked": 140,
+  "maximum_return_difference_percentage_points": 2.842170943040401e-14,
+  "verification": "Compared the original aggregation against independently recomputed lagged signals for every holding interval, excluding the initial base row.",
+  "verification_script_sha256": "dba9fe78b0eebdef7ba7eb769e6125def88a8f774b761f79527f56694c3e930c",
+  "reference_table_sha256": "86463bd682eaaccab45aa1c160bb6f05abfba19b65b513c68f9969dae044f383"
+}

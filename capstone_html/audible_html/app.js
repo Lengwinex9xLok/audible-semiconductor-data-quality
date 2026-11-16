@@ -98,5 +98,6 @@ document.querySelectorAll('.nav').forEach(button=>button.addEventListener('click
 $('#period').addEventListener('change',renderHistory);$('#search').addEventListener('input',renderQuotes);
 $('#sample').addEventListener('change',renderSample);
 barChart('#risk-chart',[-21.274674782767956,-25.355233489553463],['Rule','Buy and hold'],['#5685a4','#0b376b']);
+barChart('#invested-chart',[10443 / 20060 * 100,100],['Rule','Buy and hold'],['#5685a4','#0b376b']);
 fetch('/api/historical',{cache:'no-store'}).then(r=>{if(!r.ok)throw Error();return r.json();}).then(data=>{historical=data.rows;prepareSampleSelector();renderHistory();renderAnnual();}).catch(()=>{$('#rule-return').textContent='Unavailable';$('#buy-return').textContent='Unavailable';$('#difference').textContent='Unavailable';$('#sample-status').hidden=false;$('#annual-status').hidden=false;});
 updateQuotes();setInterval(updateQuotes,30000);
