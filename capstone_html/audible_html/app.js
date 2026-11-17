@@ -94,7 +94,15 @@ function renderQuotes(){
   rows.forEach(r=>{const tr=document.createElement('tr');[r.symbol,r.exchange,Number.isFinite(Number(r.close))&&r.close!==''?'$'+Number(r.close).toFixed(2):'—',r.quote_date,r.retrieved_at_utc].forEach(value=>{const td=document.createElement('td');td.textContent=value||'—';tr.append(td);});body.append(tr);});
 }
 async function updateQuotes(){try{const response=await fetch('/api/quotes',{cache:'no-store'});if(!response.ok)throw Error();const data=await response.json();quotes=data.rows;$('#status').textContent=data.status.message;renderQuotes();}catch{$('#status').textContent='Quote data unavailable. Check the local snapshot and collector.';}}
-document.querySelectorAll('.nav').forEach(button=>button.addEventListener('click',()=>{document.querySelectorAll('.nav').forEach(b=>b.classList.toggle('active',b===button));document.querySelectorAll('.view').forEach(v=>{v.hidden=v.id!==button.dataset.view;});$('#crumb').textContent=button.textContent.trim().replace(/^\d+\s*/, '').toUpperCase();$('#scope-equity').hidden=button.dataset.view==='phase2';$('#scope-phase2').hidden=button.dataset.view!=='phase2';}));
+document.querySelectorAll('.nav').forEach(button=>button.addEventListener('click',()=>{
+  const view=button.dataset.view;
+  document.querySelectorAll('.nav').forEach(b=>b.classList.toggle('active',b===button));
+  document.querySelectorAll('.view').forEach(v=>{v.hidden=v.id!==view;});
+  $('#crumb').textContent=button.textContent.trim().replace(/^\d+\s*/, '').toUpperCase();
+  $('#scope-equity').hidden=view==='phase2'||view==='ytd';
+  $('#scope-phase2').hidden=view!=='phase2';
+  $('#scope-ytd').hidden=view!=='ytd';
+}));
 $('#period').addEventListener('change',renderHistory);$('#search').addEventListener('input',renderQuotes);
 $('#sample').addEventListener('change',renderSample);
 barChart('#risk-chart',[-21.274674782767956,-25.355233489553463],['Rule','Buy and hold'],['#5685a4','#0b376b']);

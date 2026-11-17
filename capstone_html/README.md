@@ -40,6 +40,12 @@ For an offline historical-only preview, use `sh run_demo.sh --no-refresh` or `py
 
 See [the 20-stock replay instructions](repro20/README.md) for the saved WRDS inputs, source hashes, analytical dependencies and read-only reconciliation. On 15 November 2026 a read-only WRDS recomputation matched all 140 saved rows. The standalone replay script also passed on WRDS on 15 November 2026; see the [run receipt](repro20/WRDS_REPLAY_RECEIPT.json). Raw WRDS/CRSP inputs remain restricted.
 
+## 2026 YTD supplemental test
+
+The last dashboard tab shows a separate hypothetical run for the same 20 stocks through November 16, 2026. Both portfolios were reset to 5% per stock at the December 31, 2025 close, then not rebalanced. The rule returned **−4.88% gross** versus **+37.51% gross** for buy and hold (**−42.40 percentage points**). This does not change the 2022–2025 analysis. The 20 names were selected in 2026, so the YTD run is not an out-of-sample test.
+
+Source: Twelve Data adjusted daily history, with issuer-reported KLAC cash dividends applied to split-adjusted prices. The 2025 overlap passed the original CRSP tolerances. See the [derived results and overlap check](repro20/TWELVE_DATA_YTD_RECEIPT.json). To repeat the check with authorized access, run `python repro20/check_twelvedata_ytd.py --repair-klac`. No daily provider records or credentials are included.
+
 ## Limits and remaining work
 
 - This is a fixed historical output from WRDS/CRSP data, not proof of future or after-cost performance. The documented quote-based cost policy blocks a net result because three required strategy events have crossed quotes.

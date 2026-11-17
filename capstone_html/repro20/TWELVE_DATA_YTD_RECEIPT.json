@@ -1,0 +1,35 @@
+{
+  "status": "PASS",
+  "evidence": "Output supplied by the user from running check_twelvedata_ytd.py --repair-klac",
+  "symbols": 20,
+  "through": "2026-11-16",
+  "split_probe_factor": 9.999999999999455,
+  "dividend_probe_uplift": 0.0010982734905058595,
+  "crsp_overlap": {
+    "rule_return_pct": {
+      "twelve_data_pct": 42.130407651905834,
+      "crsp_pct": 42.13605888091389,
+      "gap_pp": -0.005651229008059033,
+      "worst_stock": "LRCX",
+      "worst_stock_gap_pp": 0.16412986243763328
+    },
+    "buy_hold_return_pct": {
+      "twelve_data_pct": 40.4221861655784,
+      "crsp_pct": 40.425368388205165,
+      "gap_pp": -0.0031822226267621545,
+      "worst_stock": "LRCX",
+      "worst_stock_gap_pp": 0.2358819210969898
+    }
+  },
+  "comparison_tolerances_pp": {
+    "portfolio": 0.25,
+    "per_stock": 1.0
+  },
+  "sessions_behind_requested_end": 0,
+  "ytd_rule_pct": -4.883483682634826,
+  "ytd_buy_hold_pct": 37.51342492822065,
+  "ytd_gap_pp": -42.396908610855476,
+  "ytd_sessions": 220,
+  "scope": "Hypothetical; fresh 5% sleeves; gross; Twelve Data adjusted daily returns",
+  "klac_dividends": "issuer cash dividends on split-adjusted prices"
+}
