@@ -1,0 +1,465 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Audible | Research dashboard</title><style>:root{--ink:#132a4e;--blue:#07336e;--navy:#071d3d;--muted:#66768c;--line:#e1e7ef;--paper:#f5f7fa;--accent:#5c8eae}*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.5 Georgia,'Times New Roman',serif}.sidebar{position:fixed;left:0;top:0;bottom:0;width:230px;background:var(--navy);color:#fff;padding:35px 22px;display:flex;flex-direction:column}.brand{display:flex;gap:12px;align-items:center;font:700 18px Georgia;letter-spacing:.08em}.brand-mark{display:grid;place-items:center;width:38px;height:38px;border:1px solid #8299b7;font-size:23px}.brand small{display:block;font:9px Arial;letter-spacing:.18em;color:#a7b8ce;margin-top:5px}.nav-label,.label,.eyebrow{font:700 10px Arial,sans-serif;letter-spacing:.16em;color:#687d98}.nav-label{margin:80px 0 20px;color:#8aa0ba}nav{display:grid;gap:6px}.nav{border:0;background:none;text-align:left;color:#8297b3;padding:13px 12px;cursor:pointer;font:11px Arial;letter-spacing:.08em}.nav span{margin-left:15px;color:#d3deeb;font:15px Georgia}.nav.active{background:#18385d;border-left:3px solid #8bb7d4;color:white}.nav:hover{background:#18385d}.side-foot{margin-top:auto;font:10px/1.8 Arial;letter-spacing:.1em;color:#b2c1d2}.side-foot span{font:12px Georgia;color:#8297b3;letter-spacing:0}main{margin-left:230px;max-width:1600px;padding:0 6%}.top{height:77px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;font:10px Arial;letter-spacing:.14em;color:#8795a5}.top #crumb{color:#274d75}.top-right{color:#60728a}.separator{margin:0 8px;color:#a9b7c7}.view{padding:45px 0 10px;max-width:1200px}.view[hidden]{display:none}.eyebrow{color:#547999}h1{font-size:46px;line-height:1.1;font-weight:normal;letter-spacing:-.025em;margin:14px 0 10px}h2{font-size:27px;font-weight:normal;margin:7px 0 0}h3{font-size:19px;font-weight:normal;margin:0}.lede{font-size:17px;color:#68788c;margin:0 0 29px}.insight{background:var(--blue);color:white;padding:23px 28px;display:flex;justify-content:space-between;align-items:center}.insight p{font-size:20px;margin:9px 0 0}.light{color:#b4cbe0}.insight-side{border-left:1px solid #527499;padding-left:24px;color:#c8d9e9;white-space:nowrap;font-size:13px}.insight-side strong{color:white;font-size:15px}.section-row{display:flex;justify-content:space-between;align-items:end;margin:37px 0 16px}.select-label{font:11px Arial;color:#6a7a8c;letter-spacing:.04em}select,input{background:#fff;border:1px solid #cfd9e4;color:#203e60;padding:10px 13px;margin-left:7px;font:13px Arial;border-radius:3px}.metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:13px;margin-bottom:14px}.metrics.two{grid-template-columns:repeat(2,1fr)}.metrics article,.card,.three-notes article{background:white;border:1px solid var(--line)}.metrics article{padding:21px 23px}.metrics span{display:block;color:#77889c;font:10px Arial;letter-spacing:.1em}.metrics strong{display:block;font-size:33px;font-weight:normal;color:#092e5f;margin-top:9px}.metrics small{color:#8a9aab;font:11px Arial}.card{padding:24px}.chart-card{padding:24px 26px}.card-heading{display:flex;align-items:start;justify-content:space-between}.card-heading p{color:#8995a4;font:12px Arial;margin:7px 0}.tag{font:10px Arial;letter-spacing:.08em;color:#476c8f;background:#eef4f8;padding:8px 10px}.chart-card svg{width:100%;height:auto;max-height:210px;margin:10px 0 0}.footnote{font:12px/1.55 Arial;color:#758599;margin:16px 0 0}.three-notes{display:grid;grid-template-columns:repeat(3,1fr);gap:13px;margin-top:14px}.three-notes article{padding:20px}.three-notes p,.audit p{color:#64758a;font-size:14px;margin:8px 0 0}.audit{padding:5px 26px}.audit-row{display:grid;grid-template-columns:190px 1fr;gap:15px;padding:20px 0;border-bottom:1px solid var(--line)}.audit-row:last-child{border:0}.audit-row p{margin:0}.status{background:#edf3f7;border-left:3px solid #6085a2;padding:14px 18px;color:#48647d;font:13px/1.5 Arial}.table-wrap{padding:0;overflow:auto}table{width:100%;border-collapse:collapse;text-align:left}th{font:10px Arial;letter-spacing:.1em;color:#7e8c9d;background:#f9fafc}td,th{padding:13px 20px;border-bottom:1px solid #edf1f5;white-space:nowrap}td{font:13px Arial;color:#3b526c}td:first-child{font-weight:bold;color:#123d69}footer{border-top:1px solid var(--line);margin:55px 0 30px;padding-top:20px;font:9px Arial;letter-spacing:.13em;color:#a2aebb}footer span{padding:0 8px}@media(max-width:850px){.sidebar{position:static;width:auto;padding:18px}.brand{font-size:15px}.nav-label,.side-foot{display:none}nav{display:flex;overflow:auto;margin-top:18px}.nav{white-space:nowrap}.nav span{margin-left:5px}.top{height:50px}.top-right{display:none}main{margin:0;padding:0 5%}.view{padding-top:28px}h1{font-size:35px}.insight{display:block}.insight-side{border:0;padding:16px 0 0}.metrics,.metrics.two,.three-notes{grid-template-columns:1fr}.audit-row{grid-template-columns:1fr}.section-row{gap:10px;align-items:start}.select-label{white-space:nowrap}}
+
+.chart-note{font:14px/1.55 Arial,sans-serif;color:#40566d;margin:10px 0 0}.chart-note strong{color:#132a4e}.chart-card .card-heading p{font-size:13px;color:#61748a}
+
+.chart-legend{display:flex;gap:24px;margin-top:12px;font:13px Arial,sans-serif;color:#40566d}.chart-legend span{display:flex;align-items:center;gap:7px}.chart-legend i{width:12px;height:12px;display:inline-block}.legend-rule{background:#5685a4}.legend-buy{background:#0b376b}.chart-card svg.annual-chart{max-height:none}.compact-row{margin-top:10px}.flow-card{padding:24px}.flow-line{display:flex;align-items:center;gap:15px;justify-content:space-between}.flow-line span{flex:1;padding:14px;background:#f1f5f9;color:#153759;text-align:center;font-weight:bold}.flow-line small,.flow-separate small{font:12px/1.4 Arial,sans-serif;color:#526b82}.flow-line b{color:#6d91af}.flow-separate{border-top:1px solid var(--line);margin-top:20px;padding-top:17px;color:#40566d;font:14px/1.6 Arial,sans-serif}@media(max-width:850px){.flow-line{align-items:stretch;flex-direction:column;gap:5px}.flow-line b{text-align:center;transform:rotate(90deg)}.section-row:has(#sample){flex-direction:column}.section-row select{max-width:100%;white-space:normal}}
+.gap-card { margin: 0; padding: 22px 26px; }
+.gap-card h2 { margin: 0; }
+.gap-card figcaption p { color: #465c73; font: 14px/1.45 Arial, sans-serif; margin: 5px 0 16px; }
+.gap-chart li { display: grid; grid-template-columns: 42px minmax(0, 1fr) 80px; column-gap: 10px; }
+.gap-axis { display: grid; grid-template-columns: 1fr auto 1fr; margin: 0 90px 4px 52px; color: #4c6276; font: 12px/1.4 Arial, sans-serif; }
+.gap-axis span:last-child { text-align: right; }
+.gap-chart { list-style: none; padding: 0; margin: 0 0 14px; }
+.gap-chart li { align-items: center; font: 15px/1.4 Arial, sans-serif; font-variant-numeric: tabular-nums; }
+.gap-chart svg { display: block; width: 100%; height: 34px; }
+.gap-chart strong { text-align: right; font-weight: 600; }
+.gap-card .chart-note { border-top: 1px solid var(--line); padding-top: 10px; font-size: 12px; }
+.validation { margin: 10px 0 0; font: 14px/1.5 Arial, sans-serif; min-width: 0; }
+.validation summary { cursor: pointer; color: #204f75; }
+.validation .table-wrap { margin: 10px 0; }
+.validation caption { text-align: left; padding: 6px 0; color: #465c73; font-size: 13px; }
+.validation td, .validation th { padding: 8px; letter-spacing: 0; font-variant-numeric: tabular-nums; }
+.validation th { font-size: 12px; }
+.validation td, .validation th:not(:first-child) { text-align: right; }
+.audit-row > div { min-width: 0; }
+@media (max-width: 600px) {
+  .gap-card { padding: 18px 14px; }
+  .gap-chart li { grid-template-columns: 36px minmax(0, 1fr) 72px; gap: 6px; font-size: 13px; }
+  .gap-axis { margin-left: 42px; margin-right: 78px; font-size: 10px; }
+}
+.evidence-switch { display: flex; flex-wrap: wrap; gap: 3px; margin-bottom: 9px; }
+.evidence-switch button { appearance: none; border: 1px solid transparent; border-radius: 3px; padding: 8px 13px; background: transparent; color: #335572; font: 14px/1.3 Arial, sans-serif; cursor: pointer; }
+.evidence-switch button[aria-pressed="true"] { color: white; background: #203f66; }
+.evidence-switch button:hover:not([aria-pressed="true"]) { border-color: #b6c5d1; }
+.evidence-switch button:focus-visible { outline: 2px solid #22786e; outline-offset: 1px; }
+.wealth-chart { display: block; width: 100%; height: 199px; }
+.wealth-chart text { fill: #49617a; font: 12px Arial, sans-serif; }
+#wealth-status { display: flex; flex-wrap: wrap; gap: 6px 24px; font-size: 14px; font-variant-numeric: tabular-nums; }
+#wealth-status span { display: inline-flex; align-items: center; gap: 7px; font-weight: bold; }
+#wealth-status span::before { content: ""; display: inline-block; width: 20px; border-top: 3px solid #203f66; }
+#wealth-status .rule_return_pct::before { border-top: 3px dashed #22786e; }
+.waterfall-row { display: grid; grid-template-columns: 125px minmax(0, 1fr) 83px; align-items: center; gap: 10px; font: 14px/1.4 Arial, sans-serif; }
+.waterfall-row svg { display: block; width: 100%; height: 32px; }
+.waterfall-row strong { text-align: right; font-variant-numeric: tabular-nums; }
+.waterfall-total { border-top: 1px solid var(--line); margin-top: 8px; padding: 6px 0; font-weight: bold; }
+.gap-card[hidden] { display: none; }
+@media (max-width: 600px) {
+  .waterfall-row { grid-template-columns: 82px minmax(0,1fr) 70px; gap: 5px; font-size: 12px; }
+  .evidence-switch { gap: 2px; }
+  .evidence-switch button { font-size: 12px; padding: 7px; }
+}
+#nvda-check h3 { margin: 14px 0 0; font-family: Georgia, serif; }
+#nvda-chart { margin: 10px 0; }
+.nvda-pair { display: grid; grid-template-columns: 122px minmax(90px,1fr) minmax(215px,auto); align-items: center; gap: 8px; font-variant-numeric: tabular-nums; }
+.nvda-pair svg { width: 100%; height: 36px; display: block; }
+.nvda-pair span { font-size: 13px; color: #28435c; }
+@media(max-width:750px) {
+  .nvda-pair { grid-template-columns: 110px minmax(0,1fr); gap: 0 6px; }
+  .nvda-pair span { grid-column: 1 / -1; padding-bottom: 6px; }
+}
+.nvda-pair svg.nvda-axis { height: 46px; }
+.nvda-pair .pair-rule, .nvda-pair .pair-hold { display: inline-block; padding: 0 0 0 8px; }
+.nvda-pair .pair-rule::before, .nvda-pair .pair-hold::before { content: ""; display: inline-block; border-radius: 50%; width: 7px; height: 7px; margin-right: 4px; vertical-align: 1px; background: #203f66; }
+.nvda-pair .pair-rule::before { background: #22786e; }
+</style></head>
+<body>
+<aside class="sidebar"><div class="brand"><span class="brand-mark">A</span><span>AUDIBLE<small>CAPSTONE RESEARCH</small></span></div><div class="nav-label">PERSPECTIVES</div><nav aria-label="Dashboard views"><button class="nav active" aria-current="page" data-view="executive">01 <span>Executive</span></button><button class="nav" data-view="risk">02 <span>Risk</span></button><button class="nav" data-view="compliance">03 <span>Compliance</span></button><button class="nav" data-view="quotes">04 <span>Quote monitor</span></button><button class="nav" data-view="phase2">05 <span>Phase 2 context</span></button><button class="nav" data-view="ytd">06 <span>2026 YTD</span></button></nav><div class="side-foot">FINTECH 590<br><span>Research demonstration</span></div></aside>
+<main><header class="top"><div>RESEARCH / <span id="crumb">EXECUTIVE</span></div><div class="top-right"><span id="scope-equity">20 STOCKS <span class="separator">/</span> 2022–2025</span><span id="scope-quotes" hidden>20 SYMBOLS <span class="separator">/</span> QUOTE SNAPSHOT</span><span id="scope-phase2" hidden>5 BANKS <span class="separator">/</span> JUNE 2026</span><span id="scope-ytd" hidden>20 STOCKS <span class="separator">/</span> THROUGH NOV 16, 2026</span></div></header>
+<section id="executive" class="view">
+  <div class="eyebrow">01 / EXECUTIVE</div>
+  <h1>Keep the rule in research.</h1>
+  <p class="lede">From 2022 through 2025, buy and hold earned 45.66 percentage points more on the same 20 stocks, before trading costs.</p>
+  <div class="evidence-switch" role="group" aria-label="Explore the 2022–2025 portfolio">
+    <button type="button" aria-controls="year-figure" aria-pressed="true">Annual gap</button>
+    <button type="button" aria-controls="wealth-figure" aria-pressed="false">Growth of $100</button>
+    <button type="button" aria-controls="contribution-figure" aria-pressed="false">Stock contributions</button>
+  </div>
+  <figure id="year-figure" class="card gap-card">
+    <figcaption>
+      <h2>The rule led in one of four years</h2>
+      <p>Annual gross return difference in percentage points (rule minus buy and hold)</p>
+    </figcaption>
+    <div class="gap-axis" aria-hidden="true"><span>Buy and hold led</span><span>0 pp</span><span>Rule led</span></div>
+    <ol id="annual-chart" class="gap-chart" aria-label="Annual return differences for all 20 stocks"></ol>
+    <p id="annual-status" class="chart-note" hidden>Annual results are unavailable.</p>
+    <p class="chart-note">Source: WRDS / CRSP. Each year carries forward the previous year’s portfolio weights.</p>
+  </figure>
+  <figure id="wealth-figure" class="card gap-card" hidden>
+    <figcaption><h2>What happened to the first $100?</h2>
+      <p>Both portfolios start at $100 at the 2021 close. Points show the value at each subsequent year-end, before costs.</p></figcaption>
+    <svg id="wealth-chart" class="wealth-chart" role="img" aria-label="Year-end portfolio values"></svg>
+    <p id="wealth-status" class="chart-note">Loading annual returns…</p>
+  </figure>
+  <figure id="contribution-figure" class="card gap-card" hidden>
+    <figcaption><h2 id="contribution-title">Which stocks explain the portfolio gap?</h2>
+      <p>Each bar adds to the running difference between the rule and buy and hold over 2022–2025. Values are percentage points of portfolio return.</p></figcaption>
+    <div id="contribution-chart"></div>
+    <p id="contribution-note" class="chart-note">Loading stock returns…</p>
+    <details class="validation" id="nvda-check" hidden><summary>What if we leave out NVIDIA?</summary>
+      <h3>Gross returns with and without NVIDIA</h3>
+      <p>2022–2025. Each comparison starts with equal amounts in the included stocks and lets the weights drift.</p>
+      <div id="nvda-chart" aria-label="Four-year portfolio returns"></div>
+      <p id="nvda-gap"></p>
+    </details>
+    <details class="validation" id="stock-evidence" hidden><summary>See all 20 stock contributions</summary>
+      <div class="table-wrap"><table><caption>Sorted by contribution to the four-year portfolio gap</caption>
+        <thead><tr><th scope="col">Stock</th><th scope="col">Stock return gap (pp)</th><th scope="col">Portfolio contribution (pp)</th></tr></thead>
+        <tbody id="contribution-table"></tbody>
+      </table></div>
+    </details>
+  </figure>
+  <div class="section-row"><h2 id="return-title">Portfolio returns · 2022–2025</h2><label class="select-label" for="period">Period <select id="period"><option value="All">2022–2025</option><option>2022</option><option>2023</option><option>2024</option><option>2025</option></select></label></div>
+  <div class="metrics"><article><span>RULE RETURN</span><strong id="rule-return">—</strong><small>gross</small></article><article><span>BUY &amp; HOLD</span><strong id="buy-return">—</strong><small>gross</small></article><article><span>RULE MINUS BUY &amp; HOLD</span><strong id="difference">—</strong><small>percentage points</small></article></div>
+<div class="section-row"><div><div class="label">EXPLORE THE SAMPLE</div><h2>Compare a selected group or stock</h2></div><label class="select-label" for="sample">Selection <select id="sample"><option value="Sample|All 20">All 20 stocks</option></select></label></div>
+<div class="card chart-card"><div class="card-heading"><div><h3 id="sample-title">All 20 stocks: 2022–2025</h3><p>Rule vs. buy and hold · gross return · uses the period selected above</p></div></div><svg id="sample-chart" viewBox="0 0 800 180" role="img" aria-label="Selected sample comparison, loading"></svg><p id="sample-status" class="chart-note" hidden>Selected results are unavailable.</p><p class="chart-note"><strong>Scope:</strong> Groups and individual stocks are selected examples, not representative industry benchmarks. Results exclude transaction costs; sample selected in 2026.</p></div></section>
+<section id="risk" class="view" hidden><div class="eyebrow">02 / RISK</div><h1>The rule had a smaller drawdown.</h1><p class="lede">Over 1,003 holding intervals, the rule held about 10.4 of the 20 stocks on average. Buy and hold held all 20.</p><div class="section-row"><div><div class="label">2022–2025 · FIXED FULL PERIOD</div><h2>Maximum drawdown</h2></div><span class="tag">GROSS · DAILY CLOSES</span></div><div class="metrics two"><article><span>RULE MAX DRAWDOWN</span><strong>−21.27%</strong><small>trough: Oct 12, 2022</small></article><article><span>BUY &amp; HOLD MAX DRAWDOWN</span><strong>−25.36%</strong><small>trough: Sep 30, 2022</small></article></div><div class="card chart-card"><div class="card-heading"><div><h3>2022–2025: largest peak-to-trough decline</h3><p>Each portfolio reached its low on a different date.</p></div></div><svg id="risk-chart" viewBox="0 0 800 180" role="img" aria-label="2022 to 2025 maximum drawdown: rule minus 21.27 percent; buy and hold minus 25.36 percent."></svg><p class="chart-note"><strong>Source:</strong> WRDS / CRSP daily data; gross results for 20 stocks selected in 2026.</p></div><div class="section-row"><div><div class="label">2022–2025 · 20 STOCK SLEEVES</div><h2>How often did the rule hold stock?</h2></div><span class="tag">FULL PERIOD</span></div><div class="metrics two"><article><span>RULE · SHARE OF POSITIONS HELD</span><strong>52.06%</strong><small>of 20 sleeves, averaged over holding intervals</small></article><article><span>BUY &amp; HOLD · SHARE OF POSITIONS HELD</span><strong>100.00%</strong><small>all 20 sleeves held throughout</small></article></div><div class="card chart-card"><div class="card-heading"><div><h3>Average share of sleeves held in stock</h3><p>1,003 close-to-close intervals · 2022–2025</p></div></div><svg id="invested-chart" viewBox="0 0 800 180" role="img" aria-label="Average share of stock sleeves invested: rule 52.06 percent; buy and hold 100 percent."></svg><p class="chart-note"><strong>Definition:</strong> Count the invested sleeves out of 20 in each interval, then average. Every stock counts once. Measuring dollars invested would require the value of each position.</p><p class="chart-note"><strong>Source:</strong> Replay of saved WRDS / CRSP data; 10,443 of 20,060 rule sleeve-intervals were invested. The sample was selected in 2026.</p></div><div class="three-notes"><article><b>Exposure</b><p>The rule may hold cash while the benchmark stays invested.</p></article><article><b>Sample</b><p>Selected after the test period; 10 of 20 names are semiconductor-related.</p></article><article><b>Costs</b><p>The quote-based policy blocks a net estimate because three required events have crossed quotes.</p></article></div></section>
+<section id="compliance" class="view" hidden><div class="eyebrow">03 / COMPLIANCE</div><h1>Keep the evidence traceable.</h1><p class="lede">The result is a retrospective, gross-only research finding—not a live strategy signal.</p><div class="section-row compact-row"><div><div class="label">SYSTEM OVERVIEW</div><h2>Where each result comes from</h2></div></div><div class="card flow-card"><div class="flow-line"><span>WRDS / CRSP<br><small>2022–2025 daily data</small></span><b aria-hidden="true">→</b><span>Python analysis<br><small>rule &amp; benchmark</small></span><b aria-hidden="true">→</b><span>Saved results<br><small>derived CSV</small></span><b aria-hidden="true">→</b><span>HTML dashboard<br><small>historical views</small></span></div><div class="flow-separate"><b>Twelve Data</b> → saved quote snapshot → <b>Quote Monitor</b><br><small>Prices and timestamps update on the quote page.</small></div><div class="flow-separate"><b>Twelve Data adjusted daily prices</b> → 2025 comparison with CRSP → <b>2026 YTD test</b><br><small>The YTD test starts both portfolios at 5% per stock.</small></div></div><div class="card audit"><div class="audit-row"><b>Historical source</b><p>WRDS / CRSP daily data, 2022–2025. The stocks were selected in 2026.</p></div><div class="audit-row"><b>Method</b><p>Equal initial allocations; each stock is held when its prior session return is positive, otherwise its sleeve holds cash. No cross-sleeve rebalancing.</p></div><div class="audit-row"><b>Output</b><p>Derived aggregate results are loaded from a local CSV. The quote-based cost estimate is blocked; gross is not net.</p></div><div class="audit-row"><b>Quote source</b><p>Twelve Data snapshots are fetched separately. They do not update the fixed historical backtest. Quote date and retrieval time are different fields.</p></div><div class="audit-row"><b>Reproducibility</b><p>A read-only replay on saved WRDS inputs matched all 140 result rows. A fresh-source audit and no-manual-steps cold start remain unverified.</p></div></div><p class="footnote">These are research controls and limitations, not a representation of legal or regulatory compliance.</p></section>
+<section id="quotes" class="view" hidden><div class="eyebrow">04 / QUOTE MONITOR</div><h1>Latest quotes for the 20 stocks.</h1><p class="lede">Quote date comes from the provider. Retrieved (UTC) records when our collector saved the quote.</p><div class="status" id="status">Checking saved snapshot…</div><div class="section-row"><div><div class="label">TWELVE DATA</div><h2>Quote details</h2></div><label class="select-label" for="search">Find a symbol <input id="search" type="search" placeholder="e.g. NVDA"></label></div><div class="card table-wrap"><table><thead><tr><th>Symbol</th><th>Exchange</th><th>Price (USD)</th><th>Quote date</th><th>Retrieved (UTC)</th></tr></thead><tbody id="quotes-body"></tbody></table></div><p class="footnote">This is a periodically refreshed snapshot, not a tick-by-tick feed; quotes may be delayed or stale. Check both dates before using a value.</p></section>
+<section id="phase2" class="view" hidden><div class="eyebrow">05 / PHASE 2 CONTEXT</div><h1>Review the funding risk.</h1><p class="lede">Our earlier bank risk console recommended a targeted funding-liquidity watch for JPMorgan Chase.</p><div class="card audit"><div class="audit-row"><b>Earlier analysis</b><p>We compared five bank holding companies using FR Y-9C data and illustrative classroom stress scenarios. JPMorgan had the lowest 12-month repricing-gap proxy in the group, despite its strong starting capital ratio.</p></div><div class="audit-row"><b>Connection to this capstone</b><p>Both projects lead with a recommendation and explain the evidence and limitations. The bank stress scenarios and this capstone's equity backtest use different data, methods, and periods; their results should not be combined.</p></div><div class="audit-row"><b>Explore Phase 2</b><p><a href="https://github.com/Lengwinex9xLok/Fintech590/blob/main/Fintech590_Defense1_RiskConsole.pbix" target="_blank" rel="noopener noreferrer">Open the original Power BI console</a> &nbsp;·&nbsp; <a href="https://github.com/Lengwinex9xLok/Fintech590/blob/main/Defense%201/Institutional_Risk_Memo.md" target="_blank" rel="noopener noreferrer">Read the risk memo</a></p></div></div><p class="footnote">The bank scenarios are classroom assumptions, not forecasts; the repricing-gap proxy is not a liquidity coverage ratio.</p></section>
+<section id="ytd" class="view" hidden>
+  <div class="eyebrow">06 / 2026 YTD · SUPPLEMENTAL TEST</div>
+  <h1>The rule trailed buy and hold in 2026.</h1>
+  <p class="lede">Hypothetical gross returns for the same 20 stocks, January 2 through November 16, 2026 (220 trading sessions).</p>
+  <div class="metrics">
+    <article><span>RULE GROSS RETURN</span><strong>−4.88%</strong></article>
+    <article><span>BUY &amp; HOLD GROSS RETURN</span><strong>+37.51%</strong></article>
+    <article><span>RULE MINUS BUY &amp; HOLD</span><strong>−42.40 pp</strong></article>
+  </div>
+  <div class="card audit">
+    <div class="audit-row"><b>How we ran it</b><p>Both portfolios started with 5% per stock at the December 31, 2025 close and did not rebalance. The rule used the same lagged daily signal; cash earned no interest. Returns exclude trading costs.</p></div>
+    <div class="audit-row"><b>Data check</b><div><p>Before running 2026, we compared both 2025 portfolio returns with CRSP. Both differences were under 0.006 percentage points.</p>
+      <details class="validation"><summary>View the 2025 comparison</summary>
+        <div class="table-wrap"><table><caption>2025 gross returns for the 20-stock portfolio</caption>
+          <thead><tr><th scope="col">Portfolio</th><th scope="col">Twelve Data</th><th scope="col">CRSP</th><th scope="col">Difference (pp)</th></tr></thead>
+          <tbody><tr><th scope="row">Rule</th><td>42.1304%</td><td>42.1361%</td><td>−0.0057</td></tr>
+          <tr><th scope="row">Buy and hold</th><td>40.4222%</td><td>40.4254%</td><td>−0.0032</td></tr></tbody>
+        </table></div>
+        <p>Prices include splits and dividends. For KLAC, we applied KLA’s published cash dividends to split-adjusted prices in matching share units.</p>
+      </details></div></div>
+    <div class="audit-row"><b>How to read it</b><p>The 20 names were selected during 2026. This is a separate year-start simulation, not an out-of-sample test, a live track record, or a continuation of the 2022–2025 portfolio. The live quote feed does not update it.</p></div>
+  </div>
+</section>
+<footer>FINTECH 590 CAPSTONE <span>·</span> AUDIBLE <span>·</span> RESEARCH ONLY</footer></main><script>'use strict';
+const $ = s => document.querySelector(s);
+let historical = [{"period":"2022","level":"Sample","item":"AAPL and MSFT (2)","rule_return_pct":"-34.342430200539354","buy_hold_return_pct":"-27.210010948315855","difference_pp":"-7.132419252223499"},{"period":"2023","level":"Sample","item":"AAPL and MSFT (2)","rule_return_pct":"9.02280404082314","buy_hold_return_pct":"53.547130498315965","difference_pp":"-44.524326457492826"},{"period":"2024","level":"Sample","item":"AAPL and MSFT (2)","rule_return_pct":"4.811531974733563","buy_hold_return_pct":"21.645620199056715","difference_pp":"-16.834088224323153"},{"period":"2025","level":"Sample","item":"AAPL and MSFT (2)","rule_return_pct":"17.77308928466381","buy_hold_return_pct":"12.138406244986522","difference_pp":"5.634683039677291"},{"period":"All","level":"Sample","item":"AAPL and MSFT (2)","rule_return_pct":"-11.639678413805088","buy_hold_return_pct":"52.46291367006468","difference_pp":"-64.10259208386977"},{"period":"2022","level":"Sample","item":"All 20","rule_return_pct":"-14.66016841899551","buy_hold_return_pct":"-13.917218780488106","difference_pp":"-0.7429496385074064"},{"period":"2023","level":"Sample","item":"All 20","rule_return_pct":"14.394842772227602","buy_hold_return_pct":"31.29328559089577","difference_pp":"-16.89844281866817"},{"period":"2024","level":"Sample","item":"All 20","rule_return_pct":"5.934350790904075","buy_hold_return_pct":"21.384695985658308","difference_pp":"-15.450345194754235"},{"period":"2025","level":"Sample","item":"All 20","rule_return_pct":"42.13605888091389","buy_hold_return_pct":"40.425368388205165","difference_pp":"1.710690492708733"},{"period":"All","level":"Sample","item":"All 20","rule_return_pct":"46.99389769400306","buy_hold_return_pct":"92.64968952438448","difference_pp":"-45.65579183038142"},{"period":"2022","level":"Sample","item":"BAC and JPM (2)","rule_return_pct":"-11.00204498126718","buy_hold_return_pct":"-18.21034031308839","difference_pp":"7.208295331821213"},{"period":"2023","level":"Sample","item":"BAC and JPM (2)","rule_return_pct":"22.587231688001474","buy_hold_return_pct":"18.607997554631297","difference_pp":"3.9792341333701797"},{"period":"2024","level":"Sample","item":"BAC and JPM (2)","rule_return_pct":"16.039116777965102","buy_hold_return_pct":"39.98440813966351","difference_pp":"-23.945291361698406"},{"period":"2025","level":"Sample","item":"BAC and JPM (2)","rule_return_pct":"28.464060065659737","buy_hold_return_pct":"33.665851643554845","difference_pp":"-5.20179157789511"},{"period":"All","level":"Sample","item":"BAC and JPM (2)","rule_return_pct":"62.6339924690332","buy_hold_return_pct":"81.51499591661779","difference_pp":"-18.88100344758459"},{"period":"2022","level":"Sample","item":"CVX and XOM (2)","rule_return_pct":"47.39818410309393","buy_hold_return_pct":"72.91830075730496","difference_pp":"-25.520116654211034"},{"period":"2023","level":"Sample","item":"CVX and XOM (2)","rule_return_pct":"-13.20833647282188","buy_hold_return_pct":"-9.62530259220663","difference_pp":"-3.5830338806152495"},{"period":"2024","level":"Sample","item":"CVX and XOM (2)","rule_return_pct":"5.238713375861237","buy_hold_return_pct":"6.870356237499631","difference_pp":"-1.6316428616383938"},{"period":"2025","level":"Sample","item":"CVX and XOM (2)","rule_return_pct":"2.962524526146626","buy_hold_return_pct":"13.551812724213374","difference_pp":"-10.589288198066749"},{"period":"All","level":"Sample","item":"CVX and XOM (2)","rule_return_pct":"38.61966916966486","buy_hold_return_pct":"89.64401618509233","difference_pp":"-51.024347015427466"},{"period":"2022","level":"Sample","item":"JNJ and UNH (2)","rule_return_pct":"-2.9274464693220703","buy_hold_return_pct":"6.457676781498156","difference_pp":"-9.385123250820227"},{"period":"2023","level":"Sample","item":"JNJ and UNH (2)","rule_return_pct":"-7.298535332638401","buy_hold_return_pct":"-3.8831722375232913","difference_pp":"-3.4153630951151093"},{"period":"2024","level":"Sample","item":"JNJ and UNH (2)","rule_return_pct":"-4.165958257455982","buy_hold_return_pct":"-3.5410554228430424","difference_pp":"-0.6249028346129393"},{"period":"2025","level":"Sample","item":"JNJ and UNH (2)","rule_return_pct":"-3.1512004535381277","buy_hold_return_pct":"4.521561850178157","difference_pp":"-7.672762303716285"},{"period":"All","level":"Sample","item":"JNJ and UNH (2)","rule_return_pct":"-16.478728622339332","buy_hold_return_pct":"3.163201119724013","difference_pp":"-19.641929742063347"},{"period":"2022","level":"Sample","item":"Other selected stocks (10)","rule_return_pct":"-0.5931317779462875","buy_hold_return_pct":"6.240367361180321","difference_pp":"-6.833499139126609"},{"period":"2023","level":"Sample","item":"Other selected stocks (10)","rule_return_pct":"2.1430321447730494","buy_hold_return_pct":"7.422496548834623","difference_pp":"-5.2794644040615735"},{"period":"2024","level":"Sample","item":"Other selected stocks (10)","rule_return_pct":"7.982605538132659","buy_hold_return_pct":"20.989982132125352","difference_pp":"-13.007376593992692"},{"period":"2025","level":"Sample","item":"Other selected stocks (10)","rule_return_pct":"11.807988577179596","buy_hold_return_pct":"15.423980610730158","difference_pp":"-3.6159920335505635"},{"period":"All","level":"Sample","item":"Other selected stocks (10)","rule_return_pct":"22.589076853687253","buy_hold_return_pct":"59.37869459621543","difference_pp":"-36.78961774252818"},{"period":"2022","level":"Sample","item":"PG and WMT (2)","rule_return_pct":"-2.091921341696734","buy_hold_return_pct":"-2.753789471497159","difference_pp":"0.6618681298004248"},{"period":"2023","level":"Sample","item":"PG and WMT (2)","rule_return_pct":"11.417852769666602","buy_hold_return_pct":"6.180101316636533","difference_pp":"5.237751453030071"},{"period":"2024","level":"Sample","item":"PG and WMT (2)","rule_return_pct":"15.245334191596127","buy_hold_return_pct":"48.114117288171634","difference_pp":"-32.868783096575505"},{"period":"2025","level":"Sample","item":"PG and WMT (2)","rule_return_pct":"11.209522045344444","buy_hold_return_pct":"11.22779946206698","difference_pp":"-0.018277416722534134"},{"period":"All","level":"Sample","item":"PG and WMT (2)","rule_return_pct":"39.81012966588262","buy_hold_return_pct":"70.10834608957835","difference_pp":"-30.298216423695724"},{"period":"2022","level":"Sample","item":"Semiconductor and equipment (10)","rule_return_pct":"-28.727205060044735","buy_hold_return_pct":"-34.074804922156574","difference_pp":"5.34759986211184"},{"period":"2023","level":"Sample","item":"Semiconductor and equipment (10)","rule_return_pct":"31.482907377396828","buy_hold_return_pct":"69.76175571123908","difference_pp":"-38.278848333842255"},{"period":"2024","level":"Sample","item":"Semiconductor and equipment (10)","rule_return_pct":"3.7150507605060223","buy_hold_return_pct":"21.787205261142596","difference_pp":"-18.07215450063657"},{"period":"2025","level":"Sample","item":"Semiconductor and equipment (10)","rule_return_pct":"76.34887674607617","buy_hold_return_pct":"65.75363025191454","difference_pp":"10.595246494161636"},{"period":"All","level":"Sample","item":"Semiconductor and equipment (10)","rule_return_pct":"71.39871853431887","buy_hold_return_pct":"125.92068445255352","difference_pp":"-54.52196591823464"},{"period":"2022","level":"Stock","item":"AAPL","rule_return_pct":"-33.29846407508603","buy_hold_return_pct":"-26.40384371316643","difference_pp":"-6.894620361919602"},{"period":"2022","level":"Stock","item":"ADI","rule_return_pct":"-20.17705998831917","buy_hold_return_pct":"-4.921749494938332","difference_pp":"-15.255310493380836"},{"period":"2022","level":"Stock","item":"AMAT","rule_return_pct":"-28.66203246142692","buy_hold_return_pct":"-37.54422463915087","difference_pp":"8.882192177723947"},{"period":"2022","level":"Stock","item":"AMD","rule_return_pct":"-50.954981774160935","buy_hold_return_pct":"-54.98992979960067","difference_pp":"4.034948025439733"},{"period":"2022","level":"Stock","item":"BAC","rule_return_pct":"-14.780808110045186","buy_hold_return_pct":"-23.809558124070307","difference_pp":"9.028750014025121"},{"period":"2022","level":"Stock","item":"CVX","rule_return_pct":"34.57727021238017","buy_hold_return_pct":"58.482478791259496","difference_pp":"-23.90520857887932"},{"period":"2022","level":"Stock","item":"INTC","rule_return_pct":"-27.984068418442","buy_hold_return_pct":"-46.65137793523855","difference_pp":"18.66730951679655"},{"period":"2022","level":"Stock","item":"JNJ","rule_return_pct":"-0.8833775561081003","buy_hold_return_pct":"5.967768338302215","difference_pp":"-6.851145894410315"},{"period":"2022","level":"Stock","item":"JPM","rule_return_pct":"-7.223281852489183","buy_hold_return_pct":"-12.611122502106465","difference_pp":"5.3878406496172815"},{"period":"2022","level":"Stock","item":"KLAC","rule_return_pct":"-4.2567126183942205","buy_hold_return_pct":"-11.211448266264657","difference_pp":"6.954735647870436"},{"period":"2022","level":"Stock","item":"LRCX","rule_return_pct":"-19.8297670919819","buy_hold_return_pct":"-40.72434256897534","difference_pp":"20.894575476993438"},{"period":"2022","level":"Stock","item":"MSFT","rule_return_pct":"-35.38639632599266","buy_hold_return_pct":"-28.01617818346529","difference_pp":"-7.370218142527374"},{"period":"2022","level":"Stock","item":"MU","rule_return_pct":"-37.059665418153806","buy_hold_return_pct":"-45.92476807453","difference_pp":"8.86510265637619"},{"period":"2022","level":"Stock","item":"NVDA","rule_return_pct":"-44.18398527635132","buy_hold_return_pct":"-50.266071352256816","difference_pp":"6.08208607590549"},{"period":"2022","level":"Stock","item":"PG","rule_return_pct":"1.5206053735118186","buy_hold_return_pct":"-5.041731189410359","difference_pp":"6.5623365629221775"},{"period":"2022","level":"Stock","item":"QCOM","rule_return_pct":"-21.30560683670032","buy_hold_return_pct":"-38.610100820118674","difference_pp":"17.304493983418357"},{"period":"2022","level":"Stock","item":"TXN","rule_return_pct":"-32.85817071651669","buy_hold_return_pct":"-9.904036270491956","difference_pp":"-22.95413444602473"},{"period":"2022","level":"Stock","item":"UNH","rule_return_pct":"-4.97151538253604","buy_hold_return_pct":"6.947585224694075","difference_pp":"-11.919100607230115"},{"period":"2022","level":"Stock","item":"WMT","rule_return_pct":"-5.7044480569052975","buy_hold_return_pct":"-0.4658477535839589","difference_pp":"-5.2386003033213395"},{"period":"2022","level":"Stock","item":"XOM","rule_return_pct":"60.219097993807665","buy_hold_return_pct":"87.35412272335043","difference_pp":"-27.135024729542767"},{"period":"2023","level":"Stock","item":"AAPL","rule_return_pct":"14.530439174031805","buy_hold_return_pct":"49.00448001026907","difference_pp":"-34.474040836237265"},{"period":"2023","level":"Stock","item":"ADI","rule_return_pct":"17.64642007920918","buy_hold_return_pct":"23.355651185148616","difference_pp":"-5.7092311059394385"},{"period":"2023","level":"Stock","item":"AMAT","rule_return_pct":"26.48252670160631","buy_hold_return_pct":"67.98089191962451","difference_pp":"-41.49836521801819"},{"period":"2023","level":"Stock","item":"AMD","rule_return_pct":"44.029452125661564","buy_hold_return_pct":"127.59036090172438","difference_pp":"-83.56090877606282"},{"period":"2023","level":"Stock","item":"BAC","rule_return_pct":"13.392619583986832","buy_hold_return_pct":"4.821195043257265","difference_pp":"8.571424540729566"},{"period":"2023","level":"Stock","item":"CVX","rule_return_pct":"-6.005681924431916","buy_hold_return_pct":"-13.623318554516784","difference_pp":"7.617636630084867"},{"period":"2023","level":"Stock","item":"INTC","rule_return_pct":"64.6227073337684","buy_hold_return_pct":"94.64008033609144","difference_pp":"-30.017373002323033"},{"period":"2023","level":"Stock","item":"JNJ","rule_return_pct":"-4.06824134796806","buy_hold_return_pct":"-8.60391680595136","difference_pp":"4.535675457983301"},{"period":"2023","level":"Stock","item":"JPM","rule_return_pct":"31.03285715192341","buy_hold_return_pct":"30.628092164761544","difference_pp":"0.40476498716186526"},{"period":"2023","level":"Stock","item":"KLAC","rule_return_pct":"27.27919986388838","buy_hold_return_pct":"56.029665092073614","difference_pp":"-28.750465228185227"},{"period":"2023","level":"Stock","item":"LRCX","rule_return_pct":"67.79817220977209","buy_hold_return_pct":"88.61294911819274","difference_pp":"-20.81477690842066"},{"period":"2023","level":"Stock","item":"MSFT","rule_return_pct":"3.3371944816890764","buy_hold_return_pct":"58.19152984858731","difference_pp":"-54.85433536689823"},{"period":"2023","level":"Stock","item":"MU","rule_return_pct":"17.783515709781206","buy_hold_return_pct":"71.92221938667898","difference_pp":"-54.13870367689777"},{"period":"2023","level":"Stock","item":"NVDA","rule_return_pct":"19.589069060312458","buy_hold_return_pct":"239.01671101481364","difference_pp":"-219.42764195450115"},{"period":"2023","level":"Stock","item":"PG","rule_return_pct":"6.5114491707036315","buy_hold_return_pct":"-0.8481382813506522","difference_pp":"7.359587452054283"},{"period":"2023","level":"Stock","item":"QCOM","rule_return_pct":"22.162957136445783","buy_hold_return_pct":"35.06711706615815","difference_pp":"-12.904159929712367"},{"period":"2023","level":"Stock","item":"TXN","rule_return_pct":"4.8208295602124585","buy_hold_return_pct":"6.390848278356476","difference_pp":"-1.5700187181440173"},{"period":"2023","level":"Stock","item":"UNH","rule_return_pct":"-10.667796986659372","buy_hold_return_pct":"0.7943224974955809","difference_pp":"-11.462119484154954"},{"period":"2023","level":"Stock","item":"WMT","rule_return_pct":"16.700191685017487","buy_hold_return_pct":"12.885231665852203","difference_pp":"3.814960019165281"},{"period":"2023","level":"Stock","item":"XOM","rule_return_pct":"-19.258261853393954","buy_hold_return_pct":"-6.243388862506971","difference_pp":"-13.014872990886984"},{"period":"2024","level":"Stock","item":"AAPL","rule_return_pct":"20.108299401227004","buy_hold_return_pct":"30.70529520887595","difference_pp":"-10.596995807648945"},{"period":"2024","level":"Stock","item":"ADI","rule_return_pct":"24.68967655570029","buy_hold_return_pct":"8.84459297630793","difference_pp":"15.84508357939236"},{"period":"2024","level":"Stock","item":"AMAT","rule_return_pct":"-15.85638650362906","buy_hold_return_pct":"1.1299325275519356","difference_pp":"-16.986319031180997"},{"period":"2024","level":"Stock","item":"AMD","rule_return_pct":"-12.364193965213344","buy_hold_return_pct":"-18.059195598570245","difference_pp":"5.6950016333569"},{"period":"2024","level":"Stock","item":"BAC","rule_return_pct":"17.860681435011607","buy_hold_return_pct":"33.85876124167302","difference_pp":"-15.998079806661414"},{"period":"2024","level":"Stock","item":"CVX","rule_return_pct":"2.9912108527224923","buy_hold_return_pct":"1.2381361895402954","difference_pp":"1.753074663182197"},{"period":"2024","level":"Stock","item":"INTC","rule_return_pct":"-57.91172070755968","buy_hold_return_pct":"-59.55660556242517","difference_pp":"1.6448848548654915"},{"period":"2024","level":"Stock","item":"JNJ","rule_return_pct":"1.222053663858902","buy_hold_return_pct":"-4.797851986680623","difference_pp":"6.019905650539526"},{"period":"2024","level":"Stock","item":"JPM","rule_return_pct":"14.591186750856512","buy_hold_return_pct":"44.26998031028444","difference_pp":"-29.67879355942793"},{"period":"2024","level":"Stock","item":"KLAC","rule_return_pct":"0.27041765030064724","buy_hold_return_pct":"9.343041158845434","difference_pp":"-9.072623508544787"},{"period":"2024","level":"Stock","item":"LRCX","rule_return_pct":"-2.228577393419917","buy_hold_return_pct":"-6.868437688858597","difference_pp":"4.63986029543868"},{"period":"2024","level":"Stock","item":"MSFT","rule_return_pct":"-12.689989050566108","buy_hold_return_pct":"12.920951365584642","difference_pp":"-25.61094041615075"},{"period":"2024","level":"Stock","item":"MU","rule_return_pct":"4.1495395201808005","buy_hold_return_pct":"-0.9559680938591719","difference_pp":"5.105507614039972"},{"period":"2024","level":"Stock","item":"NVDA","rule_return_pct":"129.55322433073354","buy_hold_return_pct":"171.24942879152823","difference_pp":"-41.696204460794696"},{"period":"2024","level":"Stock","item":"PG","rule_return_pct":"4.691989784158834","buy_hold_return_pct":"17.24839556547977","difference_pp":"-12.556405781320933"},{"period":"2024","level":"Stock","item":"QCOM","rule_return_pct":"2.203035446708923","buy_hold_return_pct":"8.33180774902238","difference_pp":"-6.128772302313457"},{"period":"2024","level":"Stock","item":"TXN","rule_return_pct":"20.353470970920927","buy_hold_return_pct":"13.139360377627618","difference_pp":"7.21411059329331"},{"period":"2024","level":"Stock","item":"UNH","rule_return_pct":"-10.200934995817512","buy_hold_return_pct":"-2.41188549323218","difference_pp":"-7.789049502585332"},{"period":"2024","level":"Stock","item":"WMT","rule_return_pct":"25.615312015856052","buy_hold_return_pct":"73.97842434228859","difference_pp":"-48.363112326432535"},{"period":"2024","level":"Stock","item":"XOM","rule_return_pct":"7.436376532666733","buy_hold_return_pct":"11.259625549477303","difference_pp":"-3.8232490168105704"},{"period":"2025","level":"Stock","item":"AAPL","rule_return_pct":"9.824740806365284","buy_hold_return_pct":"9.044689022170548","difference_pp":"0.7800517841947352"},{"period":"2025","level":"Stock","item":"ADI","rule_return_pct":"63.78879473358583","buy_hold_return_pct":"29.75906795900687","difference_pp":"34.02972677457896"},{"period":"2025","level":"Stock","item":"AMAT","rule_return_pct":"96.56486453200168","buy_hold_return_pct":"59.6247142264676","difference_pp":"36.94015030553408"},{"period":"2025","level":"Stock","item":"AMD","rule_return_pct":"70.49003182883027","buy_hold_return_pct":"77.30047652167464","difference_pp":"-6.810444692844375"},{"period":"2025","level":"Stock","item":"BAC","rule_return_pct":"20.168111231785947","buy_hold_return_pct":"28.029774903548187","difference_pp":"-7.861663671762242"},{"period":"2025","level":"Stock","item":"CVX","rule_return_pct":"-6.441012903095666","buy_hold_return_pct":"10.121804658472367","difference_pp":"-16.562817561568032"},{"period":"2025","level":"Stock","item":"INTC","rule_return_pct":"114.12040647970363","buy_hold_return_pct":"84.04060046941493","difference_pp":"30.0798060102887"},{"period":"2025","level":"Stock","item":"JNJ","rule_return_pct":"14.610769691587056","buy_hold_return_pct":"47.46065344398549","difference_pp":"-32.84988375239843"},{"period":"2025","level":"Stock","item":"JPM","rule_return_pct":"35.2465128432216","buy_hold_return_pct":"37.32436446177469","difference_pp":"-2.077851618553095"},{"period":"2025","level":"Stock","item":"KLAC","rule_return_pct":"86.93105406336721","buy_hold_return_pct":"94.48652407187647","difference_pp":"-7.5554700085092685"},{"period":"2025","level":"Stock","item":"LRCX","rule_return_pct":"86.86882612113413","buy_hold_return_pct":"139.14593543762072","difference_pp":"-52.277109316486595"},{"period":"2025","level":"Stock","item":"MSFT","rule_return_pct":"30.28322453985428","buy_hold_return_pct":"15.586948893145113","difference_pp":"14.696275646709168"},{"period":"2025","level":"Stock","item":"MU","rule_return_pct":"185.44853020675208","buy_hold_return_pct":"240.2452815824911","difference_pp":"-54.79675137573903"},{"period":"2025","level":"Stock","item":"NVDA","rule_return_pct":"59.01587261832313","buy_hold_return_pct":"38.91514332665365","difference_pp":"20.100729291669484"},{"period":"2025","level":"Stock","item":"PG","rule_return_pct":"5.645025643668666","buy_hold_return_pct":"-12.251661805490599","difference_pp":"17.896687449159266"},{"period":"2025","level":"Stock","item":"QCOM","rule_return_pct":"22.690880764858278","buy_hold_return_pct":"13.834147829744502","difference_pp":"8.856732935113776"},{"period":"2025","level":"Stock","item":"TXN","rule_return_pct":"20.171139694321873","buy_hold_return_pct":"-4.464126550438774","difference_pp":"24.635266244760643"},{"period":"2025","level":"Stock","item":"UNH","rule_return_pct":"-25.57666859044868","buy_hold_return_pct":"-33.113877658505864","difference_pp":"7.537209068057182"},{"period":"2025","level":"Stock","item":"WMT","rule_return_pct":"15.766578981685765","buy_hold_return_pct":"24.487205015479653","difference_pp":"-8.720626033793888"},{"period":"2025","level":"Stock","item":"XOM","rule_return_pct":"11.777092039160376","buy_hold_return_pct":"15.984096836278884","difference_pp":"-4.207004797118508"},{"period":"All","level":"Stock","item":"AAPL","rule_return_pct":"0.7696999402073024","buy_hold_return_pct":"56.29754619663514","difference_pp":"-55.527846256427836"},{"period":"All","level":"Stock","item":"ADI","rule_return_pct":"91.78786358114857","buy_hold_return_pct":"65.64747078016453","difference_pp":"26.140392800984035"},{"period":"All","level":"Stock","item":"AMAT","rule_return_pct":"49.23762007695072","buy_hold_return_pct":"69.36058199344713","difference_pp":"-20.122961916496408"},{"period":"All","level":"Stock","item":"AMD","rule_return_pct":"5.542356395520831","buy_hold_return_pct":"48.824242487422545","difference_pp":"-43.28188609190171"},{"period":"All","level":"Stock","item":"BAC","rule_return_pct":"36.86121238011766","buy_hold_return_pct":"36.869721189922245","difference_pp":"-0.008508809804586015"},{"period":"All","level":"Stock","item":"CVX","rule_return_pct":"21.887450098244223","buy_hold_return_pct":"52.6143006828534","difference_pp":"-30.726850584609178"},{"period":"All","level":"Stock","item":"INTC","rule_return_pct":"6.840903644440166","buy_hold_return_pct":"-22.711171894367176","difference_pp":"29.552075538807344"},{"period":"All","level":"Stock","item":"JNJ","rule_return_pct":"10.308625724040477","buy_hold_return_pct":"35.96410679846493","difference_pp":"-25.655481074424458"},{"period":"All","level":"Stock","item":"JPM","rule_return_pct":"88.40677255794873","buy_hold_return_pct":"126.16027064331332","difference_pp":"-37.75349808536459"},{"period":"All","level":"Stock","item":"KLAC","rule_return_pct":"128.4125962813655","buy_hold_return_pct":"194.60818714694975","difference_pp":"-66.19559086558424"},{"period":"All","level":"Stock","item":"LRCX","rule_return_pct":"145.7814844626356","buy_hold_return_pct":"149.00483357722956","difference_pp":"-3.2233491145939652"},{"period":"All","level":"Stock","item":"MSFT","rule_return_pct":"-24.04905676781747","buy_hold_return_pct":"48.6282811434942","difference_pp":"-72.67733791131167"},{"period":"All","level":"Stock","item":"MU","rule_return_pct":"120.39347160182147","buy_hold_return_pct":"213.29309445861503","difference_pp":"-92.89962285679354"},{"period":"All","level":"Stock","item":"NVDA","rule_return_pct":"143.65435811607705","buy_hold_return_pct":"535.3196629529934","difference_pp":"-391.6653048369164"},{"period":"All","level":"Stock","item":"PG","rule_return_pct":"19.59499347121165","buy_hold_return_pct":"-3.1321924186455297","difference_pp":"22.727185889857182"},{"period":"All","level":"Stock","item":"QCOM","rule_return_pct":"20.54783262214608","buy_hold_return_pct":"2.2527746259138226","difference_pp":"18.295057996232256"},{"period":"All","level":"Stock","item":"TXN","rule_return_pct":"1.7886985610828132","buy_hold_return_pct":"3.6071683971666824","difference_pp":"-1.8184698360838691"},{"period":"All","level":"Stock","item":"UNH","rule_return_pct":"-43.26608296871915","buy_hold_return_pct":"-29.63770455901691","difference_pp":"-13.628378409702236"},{"period":"All","level":"Stock","item":"WMT","rule_return_pct":"60.02526586055359","buy_hold_return_pct":"143.3488845978022","difference_pp":"-83.32361873724861"},{"period":"All","level":"Stock","item":"XOM","rule_return_pct":"55.351888241085504","buy_hold_return_pct":"126.67373168733124","difference_pp":"-71.32184344624575"}];
+let quotes = [];
+const fmt = n => `${Number(n).toFixed(2)}%`;
+const pp = n => `${Number(n) > 0 ? '+' : ''}${Number(n).toFixed(2)} pp`;
+const ns = 'http://www.w3.org/2000/svg';
+function svgEl(name, attrs, text) {
+  const el = document.createElementNS(ns, name);
+  Object.entries(attrs).forEach(([k,v]) => el.setAttribute(k, String(v)));
+  if (text !== undefined) el.textContent = text;
+  return el;
+}
+function barChart(target, values, labels, colors) {
+  const svg = $(target); svg.replaceChildren();
+  const min = Math.min(0, ...values), max = Math.max(0, ...values);
+  const range = max - min || 1, left=200, width=510;
+  const x = v => left + ((v-min)/range)*width;
+  const zero=x(0);
+  svg.append(svgEl('line',{x1:zero,y1:20,x2:zero,y2:145,stroke:'#aab8c8','stroke-width':1}));
+  svg.append(svgEl('text',{x:zero,y:166,fill:'#40566d','font-size':13,'font-family':'Arial','text-anchor':'middle'},'0%'));
+  values.forEach((v,i)=>{
+    const y=35+i*57;
+    svg.append(svgEl('text',{x:0,y:y+15,fill:'#40566d','font-size':15,'font-family':'Arial'},labels[i]));
+    svg.append(svgEl('rect',{x:Math.min(zero,x(v)),y,width:Math.max(1,Math.abs(x(v)-zero)),height:23,fill:colors[i]}));
+    const negative = v < 0;
+    svg.append(svgEl('text',{x:negative?x(v)-7:x(v)+7,y:y+17,fill:'#153759','font-size':14,'font-family':'Arial','text-anchor':negative?'end':'start'},fmt(v)));
+  });
+}
+function renderAnnual() {
+  if (!$('#contribution-figure').hidden) renderContributions();
+  if ($('#wealth-chart').clientWidth) renderWealth();
+  const years = ['2022', '2023', '2024', '2025'];
+  const rows = years.map(year => historical.find(row =>
+    row.period === year && row.level === 'Sample' && row.item === 'All 20'));
+  const chart = $('#annual-chart');
+  chart.replaceChildren();
+  const valid = rows.every(row => row && row.difference_pp != null &&
+    String(row.difference_pp).trim() !== '' && Number.isFinite(Number(row.difference_pp)));
+  $('#annual-status').hidden = valid;
+  if (!valid) return;
+
+  const limit = Math.max(1, ...rows.map(row => Math.abs(Number(row.difference_pp))));
+  for (const row of rows) {
+    const gap = Number(row.difference_pp);
+    const width = 49 * Math.abs(gap) / limit;
+    const line = document.createElement('li');
+    const year = document.createElement('span');
+    year.textContent = row.period;
+    const track = svgEl('svg', {viewBox:'0 0 100 30', preserveAspectRatio:'none', 'aria-hidden':'true'});
+    track.append(svgEl('rect', {x:gap < 0 ? 50 - width : 50, y:10, width, height:10,
+      fill:gap < 0 ? '#203f66' : '#22786e'}));
+    track.append(svgEl('line', {x1:50, y1:0, x2:50, y2:30, stroke:'#acbac5',
+      'vector-effect':'non-scaling-stroke'}));
+    const value = document.createElement('strong');
+    value.textContent = pp(gap);
+    line.append(year, track, value);
+    chart.append(line);
+  }
+}
+function returnValue(row, field) {
+  const raw = row?.[field];
+  return raw == null || String(raw).trim() === '' ? NaN : Number(raw);
+}
+
+function renderWealth() {
+  const svg = $('#wealth-chart');
+  const status = $('#wealth-status');
+  svg.replaceChildren();
+  const series = [
+    {label:'Buy and hold', field:'buy_hold_return_pct', color:'#203f66', balances:[100]},
+    {label:'Rule', field:'rule_return_pct', color:'#22786e', balances:[100]},
+  ];
+  const years = ['2022', '2023', '2024', '2025'];
+  for (const year of years) {
+    const row = historical.find(r => r.period === year && r.level === 'Sample' && r.item === 'All 20');
+    for (const line of series) {
+      const rate = returnValue(row, line.field);
+      if (!Number.isFinite(rate)) {
+        status.textContent = 'Year-end portfolio values are unavailable.';
+        return;
+      }
+      line.balances.push(line.balances.at(-1) * (1 + rate / 100));
+    }
+  }
+  const width = Math.max(240, Math.round(svg.getBoundingClientRect().width));
+  const right = width < 450 ? 9 : 24;
+  const x = i => 43 + i * (width - 43 - right) / years.length;
+  const balances = series.flatMap(line => line.balances);
+  const low = Math.floor(Math.min(...balances) / 25) * 25;
+  const high = Math.max(low + 25, Math.ceil(Math.max(...balances) / 25) * 25);
+  const y = v => 17 + (high - v) / (high - low) * 150;
+  svg.setAttribute('viewBox', `0 0 ${width} 199`);
+  for (let tick = low; tick <= high; tick += 25) {
+    svg.append(svgEl('line', {x1:x(0), x2:x(4), y1:y(tick), y2:y(tick), stroke:tick === 100 ? '#a6b4c2' : '#e4e9ec'}));
+    svg.append(svgEl('text', {x:34, y:y(tick) + 4, 'text-anchor':'end'}, '$' + tick));
+  }
+  ['Start', ...years].forEach((label, i) => {
+    svg.append(svgEl('text', {x:x(i), y:191, 'text-anchor':i === 4 ? 'end' : 'middle'}, label));
+  });
+  for (const line of series) {
+    const points = line.balances.map((v,i) => `${x(i)},${y(v)}`).join(' ');
+    svg.append(svgEl('polyline', {points, fill:'none', stroke:line.color, 'stroke-width':2.5,
+      'stroke-dasharray':line.label === 'Rule' ? '6 3' : 'none'}));
+    line.balances.forEach((balance,i) => {
+      const dot = svgEl('circle', {cx:x(i), cy:y(balance), r:3.7, fill:line.color});
+      dot.append(svgEl('title', {}, `${line.label}, ${i ? years[i-1] : 'start'}: $${balance.toFixed(2)}`));
+      svg.append(dot);
+    });
+  }
+  svg.setAttribute('aria-label', series.map(line =>
+    line.label + ' from start through each year-end: ' + line.balances.map(v => '$' + v.toFixed(2)).join(', ')
+  ).join('. '));
+  status.replaceChildren();
+  for (const line of series) {
+    const label = document.createElement('span');
+    label.className = line.field;
+    label.textContent = `${line.label}  $${line.balances.at(-1).toFixed(2)}`;
+    status.append(label);
+  }
+}
+
+function renderNvdaCheck(portfolio) {
+  const remaining = historical.filter(r => r.period === 'All' && r.level === 'Stock' && r.item !== 'NVDA');
+  if (remaining.length !== 19) return;
+  const chart = $('#nvda-chart');
+  chart.replaceChildren();
+  const comparisons = ['rule_return_pct', 'buy_hold_return_pct'].map(field => ({
+    full: returnValue(portfolio, field),
+    rest: remaining.reduce((sum, row) => sum + returnValue(row, field), 0) / remaining.length,
+  }));
+  const endpoints = comparisons.flatMap(pair => [pair.full, pair.rest]);
+  if (!endpoints.every(Number.isFinite)) return;
+  const low = Math.min(0, ...endpoints);
+  const high = Math.max(100, ...endpoints);
+  const position = value => (9 + 82 * (value - low) / (high - low)) + '%';
+  for (const [field, label] of [['full', 'All 20 stocks'], ['rest', '19 without NVIDIA']]) {
+    const row = document.createElement('div');
+    row.className = 'nvda-pair';
+    const name = document.createElement('b');
+    name.textContent = label;
+    const [rule, hold] = comparisons.map(pair => pair[field]);
+    const svg = svgEl('svg', {role:'img', 'aria-label':label + ', rule ' + fmt(rule) + ', buy and hold ' + fmt(hold)});
+    svg.append(svgEl('line', {x1:position(low), x2:position(high), y1:18, y2:18, stroke:'#dce3e9'}));
+    if (field === 'rest') {
+      svg.classList.add('nvda-axis');
+      for (const tick of [low, (low + high) / 2, high]) {
+        svg.append(svgEl('text', {x:position(tick), y:40, 'text-anchor':'middle', fill:'#54687b', 'font-size':11}, tick.toFixed(0) + '%'));
+      }
+    }
+    svg.append(svgEl('line', {x1:position(rule), x2:position(hold), y1:18, y2:18, stroke:'#a2b2be', 'stroke-width':2}));
+    for (const [value, color] of [[rule,'#22786e'], [hold,'#203f66']]) {
+      svg.append(svgEl('circle', {cx:position(value), cy:18, r:5, fill:color}));
+    }
+    const figures = document.createElement('span');
+    for (const [series, value] of [['Rule', rule], ['Buy and hold', hold]]) {
+      const entry = document.createElement('span');
+      entry.className = series === 'Rule' ? 'pair-rule' : 'pair-hold';
+      entry.textContent = series + ' ' + fmt(value);
+      figures.append(entry);
+    }
+    row.append(name, svg, figures);
+    chart.append(row);
+  }
+  $('#nvda-gap').textContent = 'Without NVIDIA, rule minus buy and hold was ' +
+    pp(comparisons[0].rest - comparisons[1].rest) + '. Both portfolios allocated 1/19 of starting capital to each remaining stock.';
+  $('#nvda-check').hidden = false;
+}
+
+function renderContributions() {
+  const chart = $('#contribution-chart');
+  const table = $('#contribution-table');
+  const note = $('#contribution-note');
+  chart.replaceChildren();
+  table.replaceChildren();
+  $('#stock-evidence').hidden = true;
+  $('#nvda-check').hidden = true;
+  const rows = historical.filter(row => row.period === 'All' && row.level === 'Stock')
+    .map(row => ({symbol:row.item, gap:returnValue(row, 'difference_pp')}))
+    .sort((a, b) => a.gap - b.gap);
+  const portfolio = historical.find(row => row.period === 'All' && row.level === 'Sample' && row.item === 'All 20');
+  const reported = returnValue(portfolio, 'difference_pp');
+  const total = rows.reduce((sum, row) => sum + row.gap / 20, 0);
+  if (new Set(rows.map(row => row.symbol)).size !== 20 || rows.length !== 20 ||
+      !Number.isFinite(total) || !Number.isFinite(reported) || Math.abs(total - reported) > 0.00001) {
+    note.textContent = 'A reconciled 20-stock breakdown is unavailable.';
+    return;
+  }
+  const losses = rows.filter(row => row.gap < 0);
+  const gains = rows.filter(row => row.gap > 0);
+  $('#contribution-title').textContent = `The rule trailed on ${losses.length} of 20 stocks`;
+  const parts = losses.slice(0, 3).map(row => ({name:row.symbol, change:row.gap / 20}));
+  const otherLosses = losses.slice(3);
+  if (otherLosses.length) parts.push({name:`Other ${otherLosses.length} laggards`, change:otherLosses.reduce((s,r) => s+r.gap/20,0)});
+  if (gains.length) parts.push({name:`${gains.length} outperformers`, change:gains.reduce((s,r) => s+r.gap/20,0)});
+  let running = 0;
+  const steps = parts.map(part => {
+    const start = running;
+    running += part.change;
+    return {...part, start, end:running};
+  });
+  steps.push({name:'Portfolio gap', start:0, end:total, change:total, total:true});
+  const minimum = Math.min(0, ...steps.map(step => step.end));
+  const maximum = Math.max(0, ...steps.map(step => step.end));
+  const x = value => 2 + 96 * (value - minimum) / (maximum - minimum || 1);
+  for (const step of steps) {
+    const row = document.createElement('div');
+    row.className = step.total ? 'waterfall-row waterfall-total' : 'waterfall-row';
+    const name = document.createElement('span');
+    name.textContent = step.name;
+    const track = svgEl('svg', {viewBox:'0 0 100 32', preserveAspectRatio:'none', 'aria-hidden':'true'});
+    track.append(svgEl('line', {x1:x(0), x2:x(0), y1:0, y2:32, stroke:'#b9c6cd', 'vector-effect':'non-scaling-stroke'}));
+    if (!step.total) track.append(svgEl('line', {x1:x(step.start), x2:x(step.start), y1:0, y2:16, stroke:'#8d9aa5', 'vector-effect':'non-scaling-stroke'}));
+    track.append(svgEl('rect', {x:Math.min(x(step.start),x(step.end)), y:10, height:12,
+      width:Math.abs(x(step.end)-x(step.start)), fill:step.change > 0 ? '#22786e' : '#203f66'}));
+    if (!step.total) track.append(svgEl('line', {x1:x(step.end), x2:x(step.end), y1:16, y2:32, stroke:'#8d9aa5', 'vector-effect':'non-scaling-stroke'}));
+    const value = document.createElement('strong');
+    value.textContent = pp(step.change);
+    row.append(name, track, value);
+    chart.append(row);
+  }
+  for (const row of rows) {
+    const tr = document.createElement('tr');
+    const symbol = document.createElement('th');
+    symbol.scope = 'row';
+    symbol.textContent = row.symbol;
+    tr.append(symbol);
+    for (const value of [row.gap, row.gap / 20]) {
+      const td = document.createElement('td');
+      td.textContent = pp(value);
+      tr.append(td);
+    }
+    table.append(tr);
+  }
+  $('#stock-evidence').hidden = false;
+  renderNvdaCheck(portfolio);
+  note.textContent = 'Source: WRDS / CRSP. Each stock started at 5%. Its four-year portfolio contribution equals its own gross return gap multiplied by 5%. The total uses unrounded values.';
+}
+
+function prepareSampleSelector(){
+  const select=$('#sample');
+  [['Sample','Selected groups'],['Stock','Individual stocks']].forEach(([level,label])=>{
+    const group=document.createElement('optgroup');group.label=label;
+    [...new Set(historical.filter(r=>r.level===level&&r.item!=='All 20').map(r=>r.item))].sort().forEach(item=>{
+      const option=document.createElement('option');option.value=`${level}|${item}`;option.textContent=item;group.append(option);
+    });
+    select.append(group);
+  });
+}
+function renderSample(){
+  const [level,item]=$('#sample').value.split('|'),period=$('#period').value;
+  const row=historical.find(r=>r.period===period&&r.level===level&&r.item===item);
+  const svg=$('#sample-chart');svg.replaceChildren();
+  const valid=row && row.rule_return_pct!=='' && row.buy_hold_return_pct!=='' && Number.isFinite(Number(row.rule_return_pct)) && Number.isFinite(Number(row.buy_hold_return_pct));
+  $('#sample-status').hidden=Boolean(valid);
+  const periodLabel=period==='All'?'2022–2025':period;
+  $('#sample-title').textContent=`${item}: ${periodLabel}`;
+  if(!valid){svg.setAttribute('aria-label','Selected results unavailable');return;}
+  const values=[Number(row.rule_return_pct),Number(row.buy_hold_return_pct)];
+  svg.setAttribute('aria-label',`${item}, ${periodLabel}: rule ${fmt(values[0])}, buy and hold ${fmt(values[1])}.`);
+  barChart('#sample-chart',values,['Rule','Buy and hold'],['#5685a4','#0b376b']);
+}
+function renderHistory(){
+  const period=$('#period').value;
+  const row=historical.find(r=>r.period===period&&r.level==='Sample'&&r.item==='All 20');
+  const periodLabel=period==='All'?'2022–2025':period;
+  $('#return-title').textContent = `Portfolio returns · ${periodLabel}`;
+  for (const [target, field, format] of [
+    ['#rule-return', 'rule_return_pct', fmt],
+    ['#buy-return', 'buy_hold_return_pct', fmt],
+    ['#difference', 'difference_pp', pp],
+  ]) {
+    const value = row?.[field];
+    $(target).textContent = value != null && String(value).trim() !== '' && Number.isFinite(Number(value))
+      ? format(value) : 'Unavailable';
+  }
+  renderSample();
+}
+function renderQuotes(){
+  const query=$('#search').value.trim().toUpperCase();
+  const body=$('#quotes-body');body.replaceChildren();
+  const rows=quotes.filter(r=>(r.symbol||'').toUpperCase().includes(query));
+  if(!rows.length){const tr=document.createElement('tr'),td=document.createElement('td');td.colSpan=5;td.textContent='No saved quotes match.';tr.append(td);body.append(tr);return;}
+  rows.forEach(r=>{const tr=document.createElement('tr');[r.symbol,r.exchange,Number.isFinite(Number(r.close))&&r.close!==''?'$'+Number(r.close).toFixed(2):'—',r.quote_date,r.retrieved_at_utc].forEach(value=>{const td=document.createElement('td');td.textContent=value||'—';tr.append(td);});body.append(tr);});
+}
+document.querySelectorAll('.nav').forEach(button=>button.addEventListener('click',()=>{
+  const view=button.dataset.view;
+  document.querySelectorAll('.nav').forEach(b=>{
+    b.classList.toggle('active',b===button);
+    if (b===button) b.setAttribute('aria-current','page');
+    else b.removeAttribute('aria-current');
+  });
+  document.querySelectorAll('.view').forEach(v=>{v.hidden=v.id!==view;});
+  $('#crumb').textContent=button.textContent.trim().replace(/^\d+\s*/, '').toUpperCase();
+  $('#scope-equity').hidden=['phase2','ytd','quotes'].includes(view);
+  $('#scope-quotes').hidden=view!=='quotes';
+  $('#scope-phase2').hidden=view!=='phase2';
+  $('#scope-ytd').hidden=view!=='ytd';
+  window.scrollTo(0, 0);
+}));
+$('#period').addEventListener('change',renderHistory);$('#search').addEventListener('input',renderQuotes);
+$('#sample').addEventListener('change',renderSample);
+const evidenceButtons = document.querySelectorAll('.evidence-switch button');
+evidenceButtons.forEach(button => button.addEventListener('click', () => {
+  for (const item of evidenceButtons) {
+    const selected = item === button;
+    item.setAttribute('aria-pressed', String(selected));
+    document.getElementById(item.getAttribute('aria-controls')).hidden = !selected;
+  }
+  if (!$('#contribution-figure').hidden) renderContributions();
+  if (!$('#wealth-figure').hidden) renderWealth();
+}));
+new ResizeObserver(() => {
+  if ($('#wealth-chart').clientWidth) renderWealth();
+}).observe($('#wealth-chart'));
+barChart('#risk-chart',[-21.274674782767956,-25.355233489553463],['Rule','Buy and hold'],['#5685a4','#0b376b']);
+barChart('#invested-chart',[10443 / 20060 * 100,100],['Rule','Buy and hold'],['#5685a4','#0b376b']);
+prepareSampleSelector(); renderHistory(); renderAnnual();
+document.querySelector('#status').textContent = 'Offline rehearsal: quote refresh is disabled. The full demo shows quote date and retrieval time here.';
+renderQuotes();
+document.querySelector('#quotes-body td').textContent = 'No quotes included in the offline copy.';
+document.querySelector('button[aria-controls="wealth-figure"]').click();</script></body></html>

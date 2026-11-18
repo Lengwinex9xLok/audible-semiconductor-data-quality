@@ -3,6 +3,8 @@
 > **Current capstone presentation:** Start with the [20-stock HTML dashboard and team handoff](capstone_html/README.md). This is a newer, separate analysis; the earlier v10 materials below remain preserved.
 
 
+> **Presenting the capstone?** Download the [standalone HTML](capstone_html/presentation/Audible_Executive_Charts.html) and open the file in a browser. The [English demo script and panel Q&A](capstone_html/presentation/Audible_Live_Demo_Charts_Script.docx) follows the same screens.
+
 ## Current v10 memos and runnable handoff
 
 - [Position memo, 2 pages](position_memo.pdf)

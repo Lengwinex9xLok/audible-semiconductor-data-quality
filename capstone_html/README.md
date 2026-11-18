@@ -14,6 +14,12 @@ The 20 stocks were selected in 2026, after the 2022–2025 test period. Ten are 
 
 The rule holds a stock from close to close when its prior session return is positive; otherwise that stock's sleeve holds cash. Stocks have equal initial allocations, with no cross-sleeve rebalancing. Buy and hold stays invested. Annual returns segment the continuous portfolio; they are not independent, annually reset experiments.
 
+## Classroom presentation
+
+Download [Audible Executive Charts](presentation/Audible_Executive_Charts.html) using **Download raw file** on GitHub. Open the saved file in Safari, Chrome or Edge. It opens on **Executive → Growth of $100**. Select **Stock contributions**, then **What if we leave out NVIDIA?** to see the comparison with the remaining 19 stocks. All historical charts and the 2026 YTD view work offline. Use the live startup below to refresh Quote Monitor.
+
+Download the [English demo script and slide 12 panel questions](presentation/Audible_Live_Demo_Charts_Script.docx) for rehearsal.
+
 ## Run the HTML dashboard
 
 Python 3, network access, and `TWELVE_DATA_API_KEY` provisioned in the environment are required for the live demo. From this folder, run:
